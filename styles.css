@@ -1,0 +1,22 @@
+.vertical {
+    border-left: 6px solid black;
+    height: 754px;
+    position:absolute;
+    left: 22%;
+    
+    border-right: 6px solid black;
+    height: 754px;
+    position:absolute;
+    right: 22%;
+
+    margin: 0 auto;
+}
+
+.diagional_bottom{
+    border-bottom: 6px solid black;
+    height: 550px;
+}
+
+.diagional_top{
+    border-bottom: 6px solid black;
+}
