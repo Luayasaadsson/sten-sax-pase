@@ -1,4 +1,4 @@
-.vertical {
+.vertical{
     border-left: 6px solid black;
     height: 754px;
     position:absolute;
@@ -12,11 +12,26 @@
     margin: 0 auto;
 }
 
-.diagional_bottom{
+.diagional_top{
+    border-top: 6px solid black;
+}
+
+.controller{
     border-bottom: 6px solid black;
     height: 550px;
 }
 
-.diagional_top{
+.diagional_bottom{
     border-bottom: 6px solid black;
+    height: 187px;
+    /*background-color: #7A7BA1;*/
+}
+
+.lucas_img_1{
+    text-align: center;
+    width: 30%;
+    height: 20%;
+}
+
+.lucas_img_1 img{
 }
