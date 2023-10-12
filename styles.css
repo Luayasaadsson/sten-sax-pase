@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0 ;
@@ -17,27 +19,37 @@ body{
     display: grid;
     grid-template-areas: 
     
-    
+    "header header header"
     "main main main"
     "footer footer footer"
     ;
  grid-template-columns: 1fr 2fr 1fr;
- grid-template-rows: 75%;
+ grid-template-rows: 100px;
 }
 
 
+@font-face {
+    font-family: 'MKtitle';
+    src: url(font/MKtitle.otf);
+}
 
-/* header{
+header{
     grid-area: header;
-    background-color: bisque;
-
-} */
+    font-size: 30px;
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: MKtitle;
+    opacity: 0;
+    animation: fadeIn 4s ease-in-out forwards infinite;
+}
 
 
 
 main{
     grid-area: main;
     /* background-color: blue; */
+    min-height: 600px;
     
 }
 
@@ -46,25 +58,58 @@ main{
 
 footer{
     grid-area: footer;
-    background-color: #3D3F61;
+    background-color: cadetblue;
+    max-height: 250px;
+    margin-top: -100px;
 }
 
+.ring{
+    margin-top: -100%;
+}
+
+.ring img{
+    width: 100%;
+    margin-top: 5%;
+}
+
+
+
+.animated-background {
+    width: 100%;          
+    height: 100%;        
+    background-image: url('/images/level1.jfif'); 
+    background-repeat: repeat-x;
+    animation: floatEffect 9s infinite alternate; 
+    display: flex; 
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    margin-top: -2%;
+    z-index: -1;
+    position: relative;
+
+  }
+
+  audio {
+    display: none;
+}
+footer{
+    grid-area: footer;
+    background-color: #3D3F61;
+}
 .joystick-container {
     position: relative;
     bottom: 40%;
 }
-
 .joystick-1 {
     margin-left: 100px;
     position: absolute;
     z-index: 20;
 }
-
 .joystick-1 img {
     width: 120px;
     overflow-y: visible;
 }
-
 .joystick-shadow-1 {
     position: absolute;
     top: 100%;
@@ -80,16 +125,6 @@ footer{
     top: calc(100% - 75px);
 }
 
-.ring{
-    margin-top: -100%;
-}
-
-.ring img{
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
 
 
 
