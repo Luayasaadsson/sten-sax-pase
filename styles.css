@@ -101,7 +101,7 @@ footer{
 .joystick-container {
     position: relative;
     bottom: 29%;
-    z-index: 0;
+    z-index: 1;
     position: absolute;
 }
 .joystick-1 {
@@ -155,7 +155,7 @@ footer{
     align-content: center; */
     top: 53%;
     left: 35%;
-    /* z-index: 20; */
+    z-index: 0;
     position: absolute;
     animation: bag-animation 1.5s ease-in-out infinite alternate;
     border-radius: 50px;
@@ -244,10 +244,33 @@ footer{
 z-index: -300;
 width: 3000px;
 margin-left: -1023px;
-margin-top: -95px;
+margin-top: -91px;
 
 }
-
+.screen {
+  margin-left: -480px;
+  margin-top: 118px;
+  position: absolute;
+  z-index: 1 ;
+  opacity: 1;
+  width: 100%;
+}
+.screen::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: 450px;
+  margin-right: 450px;
+  margin-bottom: 10px;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
 
 
 
