@@ -24,7 +24,7 @@ body{
     "footer footer footer"
     ;
  grid-template-columns: 1fr 2fr 1fr;
- grid-template-rows: 100px;
+ grid-template-rows: 100px/* 10% 70%; */
 }
 
 
@@ -60,7 +60,7 @@ footer{
     grid-area: footer;
     background-color: cadetblue;
     max-height: 250px;
-    margin-top: -100px;
+    margin-top: -67px;
 }
 
 .ring{
@@ -149,7 +149,7 @@ footer{
 .bag{
     /* display: flex;
     align-content: center; */
-    top: 45%;
+    top: 53%;
     left: 35%;
     /* z-index: 20; */
     position: absolute;
@@ -186,7 +186,7 @@ footer{
 .scissor{
     /* display: flex;
     align-content: center; */
-    top: 33%;
+    top: 43%;
     left: 35%;
     /* z-index: 20; */
     position: absolute;
@@ -212,7 +212,7 @@ footer{
 .stone{
     /* display: flex;
     align-content: center; */
-    top: 20%;
+    top: 30%;
     left: 35%;
     /* z-index: 20; */
     position: absolute;
@@ -243,14 +243,14 @@ footer{
 
 
   
-  @keyframes floatEffect {
+/*   @keyframes floatEffect {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-20px);
     }
-  }
+  } */
 
   @keyframes fadeIn {
     0% {
