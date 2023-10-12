@@ -35,12 +35,13 @@ body{
 
 header{
     grid-area: header;
-    font-size: 30px;
-    color: red;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     text-align: center;
     font-family: MKtitle;
-    opacity: 0;
+    opacity: 1;
+    margin-top: 30px;
     animation: fadeIn 4s ease-in-out forwards infinite;
 }
 
@@ -235,7 +236,14 @@ footer{
     }
 }
 
+.arkad {
+  position: absolute;
+z-index: -300;
+width: 3000px;
+margin-left: -1023px;
+margin-top: -40px;
 
+}
 
 
 
@@ -251,7 +259,7 @@ footer{
       transform: translateY(-20px);
     }
   } */
-
+/* 
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -261,7 +269,7 @@ footer{
     }
   }
   
-  
+   */
   
   
   
