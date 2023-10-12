@@ -22,7 +22,7 @@ body{
     "footer footer footer"
     ;
  grid-template-columns: 1fr 2fr 1fr;
- grid-template-rows: 65%;
+ grid-template-rows: 75%;
 }
 
 
@@ -37,28 +37,57 @@ body{
 
 main{
     grid-area: main;
-    background-color: blue;
-    background-image: url(/images/bg_stars.gif);
+    /* background-color: blue; */
+    
 }
 
-/* aside{
-    grid-area: aside;
-    grid-area: nav;
-    background-color: blueviolet;
-    background-image: url(/images/bg_stars.gif);
-} */
 
-/* nav{
-    grid-area: nav;
-    background-color: blueviolet;
-    background-image: url(/images/bg_stars.gif);
-}
- */
 
 
 footer{
     grid-area: footer;
     background-color: cadetblue;
-    background-image: url(/images/bg_stars.gif);
 }
 
+.ring{
+    margin-top: -100%;
+}
+
+.ring img{
+    width: 100%;
+    margin-top: 5%;
+}
+
+
+
+.animated-background {
+    width: 100%;          
+    height: 100%;        
+    background-image: url('/images/level1.jfif'); 
+    background-repeat: repeat-x;
+    animation: floatEffect 9s infinite alternate; 
+    display: flex; 
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    margin-top: 5%;
+    z-index: -1;
+    position: relative;
+
+  }
+  
+  @keyframes floatEffect {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  
+  
+  
+  
+  
+  
