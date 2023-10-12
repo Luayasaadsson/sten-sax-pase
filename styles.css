@@ -17,27 +17,37 @@ body{
     display: grid;
     grid-template-areas: 
     
-    
+    "header header header"
     "main main main"
     "footer footer footer"
     ;
  grid-template-columns: 1fr 2fr 1fr;
- grid-template-rows: 75%;
+ grid-template-rows: 100px;
 }
 
 
+@font-face {
+    font-family: 'MKtitle';
+    src: url(font/MKtitle.otf);
+}
 
-/* header{
+header{
     grid-area: header;
-    background-color: bisque;
-
-} */
+    font-size: 30px;
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: MKtitle;
+    opacity: 0;
+    animation: fadeIn 4s ease-in-out forwards infinite;
+}
 
 
 
 main{
     grid-area: main;
     /* background-color: blue; */
+    min-height: 600px;
     
 }
 
@@ -47,6 +57,8 @@ main{
 footer{
     grid-area: footer;
     background-color: cadetblue;
+    max-height: 250px;
+    margin-top: -100px;
 }
 
 .ring{
@@ -70,7 +82,7 @@ footer{
     flex-wrap: wrap;
     align-content: center;
     overflow: hidden;
-    margin-top: 5%;
+    margin-top: -2%;
     z-index: -1;
     position: relative;
 
@@ -85,6 +97,14 @@ footer{
     }
   }
 
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   
   
   
