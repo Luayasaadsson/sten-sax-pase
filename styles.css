@@ -100,7 +100,9 @@ footer{
 }
 .joystick-container {
     position: relative;
-    bottom: 40%;
+    bottom: 29%;
+    z-index: 0;
+    position: absolute;
 }
 .joystick-1 {
     margin-left: 100px;
@@ -108,22 +110,23 @@ footer{
     z-index: 20;
 }
 .joystick-1 img {
-    width: 120px;
+  margin-top: -35px;
+    width: 180px;
     overflow-y: visible;
+    z-index: 20;
 }
 .joystick-shadow-1 {
     position: absolute;
-    top: 100%;
     width: 100%;
-    height: 100%;
-    max-width: 120px;
+    height: 100%;  
+    margin-top: -95px;
     background: url(/images/joystick-1-shadow.png) no-repeat center center;
     background-size: contain;
     background-repeat: no-repeat;
     transform: scaleY(-1);
     opacity: 0.3;
-    z-index: 10;
-    top: calc(100% - 75px);
+    z-index: -20;
+    overflow:;
 }
 
 
