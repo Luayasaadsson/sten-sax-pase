@@ -33,7 +33,7 @@ body{
     src: url(font/MKtitle.otf);
 }
 
-header{
+header {
     grid-area: header;
     font-size: 35px;
     color: rgb(255, 255, 255);
@@ -42,7 +42,10 @@ header{
     font-family: MKtitle;
     opacity: 1;
     margin-top: 30px;
-    animation: fadeIn 4s ease-in-out forwards infinite;
+}
+
+header h1 {
+  animation: fadeIn 4s ease-in-out alternate infinite;
 }
 
 
@@ -137,7 +140,6 @@ footer{
     height: 100%;        
     background-image: url('/images/level1.jfif'); 
     background-repeat: repeat-x;
-    animation: floatEffect 9s infinite alternate; 
     display: flex; 
     flex-wrap: wrap;
     align-content: center;
@@ -145,9 +147,19 @@ footer{
     margin-top: 5%;
     z-index: -1;
     position: relative;
+    animation: slideshow 30s infinite 1s ease-in-out;
 }
 
-
+@keyframes slideshow {
+  0% {background-image: url("images/level1.jfif")}
+  16% {background-image: url("images/level1.jfif")}
+  33% {background-image: url("images/level3.jfif")}
+  48% {background-image: url("images/level3.jfif")}
+  64% {background-image: url("images/level3.jfif")}
+  80% {background-image: url("images/level2.jfif")}
+  96% {background-image: url("images/level2.jfif")}
+  100%{background-image: url("images/level1.jfif")}
+}
 
 
 .bag{
@@ -272,12 +284,112 @@ margin-top: -91px;
   pointer-events: none;
 }
 
-
-
-
-
+/* 
+.h1flicker::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   
-/*   @keyframes floatEffect {
+  margin-left: 450px;
+  margin-right: 450px;
+  margin-bottom: 800px;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: no 
+}*//*  
+ .h1flicker::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  margin-left: 450px;
+  margin-right: 450px;
+  margin-bottom: 800px;  background: rgba(18, 16, 16, 0.1);
+  opacity: 0.5;
+  z-index: 100;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+ */
+
+@keyframes flicker {
+  0% {
+  opacity: 0.27861;
+  }
+  5% {
+  opacity: 0.34769;
+  }
+  10% {
+  opacity: 0.23604;
+  }
+  15% {
+  opacity: 0.90626;
+  }
+  20% {
+  opacity: 0.18128;
+  }
+  25% {
+  opacity: 0.83891;
+  }
+  30% {
+  opacity: 0.65583;
+  }
+  35% {
+  opacity: 0.67807;
+  }
+  40% {
+  opacity: 0.26559;
+  }
+  45% {
+  opacity: 0.84693;
+  }
+  50% {
+  opacity: 0.96019;
+  }
+  55% {
+  opacity: 0.08594;
+  }
+  60% {
+  opacity: 0.20313;
+  }
+  65% {
+  opacity: 0.71988;
+  }
+  70% {
+  opacity: 0.53455;
+  }
+  75% {
+  opacity: 0.37288;
+  }
+  80% {
+  opacity: 0.71428;
+  }
+  85% {
+  opacity: 0.70419;
+  }
+  90% {
+  opacity: 0.7003;
+  }
+  95% {
+  opacity: 0.36108;
+  }
+  100% {
+  opacity: 0.24387;
+  }
+}
+
+
+/*  
+   @keyframes floatEffect {
     0%, 100% {
       transform: translateY(0);
     }
@@ -285,17 +397,15 @@ margin-top: -91px;
       transform: translateY(-20px);
     }
   } */
-/* 
+
   @keyframes fadeIn {
     0% {
-      opacity: 0;
+      opacity: 0.4;
     }
-    100% {
+    50% {
       opacity: 1;
     }
   }
-  
-   */
   
   
   
