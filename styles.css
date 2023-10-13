@@ -9,8 +9,7 @@
 
 html{
     background-image: url(/images/controller_background.png);
-    margin-left: 27.5%;
-    margin-right: 25%;
+    margin:auto;
     max-width: 1000px;
 }
 
@@ -258,8 +257,8 @@ footer{
   position: absolute;
 z-index: -300;
 width: 1500px;
-margin-left: -280px;
-margin-top: -91px;
+margin-left: -268px;
+margin-top: -92px;
 
 }
 .screen {
