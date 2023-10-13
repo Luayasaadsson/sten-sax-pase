@@ -176,12 +176,12 @@ footer{
 @keyframes ringfloat {
   0%, 100% {
     transform: translateY(0px);
-    transform: rotate3d(10, 0, 0, 45deg);
+    transform: rotate3d(1, 0, 0, 40deg);
   }
   50% {
-    transform: translateY(-40px);
+    transform: translateY(-50px);
     transform: translateY(0px);
-   
+    transform: scaleX(1.05)
   }
 }
 
