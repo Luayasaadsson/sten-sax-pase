@@ -73,6 +73,7 @@ footer{
 
 .ring{
     margin-top: -100%;
+    z-index: -3;
 }
 
 .ring img{
@@ -103,12 +104,13 @@ footer{
     display: none;
 }
 footer{
+  position: relative;
     grid-area: footer;
     background-color: #3D3F61;
 }
 .joystick-container {
     position: relative;
-    bottom: 29%;
+    bottom: 290px;
     z-index: 1;
     position: absolute;
 }
@@ -150,8 +152,8 @@ footer{
     align-content: center;
     overflow: hidden;
     margin-top: 5%;
-    z-index: -1;
     position: relative;
+    z-index: -3 ;
     animation: slideshowPanY 37.5s infinite , slideshow 75s infinite ;
 }
 
