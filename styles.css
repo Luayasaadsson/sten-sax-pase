@@ -9,13 +9,15 @@
 
 html{
     background-image: url(/images/controller_background.png);
-    margin-left: 25%;
+    margin-left: 27.5%;
     margin-right: 25%;
-    /* margin: 6rem; */
+    max-width: 1000px;
 }
 
 body{
-    height: 100vh;
+    position:absolute;
+    margin: auto;
+    height: 950px;
     display: grid;
     grid-template-areas: 
     
@@ -41,7 +43,8 @@ header {
     text-align: center;
     font-family: MKtitle;
     opacity: 1;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-left: 30px;
 }
 
 header h1 {
@@ -166,7 +169,7 @@ footer{
     /* display: flex;
     align-content: center; */
     top: 53%;
-    left: 35%;
+    left: 20%;
     z-index: 0;
     position: absolute;
     animation: bag-animation 1.5s ease-in-out infinite alternate;
@@ -203,7 +206,7 @@ footer{
     /* display: flex;
     align-content: center; */
     top: 43%;
-    left: 35%;
+    left: 20%;
     /* z-index: 20; */
     position: absolute;
     animation: scissor-animation 2.7s ease-in-out infinite alternate;
@@ -229,7 +232,7 @@ footer{
     /* display: flex;
     align-content: center; */
     top: 30%;
-    left: 35%;
+    left: 20%;
     /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
@@ -254,17 +257,18 @@ footer{
 .arkad {
   position: absolute;
 z-index: -300;
-width: 3000px;
-margin-left: -1023px;
+width: 1500px;
+margin-left: -280px;
 margin-top: -91px;
 
 }
 .screen {
-  margin-left: -480px;
+  margin-left: -30px;
   margin-top: 118px;
   position: absolute;
   z-index: 1 ;
   opacity: 1;
+  min-width: ;
   width: 100%;
 }
 .screen::before {
@@ -275,7 +279,8 @@ margin-top: -91px;
   left: 0;
   bottom: 0;
   right: 0;
-  margin-left: 450px;
+  width: 100%;
+  margin-left: 0px;
   margin-right: 450px;
   margin-bottom: 10px;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
