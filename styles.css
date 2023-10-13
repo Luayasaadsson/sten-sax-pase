@@ -35,6 +35,7 @@ body{
 }
 
 header {
+  position: relative;
     grid-area: header;
     font-size: 35px;
     color: rgb(255, 255, 255);
@@ -44,6 +45,7 @@ header {
     opacity: 1;
     margin-top: 25px;
     margin-left: 30px;
+    
 }
 
 header h1 {
@@ -76,6 +78,7 @@ footer{
 .ring img{
     width: 100%;
     margin-top: 5%;
+    animation: ringfloat 37.5s infinite;
 }
 
 
@@ -149,20 +152,36 @@ footer{
     margin-top: 5%;
     z-index: -1;
     position: relative;
-    animation: slideshow 30s infinite 1s ease-in-out;
+    animation: slideshowPanY 37.5s infinite , slideshow 75s infinite ;
 }
 
 @keyframes slideshow {
-  0% {background-image: url("images/level1.jfif")}
-  16% {background-image: url("images/level1.jfif")}
-  33% {background-image: url("images/level3.jfif")}
-  48% {background-image: url("images/level3.jfif")}
-  64% {background-image: url("images/level3.jfif")}
-  80% {background-image: url("images/level2.jfif")}
-  96% {background-image: url("images/level2.jfif")}
-  100%{background-image: url("images/level1.jfif")}
+  0%,  25%, 100% {background-image: url("images/level1.jfif" )}
+  30%, 35%, 45%, 50% {background-image: url("images/level2.jfif") }
+  50%, 55%, 70%, 75% {background-image: url("images/level3.jfif") }
+  75%, 80%, 95% {background-image: url("images/level4.jfif") }
+  
+}
+@keyframes slideshowPanY {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
 }
 
+@keyframes ringfloat {
+  0%, 100% {
+    transform: translateY(0px);
+    transform: rotate3d(10, 0, 0, 45deg);
+  }
+  50% {
+    transform: translateY(-40px);
+    transform: translateY(0px);
+   
+  }
+}
 
 .bag{
     /* display: flex;
@@ -269,6 +288,7 @@ margin-top: -92px;
   opacity: 1;
   min-width: ;
   width: 100%;
+  
 }
 .screen::before {
   content: " ";
@@ -278,8 +298,8 @@ margin-top: -92px;
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
-  margin-left: 0px;
+  width: 105%;
+  margin-left: 10px;
   margin-right: 450px;
   margin-bottom: 10px;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
