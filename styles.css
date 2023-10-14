@@ -34,6 +34,11 @@ body{
     src: url(font/MKtitle.otf);
 }
 
+.arkad img{
+margin-left: 30px;
+margin-top: 30px;
+}
+
 header {
   position: relative;
     grid-area: header;
@@ -43,13 +48,22 @@ header {
     text-align: center;
     font-family: MKtitle;
     opacity: 1;
-    margin-top: 25px;
-    margin-left: 30px;
-    
+    height: 137px;
+    border-bottom: solid 14px rgb(217, 0, 0);
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: #262014;
+    width: 100%;
 }
 
 header h1 {
+  margin-top: 30px;
+  font-size: 64px;
+  color: rgb(255, 255, 255);
   animation: fadeIn 4s ease-in-out alternate infinite;
+  z-index: 2;
+  text-align: center;
+  font-family: MKtitle;
 }
 
 
@@ -57,7 +71,8 @@ header h1 {
 main{
     grid-area: main;
     /* background-color: blue; */
-    min-height: 600px;
+    min-height: 640px;
+    margin-top: -45px;
     
 }
 
@@ -83,7 +98,7 @@ footer{
 }
 
 
-
+/* 
 .animated-background {
     width: 100%;          
     height: 100%;        
@@ -98,7 +113,7 @@ footer{
     z-index: -1;
     position: relative;
 
-  }
+  } */
 
   audio {
     display: none;
@@ -173,17 +188,15 @@ footer{
   }
 }
 
-@keyframes ringfloat {
-  0%, 100% {
-    transform: translateY(0px);
-    transform: rotate3d(1, 0, 0, 40deg);
+ @keyframes ringfloat {
+    0%, 100% {
+      transform: translateY(40px) rotate3d(1, 0, 0, 45deg);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+    /* transform: scaleX(1.05) */
   }
-  50% {
-    transform: translateY(-50px);
-    transform: translateY(0px);
-    transform: scaleX(1.05)
-  }
-}
 
 .bag{
     /* display: flex;
@@ -283,8 +296,8 @@ margin-top: -92px;
 
 }
 .screen {
-  margin-left: -30px;
-  margin-top: 118px;
+  margin-left: -0px;
+  margin-top: 95px;
   position: absolute;
   z-index: 1 ;
   opacity: 1;
@@ -300,8 +313,8 @@ margin-top: -92px;
   left: 0;
   bottom: 0;
   right: 0;
-  width: 105%;
-  margin-left: 10px;
+  width: 103%;
+  margin-left: -20px;
   margin-right: 450px;
   margin-bottom: 10px;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
