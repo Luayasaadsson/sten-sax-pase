@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 
@@ -60,6 +61,8 @@
         </div>
     </div>
 
+    <div  id="result"></div>
+
     <h1 class="h1flicker">Rock Paper Scissors</h1>
      <div class="animated-background"></div>
 
@@ -91,8 +94,12 @@
 <footer>
 
     <div class="joystick-container">
+        
         <div class="joystick-1">
-            <img src="/images/joystick-1.png" alt="">
+            <img id="joystickImage" src="/images/joystick-1.png" alt="">
+            <button onclick="joystickChange(); joystickBend()" class="joy-btn"></button>
+            <p style="font-size: x-large; color: white; position: absolute;" id="displayValue">0</p>
+
             <div class="joystick-shadow-1"></div>
         </div>
     </div>
