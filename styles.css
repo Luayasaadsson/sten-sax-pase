@@ -9,14 +9,13 @@
 
 html{
   /* background-image: url(/images/controller_background.png); */
-    background-image: url(/images/wallart.jpg);
+  /*   background-image: url(/images/wallart.jpg); */
     margin:auto;
     max-width: 1000px;
 }
 
 body{
     position:absolute;
-    margin: auto;
     height: 950px;
     display: grid;
     grid-template-areas: 
@@ -24,11 +23,11 @@ body{
     "header header header"
     "main main main"
     "footer footer footer"
+    
     ;
  grid-template-columns: 1fr 2fr 1fr;
  grid-template-rows: 100px/* 10% 70%; */
 }
-
 
 @font-face {
     font-family: 'MKtitle';
@@ -377,7 +376,7 @@ margin-top: -92px;
   min-width: ;
   width: 100%;
   
-}
+}/* 
 .screen::before {
   content: " ";
   display: block;
@@ -395,7 +394,7 @@ margin-top: -92px;
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-}
+} */
 
 /* 
 .h1flicker::before {
@@ -597,5 +596,14 @@ font-weight: bold;
 }
   
   
-  
-  
+@media (max-width: 750px ) {
+html {
+  zoom: 70%;
+}
+}
+
+@media (max-width: 400px ) {
+  html {
+    zoom: 40%;
+  }
+  }
