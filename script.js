@@ -22,6 +22,11 @@ function joystickChange() {
 function joystickBend() {
     const imageElement = document.getElementById('joystickImage')
     const origionalSrc = imageElement.src;
+    
+/*     if (joystickTimeout) {
+        clearTimeout(joystickTimeout);
+    } */
+
     imageElement.src = '/images/joystick-2.png'
     setTimeout(() => {
         imageElement.src = origionalSrc;

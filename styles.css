@@ -141,10 +141,6 @@ footer{
   z-index: 20;
 }
 
-#joystickImage {
-  bottom: 290px;
-}
-
 .joystick-shadow-1 {
     position: absolute;
     width: 100%;
