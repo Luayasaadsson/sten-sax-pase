@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-image: url(/images/main-image.png);
+    margin: auto;
+    max-width: 1500px;
+}
+
+@font-face {
+    font-family: 'MKtitle';
+    src: url(font/MKtitle.otf);
+}
+
+header {
+    position: absolute;
+      font-size: 20px;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      text-align: center;
+      font-family: MKtitle;
+      margin-top: 420px;
+      margin-left: 530px;
+      
+  }
+  
+  button {
+    position: fixed;
+    font-size:30px;
+      color: rgb(250, 245, 245);
+      background-color: rgb(208, 10, 10);
+      text-transform: uppercase;
+      text-align: center;
+      font-family: MKtitle;
+      margin-top: 10px;
+      margin-left: -90px;
+      padding: 0.3rem;
+      cursor: pointer;
+  }
+
+ 
