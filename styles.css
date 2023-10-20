@@ -1,9 +1,7 @@
-
-
 * {
     margin: 0;
-    padding: 0 ;
-
+    padding: 0;
+    font-family: 'mktitle';
 }
 
 
@@ -76,6 +74,14 @@ main{
     
 }
 
+#result {
+  color: rgb(237, 237, 68);
+  font-size: 100px;
+  margin-top: -600px;
+  margin-left: 350px;
+  margin-right: 380px;
+  position: absolute;
+}
 
 
 
