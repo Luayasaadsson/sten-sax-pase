@@ -33,35 +33,35 @@ function joystickBend() {
     }, 100)
 }
 
-// början till självaste spelet. Kan vara bättre med array???
-if (joystick === 0) {
-    let rock = Math.floor(Math.random() * 3)
 
-    if (rock === 0) {
-        console.log("Player: Rock - Robot: Rock - Draw!")
-    } else if (rock === 1) {
-        console.log("Player: Rock - Robot: Paper - You Lose!")
-    } else if (rock === 2) {
-        console.log("Player: Rock - Robot: Scissor - You Win!")
-    }
-} else if  (joystick === 0) {
-    let paper = Math.floor(Math.random() * 3)
+// början till självaste spelet.
+function spel() {
+    let robot = Math.floor(Math.random() * 3)
 
-    if (paper === 0) {
-        console.log("Player: Paper - Robot: Rock - You Win!")
-    } else if (paper === 1) {
-        console.log("Player: Paper - Robot: Paper - Draw!")
-    } else if (paper === 2) {
-        console.log("Player: Paper - Robot: Scissor - You Lose!")
-    }
-} else if  (joystick === 0) {
-    let scissor = Math.floor(Math.random() * 3)
+    if (joystick === 0) {
+        if (robot === 0) {
+            console.log("Player: Paper - Robot: Rock - You Win!")
+        } else if (robot === 1) {
+            console.log("Player: Paper - Robot: Paper - Draw!")
+        } else if (robot === 2) {
+            console.log("Player: Paper - Robot: Scissor - You Lose!")
+        }
+    } else if  (joystick === 1) {
+        if (robot === 0) {
+            console.log("Player: Scissor - Robot: Rock - You Lose!")
+        } else if (robot === 1) {
+            console.log("Player: Scissor - Robot: Paper - You Win!")
+        } else if (robot === 2) {
+            console.log("Player: Scissor - Robot: Scissor - Draw!")
 
-    if (scissor === 0) {
-        console.log("Player: Scissor - Robot: Rock - You Lose!")
-    } else if (scissor === 1) {
-        console.log("Player: Scissor - Robot: Paper - You Win!")
-    } else if (scissor === 2) {
-        console.log("Player: Scissor - Robot: Scissor - Draw!")
+        }
+    } else if  (joystick === 2) {
+        if (robot === 0) {
+            console.log("Player: Rock - Robot: Rock - Draw!")
+        } else if (robot === 1) {
+            console.log("Player: Rock - Robot: Paper - You Lose!")
+        } else if (robot === 2) {
+            console.log("Player: Rock - Robot: Scissor - You Win!")
+        }
     }
 }
