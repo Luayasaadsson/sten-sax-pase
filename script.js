@@ -33,30 +33,40 @@ function joystickBend() {
 //0 paper
 //1 scissor
 //2 rock
-
-function spel () {
-    let robot = Math.floor(Math.random() * 3)
-    console.log(robot)
+function spel() {
+    let robot = Math.floor(Math.random() * 3);
+    console.log(robot);
 
     if (joystick === robot) {
-        document.getElementById('result').innerHTML = "DRAW"
+        document.getElementById('result').innerHTML = "DRAW";
         console.log("draw");
-        robotHand (robot)
-    }else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
+        robotHand(robot);
+    } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
         console.log("win");
-        document.getElementById('result').innerHTML = "WIN"
-        robotHand (robot)
+        document.getElementById('result').innerHTML = "WIN";
+        robotHand(robot);
     } else {
         console.log("lose");
-        document.getElementById('result').innerHTML = "LOSE"
-        robotHand (robot)
+        document.getElementById('result').innerHTML = "LOSE";
+        robotHand(robot);
     }
 
+    let resultElement = document.getElementById('result');
+    resultElement.style.animation = 'none';
+    void resultElement.offsetWidth;  // Trigger a reflow
+    resultElement.style.animation = 'result1 2s';
+    
     setTimeout(() => {
-       document.getElementById('result').innerHTML = ''; 
+        document.getElementById('result').innerHTML = ''; 
     }, 2000);
-}
 
+    let gobtn = document.getElementById('go-btn');
+    gobtn.disabled = true;
+
+    setTimeout(() => {
+        gobtn.disabled = false;
+    }, 2000); // 2000ms = 2s
+}
 function robotHand (robot) {
     document.querySelector('.robot-hand').style.display = 'none';
     document.querySelector('.robot-hand1').style.display = 'none';
@@ -73,4 +83,20 @@ function robotHand (robot) {
 /*     setTimeout(function() {
         selectedHand.style.display = 'none';
     }, 2000); */
+
+//För animation results, Win, Lose etc
+    document.getElementById('result').addEventListener('click', function() {
+        // Get the element
+        var element = this;
+    
+        // Remove the animation class
+        element.style.animation = 'none';
+    
+        // Trigger a reflow
+        void element.offsetWidth;
+    
+        // Re-apply the animation
+        element.style.animation = '';
+    });
+
 }
