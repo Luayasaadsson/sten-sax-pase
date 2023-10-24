@@ -77,8 +77,8 @@ main{
 #result {
   color: rgb(237, 237, 68);
   font-size: 100px;
-  margin-top: -600px;
-  margin-left: 350px;
+  margin-top: -800px;
+  margin-left: 400px;
   margin-right: 380px;
   position: absolute;
 }
@@ -297,7 +297,7 @@ footer{
 .bag{
     /* display: flex;
     align-content: center; */
-    top: 53%;
+    top: 43%;
     left: 20%;
     z-index: 0;
     position: absolute;
@@ -361,7 +361,7 @@ footer{
 .stone{
     /* display: flex;
     align-content: center; */
-    top: 30%;
+    top: 43%;
     left: 20%;
     /* z-index: 20; */
     position: absolute;
@@ -386,13 +386,13 @@ footer{
 }
 
 .robot-hand {
-  display: flex;
-  justify-content: end;
-  margin-top: -600px;
+  display: block;
+  top: 38%;
   margin-left: 700px;
- rotate: -90deg;
-  animation: robot-hand-animation 3s ease-in-out infinite
-  
+  rotate: -90deg;
+  animation: robot-hand-animation 3s ease-in-out infinite;
+  position: absolute;
+  display: none;
 }
 
 @keyframes robot-hand-animation {
@@ -405,13 +405,13 @@ footer{
 }
 
 .robot-hand1 {
-  display: flex;
-  justify-content: end;
-  margin-top: -50px;
-  margin-left: 620px;
+  display: block;
+  position: absolute;
+  top: 35%;
+  margin-left: 700px;
  rotate: -90deg;
-  animation: robot-hand-animation 3s ease-in-out infinite
-  
+  animation: robot-hand-animation 3s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes robot-hand-animation {
@@ -424,13 +424,13 @@ footer{
 }
 
 .robot-hand2 {
-  display: flex;
-  justify-content: end;
-  margin-top: -120px;
-  margin-left: 620px;
- rotate: -90deg;
-  animation: robot-hand-animation 3s ease-in-out infinite
-  
+  position: absolute;
+  display: block;
+  top: 34%;
+  margin-left: 700px;
+  rotate: -90deg;
+  animation: robot-hand-animation 3s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes robot-hand-animation {
