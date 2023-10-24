@@ -385,6 +385,63 @@ footer{
     }
 }
 
+.robot-hand {
+  display: flex;
+  justify-content: end;
+  margin-top: -600px;
+  margin-left: 700px;
+ rotate: -90deg;
+  animation: robot-hand-animation 3s ease-in-out infinite
+  
+}
+
+@keyframes robot-hand-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.robot-hand1 {
+  display: flex;
+  justify-content: end;
+  margin-top: -50px;
+  margin-left: 620px;
+ rotate: -90deg;
+  animation: robot-hand-animation 3s ease-in-out infinite
+  
+}
+
+@keyframes robot-hand-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.robot-hand2 {
+  display: flex;
+  justify-content: end;
+  margin-top: -120px;
+  margin-left: 620px;
+ rotate: -90deg;
+  animation: robot-hand-animation 3s ease-in-out infinite
+  
+}
+
+@keyframes robot-hand-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
 .arkad {
   position: absolute;
 z-index: -300;
