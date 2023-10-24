@@ -41,15 +41,36 @@ function spel () {
     if (joystick === robot) {
         document.getElementById('result').innerHTML = "DRAW"
         console.log("draw");
+        robotHand (robot)
     }else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
         console.log("win");
         document.getElementById('result').innerHTML = "WIN"
+        robotHand (robot)
     } else {
         console.log("lose");
         document.getElementById('result').innerHTML = "LOSE"
+        robotHand (robot)
     }
 
     setTimeout(() => {
        document.getElementById('result').innerHTML = ''; 
     }, 2000);
+}
+
+function robotHand (robot) {
+    document.querySelector('.robot-hand').style.display = 'none';
+    document.querySelector('.robot-hand1').style.display = 'none';
+    document.querySelector('.robot-hand2').style.display = 'none';
+
+    if (robot === 0) {
+        document.querySelector('.robot-hand2').style.display = 'block';
+    }else if (robot === 1) {
+        document.querySelector('.robot-hand1').style.display = 'block';
+    }else if (robot === 2) {
+        document.querySelector('.robot-hand').style.display = 'block';
+    }
+
+/*     setTimeout(function() {
+        selectedHand.style.display = 'none';
+    }, 2000); */
 }
