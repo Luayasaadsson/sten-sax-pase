@@ -12,12 +12,12 @@
 
 
 <body>
-    <!-- 
+    
     <div class="arkad">
         <img src="images/arkad.png" alt="">
     </div>
     <audio controls autoplay>   <source src="/music/level-1.mp3" type="audio/mpeg">
- -->
+
     </audio>
 <header>
 <h1>ROCK PAPER SCISSORS</h1>
@@ -25,7 +25,7 @@
 
 <main>
     <div class="screen">
-      <!--   <img src="images/screen3.png" alt=""> -->
+      <img src="images/screen3.png" alt="">
         <div class="life-bars-block">
             <div class="nameblock">
             
@@ -94,16 +94,14 @@
 
 
 <div  id="result"></div>
+<div class="score-board">
+    <span id="win.score">Wins: 
+        0</span> 
+     <span id="losses.score">Losses: 0</span>
+     <span id="draw.score">Draws: 0</span>
+</div>
 
 </main>
-
-
-    
-</nav> 
-
-
-
-
 
 <footer>
 
@@ -124,10 +122,10 @@
         <img src="/images/go-2.png" alt="">
         <img src="/images/go-1.png" alt="">
     </div>
-    <div class="reset">
-        <a href="first-page.html">
+    <div class="reset" onclick="
+            resetGame();
+        ">
             <button class="reset-btn"></button>
-        </a>
         <img src="/images/button.gif" alt="">
     </div>
     <div class="reset-text"><img src="/images/reset-1.png" alt=""></div>
