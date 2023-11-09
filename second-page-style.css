@@ -46,7 +46,7 @@ body {
   font-family: 'MKtitle';
 }
 
-.btn {
+.continue-btn {
   margin-top: 70px;
   margin-left: -130px;
   width: 250px;
@@ -56,9 +56,30 @@ body {
   border-radius: 40px;
   background-color: rgb(244, 55, 22);
   position: absolute;
+  cursor: pointer;
 }
 
-.btn:hover {
+.continue-btn:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.btn-name-user, .btn-name-robot {
+  width: 150px;
+  height: 20px;
+  font-size: 0.7rem;
+  font-family: 'MKtitle';
+  border-radius: 40px;
+  background-color: rgb(108, 194, 244);
+  padding-left: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn-name-user:hover, .btn-name-robot:hover {
   background-color: #76c1d4;
   transition: background-color 0.3s ease-out;
   transition: transform 0.3s ease;
