@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-image: url(/images/spelhall.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 30vh;
+  margin-top: 100px;
+}
+
+@font-face {
+  font-family: 'MKtitle';
+  src: url(font/MKtitle.otf);
+}
+
+.title {
+  background-color: rgb(244, 55, 22);
+  font-family: 'MKtitle';
+  font-size: 1rem;
+  border-radius: 50px;
+}
+
+.title:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.nameButton {
+  margin-top: 200px;
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 18px;
+  text-align: center;
+  font-family: 'MKtitle';
+}
+
+.btn {
+  margin-top: 70px;
+  margin-left: -130px;
+  width: 250px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-family: 'MKtitle';
+  border-radius: 40px;
+  background-color: rgb(244, 55, 22);
+  position: absolute;
+}
+
+.btn:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.character-container {
+  position: relative;
+
+}
+
+.img {
+  display: flex;
+  width: 90px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.img:hover {
+  cursor: pointer;
+  border: 3px solid #f8eeee;
+}
