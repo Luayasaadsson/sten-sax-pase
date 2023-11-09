@@ -1,5 +1,10 @@
 let joystick = 1;
 
+let win = { score: 0 };
+let losses = { score: 0 };
+let draw = { score: 0 };
+
+
 //Byter värde mellan på en knapp som sitter på joysticken. Som då byter mellan de olika händerna
 function joystickChange() {
     joystick     = (joystick + 1) % 3;
@@ -28,33 +33,89 @@ function joystickBend() {
     }, 100)
 }
 
+document.body.addEventListener('keydown',(event) => {
+    if (event.key === 'j') {
+        joystickChange();
+        joystickBend();
+    } else if (event.key === 'g') {
+        spel();
+    } else if (event.key === 'r') {
+        resetGame();
+    }
+})
+
 
 // början till självaste spelet.
 //0 paper
 //1 scissor
 //2 rock
 
+function resetGame() {
+    win.score = 0;
+    losses.score = 0;
+    draw.score = 0;
+    updateScoreElement();
+}
+
+function updateScoreElement() {
+    document.getElementById('win.score').textContent = "Wins: " + win.score;
+    document.getElementById('losses.score').textContent = "Losses: " + losses.score;
+    document.getElementById('draw.score').textContent = "Draws: " + draw.score;
+}
+
+
+
 function spel () {
     let robot = Math.floor(Math.random() * 3)
     console.log(robot)
 
+   /*  let result = '';
+
     if (joystick === robot) {
-        document.getElementById('result').innerHTML = "DRAW"
+        document.getElementById('draw.score').textContent = "Draws: " + (parseInt(document.getElementById('draw.score').textContent.split(" ")[1]) + 1);
         console.log("draw");
         robotHand (robot)
     }else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
         console.log("win");
-        document.getElementById('result').innerHTML = "WIN"
+        document.getElementById('win.score').textContent = "Wins: " + (parseInt(document.getElementById('win.score').textContent.split(" ")[1]) + 1);
         robotHand (robot)
     } else {
         console.log("lose");
-        document.getElementById('result').innerHTML = "LOSE"
+        document.getElementById('losses.score').textContent = "Losses: " + (parseInt(document.getElementById('losses.score').textContent.split(" ")[1]) + 1);
+        result = 'You lose!';
         robotHand (robot)
-    }
+    } */
 
-    setTimeout(() => {
-       document.getElementById('result').innerHTML = ''; 
-    }, 2000);
+    if (joystick === robot) {
+        updateScore('draw.score');
+        console.log("draw");
+        robotHand(robot)
+    } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
+        console.log("win");
+        updateScore('win.score');
+        robotHand(robot)
+    } else {
+        console.log("lose");
+        updateScore('losses.score');
+        result = 'You lose!';
+        robotHand(robot)
+    }
+}
+    if (result === 'You win!') {
+        win.score += 1;
+      } else if (result === 'You lose!') {
+        losses.score += 1;
+      } else if (result === 'Draw!') {
+        draw.score += 1;
+      }
+
+function updateScore(scoreId) {
+    const scoreElement = document.getElementById(scoreId);
+    let currentScore = parseInt(scoreElement.textContent.split(" ")[1]);
+    if (isNaN(currentScore)) {
+        currentScore = 0; // Om det inte är ett numeriskt värde, sätt det till 0
+    }
+    scoreElement.textContent = scoreElement.textContent.split(" ")[0] + " " + (currentScore + 1);
 }
 
 function robotHand (robot) {

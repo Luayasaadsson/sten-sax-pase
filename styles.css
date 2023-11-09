@@ -6,8 +6,8 @@
 
 
 html{
-  /* background-image: url(/images/controller_background.png); */
-  /*   background-image: url(/images/wallart.jpg); */
+   background-image: url(/images/controller_background.png); */
+    background-image: url(/images/wallart.jpg); 
     margin:auto;
     max-width: 1000px;
 }
@@ -74,6 +74,20 @@ main{
     
 }
 
+.score-board {
+  background-image: url(/images/fire.gif);
+  background-position: left;
+  border: 3px solid brown;
+  border-radius: 10px;
+  width: 150px;
+  height: 100px;
+  margin-top: -780px;
+  margin-left: 420px;
+  color: rgb(248, 238, 239);
+  font-size: 30px;
+  padding: 15px 20px;
+}
+/* 
 #result {
   color: rgb(237, 237, 68);
   font-size: 100px;
@@ -81,9 +95,11 @@ main{
   margin-left: 400px;
   margin-right: 380px;
   position: absolute;
+} */
+
+.score {
+  margin-top: 60px;
 }
-
-
 
 footer{
     grid-area: footer;
@@ -425,10 +441,10 @@ footer{
 
 @keyframes robot-hand-animation {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(-10);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateY(0px);
   }
 }
 
@@ -444,10 +460,10 @@ footer{
 
 @keyframes robot-hand-animation {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateX(-10px);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateY(0px);
   }
 }
 
@@ -620,19 +636,20 @@ margin-top: -92px;
 }
 
 .life-bar-left {
-    width: 350px;
+    width: 200px;
     height: 20px;
     border: 7px solid;
     border-image: linear-gradient(to right, white, grey, white, grey);
     border-image-slice: 1;
     display: flex;
     padding: 5px;
+    margin-right: 250px;
     background-color: rgb(176, 208, 203);
     transform: skewX(30deg);
 }
 
 .life-bar-right {
-    width: 350px;
+    width: 200px;
     height: 20px;
     border: 7px solid;
     border-image: linear-gradient(to right,  grey, white,  grey, white);
