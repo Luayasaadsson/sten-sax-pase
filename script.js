@@ -1,3 +1,62 @@
+const fetchName = {
+    fetchPlayerName: () => {
+        return fetch("data.json")
+        .then(res => {
+            if (!res.ok) {
+                console.log("Fetch failed with status: ", res.status);
+                throw new Error('Network response was not ok.');
+            }
+            console.log("Response ok, proceeding to parse JSON.");
+            return res.json();
+        })
+        .then(data => {
+            if (!data.userName) {
+                console.log("userName not found in the data: ", data);
+                return; // Exit the function if userName is not present
+            }
+            console.log("Setting userName: ", data.userName);
+            document.querySelector(".text-left").innerText = data.userName; // Changed to querySelector to target the class
+            return data.userName; // If you need to use the userName outside
+        })
+        
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    },
+    fetchRobotName: () => {
+        return fetch("data.json")
+        .then(res => {
+            if (!res.ok) {
+                console.log("Fetch failed with status: ", res.status);
+                throw new Error('Network response was not ok.');
+            }
+            console.log("Response ok, proceeding to parse JSON.");
+            return res.json();
+        })
+
+        .then(data => {
+            if (!data.robotName) {
+                console.log("robotName not found in the data: ", data);
+                return; // Exit the function if userName is not present
+            }
+            console.log("Setting robotName: ", data.robotName);
+            document.querySelector(".text-right").innerText = data.robotName; // Changed to querySelector to target the class
+            return data.robotName; // If you need to use the userName outside
+        })
+        // Call the function to fetch and update the player name
+        
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+};
+
+// Now call both methods after the DOM has fully loaded
+document.addEventListener('DOMContentLoaded', (event) => {
+    fetchName.fetchPlayerName();
+    fetchName.fetchRobotName();
+});
+
 let joystick = 1;
 
 let win = { score: 0 };
