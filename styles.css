@@ -789,7 +789,7 @@ font-weight: bold;
 
 .humanScreen {
   transform-origin: left;
-  animation: shakeHuman 0.9s ease infinite;
+  animation: shakeHuman 0.9s ease-in-out infinite;
 }
 @keyframes shakeHuman {
  50% {
@@ -798,7 +798,7 @@ font-weight: bold;
 }
 
 .robotScreen {
-  animation: shakeRobot 0.9s ease infinite;
+  animation: shakeRobot 0.9s ease-in-out infinite;
 }
 @keyframes shakeRobot {
 50% {
