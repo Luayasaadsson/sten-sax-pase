@@ -147,6 +147,13 @@ footer{
     grid-area: footer;
     background-color: #3D3F61;
 }
+
+ /* Här lägger jag till en ruta där användaren gör ett val, genom att välja ett figur.*/
+ .choose-human-figur img {
+  width: 100px;
+  margin-left: 200px;
+  rotate: -80deg;
+ }
 .joystick-container {
     position: relative;
     bottom: 290px;
@@ -154,12 +161,12 @@ footer{
     position: absolute;
 }
 .joystick-1 {
-    margin-left: 100px;
+    margin-left: 1px;
     position: absolute;
     z-index: 20;
 }
 .joystick-1 img {
-  margin-top: -35px;
+  margin-top: -1px;
   width: 180px;
   overflow-y: visible;
   z-index: 20;
@@ -192,7 +199,7 @@ footer{
   position: absolute;
   width: 150px;
   top: 15px;
-  margin-left: 590px;
+  margin-left: 490px;
 }
 
 .go img {
@@ -202,7 +209,7 @@ footer{
 
 .go-text {
   position: absolute;
-  margin-left: 600px;
+  margin-left: 505px;
   top: 130px;
   background-color: rgba(0, 0, 0, 0.629);
   height: 30%;
@@ -253,7 +260,7 @@ footer{
 .reset {
   position: absolute;
   width: 150px;
-  margin-left: 812px;
+  margin-left: 680px;
   top: 15px;
 }
 
@@ -264,7 +271,7 @@ footer{
 
 .reset-text {
   position: absolute;
-  margin-left: 800px;
+  margin-left: 670px;
   top: 130px;
   background-color: rgba(0, 0, 0, 0.629);
   height: 30%;
@@ -275,6 +282,45 @@ footer{
 }
 
 .reset-text img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.go-back {
+  position: absolute;
+  width: 120px;
+  height: 70px;
+  margin-left: 15px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.back {
+  position: absolute;
+  width: 150px;
+  margin-left: 870px;
+  top: 15px;
+}
+
+.back img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.back-text {
+  position: absolute;
+  margin-left: 870px;
+  top: 130px;
+  background-color: rgba(0, 0, 0, 0.629);
+  height: 30%;
+  width: 170px;
+  border: 5px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.back-text img{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -341,14 +387,14 @@ footer{
 }
 
 
-  @keyframes bag-animation {
+/*   @keyframes bag-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
-}
+} */
 
 /* @keyframes bag-animation {
     0% {
@@ -376,14 +422,14 @@ footer{
     filter: contrast(100%);
     filter:saturate(90%);
 }
-  @keyframes scissor-animation {
+/*   @keyframes scissor-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
-}
+} */
 
 .stone{
     /* display: flex;
@@ -403,13 +449,48 @@ footer{
     filter:saturate(90%);
 }
 
-  @keyframes stone-animation {
+/*   @keyframes stone-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
+} */
+
+.moveHumanContainer {
+  position: absolute;
+  width: 25%;
+  height: 85%;
+  margin-top: 20px;
+  border: 4px solid white;
+  margin-left: 200px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+}
+
+.moveHumanContainer img {
+  width: 150px;
+  margin-top: -50px;
+}
+
+.humanScreen {
+  position: absolute;
+  margin-top: -500px;
+  margin-left: 270px;
+  transform: rotate(10deg);
+}
+
+.humanScreen img {
+width: 150px;
+}
+
+.robotScreen {
+  position: absolute;
+  margin-top: -550px;
+  margin-left: 650px;
+  transform: rotate(-10deg);
+  rotate: -85deg;
 }
 
 .robot-hand {
@@ -704,6 +785,26 @@ font-weight: bold;
   /*width: 95%;*/
   margin-top: -620px;
   margin-left: 0px;
+}
+
+.humanScreen {
+  transform-origin: left;
+  animation: shakeHuman 0.9s ease-in-out infinite;
+}
+@keyframes shakeHuman {
+ 50% {
+  transform: rotateX(10deg);
+ }
+}
+
+.robotScreen {
+  animation: shakeRobot 0.9s ease-in-out infinite;
+}
+@keyframes shakeRobot {
+50% {
+  transform: rotateX(-10deg);
+ 
+}
 }
   
   

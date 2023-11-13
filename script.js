@@ -55,6 +55,7 @@ const fetchName = {
 document.addEventListener('DOMContentLoaded', (event) => {
     fetchName.fetchPlayerName();
     fetchName.fetchRobotName();
+
 });
 
 let joystick = 1;
@@ -121,8 +122,6 @@ function updateScoreElement() {
     document.getElementById('losses.score').textContent = "Losses: " + losses.score;
     document.getElementById('draw.score').textContent = "Draws: " + draw.score;
 }
-
-
 
 function spel () {
     let robot = Math.floor(Math.random() * 3)
