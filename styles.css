@@ -283,7 +283,9 @@ opacity: 0;
       display: block;
   }
 }
-
+.reset-btn {
+  opacity: 0;
+}
 .reset {
 position: absolute;
 width: 150px;
@@ -406,7 +408,7 @@ height: 100%;
 }
 
 
-/*   @keyframes bag-animation {
+  @keyframes bag-animation {
     0%, 100% {
       transform: translateY(0);
     }
@@ -415,17 +417,12 @@ height: 100%;
     }
 } */
 
-/* @keyframes bag-animation {
-    0% {
-      transform: rotate3d(0deg);
-    }
-    100% {
-      transform:rotateX('angle')
-    }
-  } */
 
 .choices {
+  position: relative;
+  margin-top: -550px;
   display: block;
+  z-index: 10;
 }
 
 .hands {
@@ -440,7 +437,7 @@ height: 100%;
     left: 20%;
     /* z-index: 20; */
     position: absolute;
-    animation: scissor-animation 2.7s ease-in-out infinite alternate;
+    animation: stone-animation 2s ease-in-out infinite alternate;
     display: none;
 }
 
@@ -450,14 +447,14 @@ height: 100%;
     filter: contrast(100%);
     filter:saturate(90%);
 }
-/*   @keyframes scissor-animation {
+  @keyframes scissor-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
-} */
+}
 
 .stone{
     /* display: flex;
@@ -467,7 +464,7 @@ height: 100%;
     /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
-    display: none;
+    display: block;
 }
 
 .stone img {
@@ -528,7 +525,6 @@ width: 150px;
   rotate: -90deg;
   animation: robot-hand-animation 3s ease-in-out infinite;
   position: absolute;
-  display: none;
 }
 
 @keyframes robot-hand-animation {
@@ -591,16 +587,48 @@ margin-top: -92px;
   display: none;
   }
 
+  #flash-overlay {
+  margin-left: -0px;
+  margin-top: 95px;
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
+  width: 100%;
+    width: 100  0px;
+    height: 610px;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none; /* Ensures clicks go through the div */
+    transition: opacity 0.4s ease; /* Smooth transition for the flash effect */
+    z-index: 1; /* Ensure it's above everything else */
+  }
+
+  #dark-overlay {
+    margin-left: -0px;
+    margin-top: 95px;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    width: 100%;
+      width: 100  0px;
+      height: 610px;
+      background-color: rgb(3, 3, 3);
+      opacity: 0;
+      pointer-events: none; /* Ensures clicks go through the div */
+      transition: opacity 0.1s ease-in-out;
+    }
+    
+
 .screen {
   margin-left: -0px;
   margin-top: 95px;
   position: absolute;
-  z-index: 1 ;
-  opacity: 1;
+  z-index: 1;
+    opacity: 1;
   width: 100%;
   
-}/* 
-
+}
+/* 
 .screen::before {
   content: " ";
   display: block;
@@ -618,7 +646,7 @@ margin-top: -92px;
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-} */
+}  */
 
 /* 
 .h1flicker::before {
@@ -743,7 +771,6 @@ margin-top: -92px;
     }
   }
 
-
   .life-bar-container {
     display: flex;
     justify-content: space-between;
@@ -783,9 +810,7 @@ margin-top: -92px;
     border: 2px solid rgb(255, 195, 30);
    
 }
-/*.text-left {
-    float: left;
-}*/
+
 .text-right {
     float: right;
 }
@@ -820,7 +845,9 @@ font-weight: bold;
   margin-left: 0px;
 }
 .explosion{
-  display:none;
+  position: relative;
+  display: none;
+  z-index: 0;
   
 }
 .explosion img{
@@ -829,7 +856,8 @@ width: 1000px;
   position: relative;
   margin-left: 20px;
   margin-top: -250px;
-  opacity: 0.8;
+  opacity: 1;
+  z-index: 1;
 }
 
 .humanScreen {
@@ -856,6 +884,20 @@ width: 1000px;
 }
 }
   
+
+
+/* 
+
+  __i
+ |---|    
+ |[_]|    
+ |:::|    
+ |:::|    
+ `\   \   
+   \_=_\ 
+ 
+
+MINDRE DEVAJSES>>>>>>>  */
   
 @media (max-width: 750px ) {
 html { 
@@ -890,7 +932,29 @@ margin-top: 100px;
 }
 }
 
+/* 
+ _n_________________
+|_|_______________|_|
+|  ,-------------.  |
+| |  .---------.  | |
+| |  |         |  | |
+| |  |         |  | |
+| |  |         |  | |
+| |  |         |  | |
+| |  `---------'  | |
+| `---------------' |
+|   _ GAME BOY      |
+| _| |_         ,-. |
+||_ O _|   ,-. "._,"|
+|  |_|    "._,"   A | hjw
+|    _  _    B      | `97
+|   // //           |
+|  // //    \\\\\\  |
+|  `  `      \\\\\\ ,
+|________...______,"
 
+GEJMBOY!!!!!!!!!!!!!!!!!!!!>>>>>>>>>>>>>>>>>>
+*/
 @media (max-width: 550px ) {
   html {
     margin:auto;
@@ -901,14 +965,13 @@ margin-top: 100px;
    background-color: black;
   }
 
-  main .screen{
+main .screen{
     width: 64rem;
 }
 
 header {
   width: 10000px;
 }
-
 
 footer {
   margin:auto;
@@ -943,7 +1006,7 @@ opacity: 0;
   opacity: 0;
   }
 
-  .go-btn {
+.go-btn {
     position: absolute;
     margin-top: -50px;
     width: 200px;
@@ -952,6 +1015,7 @@ opacity: 0;
     border-radius: 50%;
     opacity: 0;
     }
+
 .reset {
   margin-top: -90px;
   width: 300px;
@@ -979,12 +1043,10 @@ margin-top: -92px;
 z-index: 100;
 width: 72em;
 }
-  /* margin: auto; */
-}
-  .gameboy img{
+
+.gameboy img{
     
     margin-left: 30px;
     margin-top: 30px;
   } 
-
- */ */
+}
