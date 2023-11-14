@@ -584,15 +584,19 @@ z-index: -300;
 width: 1500px;
 margin-left: -268px;
 margin-top: -92px;
-
 }
+
+
+.gameboy {
+  display: none;
+  }
+
 .screen {
   margin-left: -0px;
   margin-top: 95px;
   position: absolute;
   z-index: 1 ;
   opacity: 1;
-  min-width: ;
   width: 100%;
   
 }/* 
@@ -855,7 +859,7 @@ width: 1000px;
   
 @media (max-width: 750px ) {
 html { 
-  margin-top: 100px;
+  margin-top: 200px;
   zoom: 50%;
   background-image: url(/images/bg.png);
   background-position:  2000px -500px;
@@ -886,15 +890,76 @@ margin-top: 100px;
 }
 
 
-
 @media (max-width: 500px ) {
   html {
-    margin-top: 200px;
+    margin-top: 40%;
     zoom: 40%;
-    background-image: url(/images/bg.png);
-    background-position:  2000px -500px;
-    background-size: 3000px;
-    
+    background-image: none;
+   background-color: black; */
   }
-  
+
+  main {
+    width: 64rem;
+}
+footer {
+  margin-top: 500px; 
+  width: 64rem;
+z-index: 1000;
+opacity: 0;
+
+}
+
+
+.ring img{
+  width: 100%;
+  margin-top: 20%;
+  animation: ringfloat 37.5s infinite;
+}
+
+.joy-btn {
+  margin-top: 200px;
+  margin-left: -300px;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0;
   }
+
+  .go-btn {
+    position: absolute;
+    margin-top: -50px;
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    }
+
+
+header {
+  display: none;
+}
+ 
+
+.arkad img{
+  opacity: 0;
+  } 
+
+.gameboy {
+  display: block;
+  position: absolute;
+z-index: -300;
+width: 1500px;
+margin-left: -275px;
+margin-top: -92px;
+z-index: 100;
+}
+  /* margin: auto; */
+}
+  .gameboy img{
+    margin-left: 30px;
+    margin-top: 30px;
+  } 
+
+ */ */
