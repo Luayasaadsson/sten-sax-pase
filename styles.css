@@ -853,7 +853,7 @@ width: 1000px;
 }
   
   
-@media (max-width: 900px ) {
+@media (max-width: 750px ) {
 html { 
   margin-top: 100px;
   zoom: 50%;
@@ -887,7 +887,7 @@ margin-top: 100px;
 
 
 
-@media (max-width: 600px ) {
+@media (max-width: 500px ) {
   html {
     margin-top: 200px;
     zoom: 40%;
