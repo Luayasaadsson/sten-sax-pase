@@ -93,6 +93,7 @@ function joystickBend() {
     }, 100)
 }
 
+
 document.body.addEventListener('keydown',(event) => {
     if (event.key === 'j') {
         joystickChange();
@@ -109,12 +110,24 @@ document.body.addEventListener('keydown',(event) => {
 //0 paper
 //1 scissor
 //2 rock
-
 function resetGame() {
     win.score = 0;
     losses.score = 0;
     draw.score = 0;
     updateScoreElement();
+
+    let flashOverlay = document.getElementById('flash-overlay');
+
+    // Check if flashOverlay exists
+    if (flashOverlay) {
+        // Make the overlay visible
+        flashOverlay.style.opacity = '1';
+
+        // Set a timeout to hide the overlay after a short period
+        setTimeout(function() {
+            flashOverlay.style.opacity = '0';
+        }, 150); // Adjust the time for the length of the flash
+    }
 }
 
 function updateScoreElement() {
@@ -124,38 +137,61 @@ function updateScoreElement() {
 }
 
 //Animationen för händerna när man trycker GO
-
 function animation() {
     let handAnimation = document.getElementById('hands');
     let choicesAnimation = document.getElementById('choices');
     let explosionAnimation = document.getElementById('explosion');
+    let darkAnimation = document.getElementById('dark-overlay');
+
     console.log(handAnimation);
 
-    // Set z-index of hands to 10 and hide choices
+    // Start dark animation with ease-in
+    darkAnimation.style.transition = 'opacity 0.8s ease-in';
+    darkAnimation.style.opacity = '0.6';
+
+    // Flash dark animation for 1 second then step out instantly
+    setTimeout(function() {
+        darkAnimation.style.transition = 'opacity 0.2s';
+        darkAnimation.style.opacity = '0';
+
+        // Optional: Reset the transition back to original after a short delay
+        setTimeout(() => {
+            darkAnimation.style.transition = 'opacity 0.2s ease-in';
+        }, 50);
+    }, 800);
+
+    // Set z-index of hands to 10 and hide choices with initial opacity set to 0
     handAnimation.style.zIndex = '10';
     choicesAnimation.style.display = 'none';
+    choicesAnimation.style.opacity = '0';  // Initially invisible
 
     // After a delay, change z-index back and call spel()
     setTimeout(function() {
         handAnimation.style.zIndex = '-10';
-      
+        choicesAnimation.style.display = 'block';
+        choicesAnimation.style.zIndex = '10';
         console.log('z-index changed back to -10');
-        explosionAnimation.style.display = 'block';
-        console.log("KABOOOM");
 
-        // Hide explosion animation after 1000 milliseconds
-        setTimeout(function() {
-            explosionAnimation.style.display = 'none';
-            choicesAnimation.style.display = 'block'; // Show choices again
-        }, 800); // 1000 milliseconds = 1 second
         spel();
 
         // Show explosion animation
-       
+        explosionAnimation.style.display = 'block';
+        explosionAnimation.style.opacity = '1';
+        explosionAnimation.style.transition = 'opacity 1s ease-in';
+
+        console.log("KABOOOM");
+
+        // After the explosion animation, fade in the choices
+        setTimeout(function() {
+            choicesAnimation.style.transition = 'opacity 0.2s ease-in'; // Set transition for fade-in
+            choicesAnimation.style.opacity = '1'; // Fade in choices
+            setTimeout(function() {
+                explosionAnimation.style.display = 'none';
+            }, 200);
+        }, 500);
 
     }, 3000); // 800 milliseconds = 0.8 seconds
 }
-
 
 function spel () {
     
