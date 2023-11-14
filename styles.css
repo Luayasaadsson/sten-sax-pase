@@ -833,7 +833,7 @@ width: 1000px;
 }
 
 .humanScreen {
-  margin-top: -555px;
+  margin-top: -560px;
   transform-origin: left;
   animation: shakeHuman 0.9s ease infinite;
 }
