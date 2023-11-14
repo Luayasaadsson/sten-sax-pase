@@ -32,36 +32,21 @@ function uppdatteraVisning(){
 
 window.onload = uppdatteraVisning;
 
-
-
-/* function sparaAvatar() {
-    document.querySelectorAll('.img').forEach(function(bild) {
-        bild.addEventListener('click', function() {
-            let avatar = this.src;
-            localStorage.setItem('sparadAvatar', avatar);
-        });
-    });
-} */
-
-
-/* const avatarIds = ['demon', 'man', 'alien', 'ape'];
+const avatarIds = ['demon', 'man', 'alien', 'ape'];
 
 function sparaAvatar() {
     avatarIds.forEach(function(id) {
         const element = document.getElementById(id);
+        console.log(document.getElementById(id))   
         if (element) {
             element.addEventListener('click', function() {
-                console.log("Avatar klickad: " + this.src); // För felsökning
+                
                 localStorage.setItem('sparadAvatar', this.src);
             });
-        } else {
-            console.log("Elementet hittades inte: " + id); // För felsökning
         }
     });
 }
 
-
-// Visa sparad avatar
 function visaSparadAvatar() {
     let sparadUrl = localStorage.getItem('sparadAvatar');
     if (sparadUrl) {
@@ -70,12 +55,14 @@ function visaSparadAvatar() {
             avatarBild.src = sparadUrl;
         }
     }
-} */
+}
 
 
 
-/* window.onload = function() {
-    uppdatteraVisning();
+window.onload = uppdatteraVisning;
+
+document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
     visaSparadAvatar();
-}; */
+});
+
