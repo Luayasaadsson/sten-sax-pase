@@ -153,7 +153,7 @@ function animation() {
         // Show explosion animation
        
 
-    }, 800); // 800 milliseconds = 0.8 seconds
+    }, 3000); // 800 milliseconds = 0.8 seconds
 }
 
 
