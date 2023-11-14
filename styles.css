@@ -829,7 +829,7 @@ width: 1000px;
   position: relative;
   margin-left: 20px;
   margin-top: -250px;
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .humanScreen {
@@ -859,8 +859,9 @@ width: 1000px;
   
 @media (max-width: 750px ) {
 html { 
-  margin-top: 200px;
-  zoom: 50%;
+  margin-top: 50px;
+  zoom: 70%;
+  width: 100rem;
   background-image: url(/images/bg.png);
   background-position:  2000px -500px;
   background-size: 3000px;
@@ -890,25 +891,41 @@ margin-top: 100px;
 }
 
 
-@media (max-width: 500px ) {
+@media (max-width: 550px ) {
   html {
+    margin:auto;
     margin-top: 10%;
     zoom: 40%;
+    width: 200em;
     background-image: none;
-   background-color: black; */
+   background-color: black;
   }
 
-  main {
+  main .screen{
     width: 64rem;
 }
+
+header {
+  width: 10000px;
+}
+
+
 footer {
+  margin:auto;
   margin-top: 500px; 
   width: 64rem;
 z-index: 1000;
 opacity: 0;
-
 }
 
+@keyframes slideshowPanY {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+}
 
 .ring img{
   width: 100%;
@@ -935,9 +952,15 @@ opacity: 0;
     border-radius: 50%;
     opacity: 0;
     }
-
+.reset {
+  margin-top: -90px;
+  width: 300px;
+  height: 200px;
+  opacity: 1;
+}
 
 header {
+  margin:auto;
   display: none;
 }
  
@@ -950,14 +973,16 @@ header {
   display: block;
   position: absolute;
 z-index: -300;
-width: 1500px;
-margin-left: -275px;
+width: 100%;
+margin-left: -280px;
 margin-top: -92px;
 z-index: 100;
+width: 72em;
 }
   /* margin: auto; */
 }
   .gameboy img{
+    
     margin-left: 30px;
     margin-top: 30px;
   } 
