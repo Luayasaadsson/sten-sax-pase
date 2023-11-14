@@ -123,7 +123,40 @@ function updateScoreElement() {
     document.getElementById('draw.score').textContent = "Draws: " + draw.score;
 }
 
+//Animationen för händerna när man trycker GO
+
+function animation() {
+    let handAnimation = document.getElementById('hands');
+    let choicesAnimation = document.getElementById('choices');
+    let explosionAnimation = document.getElementById('explosion');
+    console.log(handAnimation);
+
+    // Set z-index of hands to 10 and hide choices
+    handAnimation.style.zIndex = '10';
+    choicesAnimation.style.display = 'none';
+
+    // After a delay, change z-index back and call spel()
+    setTimeout(function() {
+        handAnimation.style.zIndex = '-10';
+        choicesAnimation.style.display = 'block'; // Show choices again
+        console.log('z-index changed back to -10');
+        spel();
+
+        // Show explosion animation
+        explosionAnimation.style.display = 'block';
+        console.log("KABOOOM");
+
+        // Hide explosion animation after 1000 milliseconds
+        setTimeout(function() {
+            explosionAnimation.style.display = 'none';
+        }, 800); // 1000 milliseconds = 1 second
+
+    }, 800); // 800 milliseconds = 0.8 seconds
+}
+
+
 function spel () {
+    
     let robot = Math.floor(Math.random() * 3)
     console.log(robot)
 
@@ -189,6 +222,7 @@ function robotHand (robot) {
         document.querySelector('.robot-hand').style.display = 'block';
     }
 
+   
 /*     setTimeout(function() {
         selectedHand.style.display = 'none';
     }, 2000); */

@@ -71,7 +71,34 @@
         <img src=/images/ring.png alt="">
     </div>
 
-    <div class="hands">
+
+<div class="choices" id="choices">
+    <div class="bag">
+        <img src="/images/Bag2.png" alt="">
+    </div>
+    <div class="scissor">
+        <img src="/images/Scissor2.png" alt="">
+    </div>
+    <div class="stone">
+        <img src="/images/Stone2.png" alt="">
+    </div>
+    
+    <div class="robot-hand">
+        <img src="/images/robot-rock.png" alt="">
+    </div>
+    
+    <div class="robot-hand1">
+        <img src="/images/robot-scissor.png" alt="">
+    </div>
+    
+    <div class="robot-hand2">
+        <img src="/images/robot-paper.png" alt="">
+    </div>
+    
+</div>
+
+
+    <div class="hands" id="hands">
         <div class="humanScreen">
             <img src="/images/human-hand.png" alt="">
         </div>
@@ -81,17 +108,6 @@
     </div>
 
 
-<div class="robot-hand">
-    <img src="/images/robot-rock.png" alt="">
-</div>
-
-<div class="robot-hand1">
-    <img src="/images/robot-scissor.png" alt="">
-</div>
-
-<div class="robot-hand2">
-    <img src="/images/robot-paper.png" alt="">
-</div>
 
 
 <div  id="result"></div>
@@ -101,23 +117,12 @@
      <span id="losses.score">Losses: 0</span>
      <span id="draw.score">Draws: 0</span>
 </div>
-
+<div class="explosion" id="explosion">
+    <img src="images/exp.gif" alt="">
+</div>
 </main>
 
 <footer>
-
-    <div class="moveHumanContainer">
-        <div class="bag">
-            <img src="/images/Bag2.png" alt="">
-        </div>
-        <div class="scissor">
-            <img src="/images/Scissor2.png" alt="">
-        </div>
-        <div class="stone">
-            <img src="/images/Stone2.png" alt="">
-        </div>
-    </div>
-
     <div class="joystick-container">
         
         <div class="joystick-1">
@@ -128,26 +133,15 @@
         </div>
     </div>
     <div class="go">
-        <button onclick="spel()" class="go-btn"></button>
+        <button onclick="animation()" class="go-btn"></button>
         <img src="/images/button.gif" alt="">
     </div>
     <div class="go-text">
         <img src="/images/go-2.png" alt="">
         <img src="/images/go-1.png" alt="">
     </div>
-    <div class="reset" onclick="
-            resetGame();
-        ">
-            <button class="reset-btn"></button>
-        <img src="/images/button.gif" alt="">
-    </div>
+    <div class="reset"><img src="/images/button.gif" alt=""></div>
     <div class="reset-text"><img src="/images/reset-1.png" alt=""></div>
-
-    <div class="back">
-        <button class="go-back">Go Back</button>
-        <img src="/images/button.gif" alt="">
-    </div>
-    <div class="back-text"><img src="/images/reset-1.png" alt=""></div>
 
 </footer>
 
