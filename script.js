@@ -138,18 +138,20 @@ function animation() {
     // After a delay, change z-index back and call spel()
     setTimeout(function() {
         handAnimation.style.zIndex = '-10';
-        choicesAnimation.style.display = 'block'; // Show choices again
+      
         console.log('z-index changed back to -10');
-        spel();
-
-        // Show explosion animation
         explosionAnimation.style.display = 'block';
         console.log("KABOOOM");
 
         // Hide explosion animation after 1000 milliseconds
         setTimeout(function() {
             explosionAnimation.style.display = 'none';
+            choicesAnimation.style.display = 'block'; // Show choices again
         }, 800); // 1000 milliseconds = 1 second
+        spel();
+
+        // Show explosion animation
+       
 
     }, 800); // 800 milliseconds = 0.8 seconds
 }

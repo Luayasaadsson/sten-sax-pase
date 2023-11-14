@@ -817,12 +817,15 @@ font-weight: bold;
 }
 .explosion{
   display:none;
+  
 }
 .explosion img{
-  height: 550px;
+  height: 750px;
+width: 1000px;
   position: relative;
-  margin-left: 250px;
-  margin-top: -150px;
+  margin-left: 20px;
+  margin-top: -250px;
+  opacity: 1;
 }
 
 .humanScreen {
