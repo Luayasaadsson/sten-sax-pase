@@ -28,20 +28,16 @@ function uppdatteraVisning(){
 };
 
 
-
-
 window.onload = uppdatteraVisning;
 
 const avatarIds = ['demon', 'man', 'alien', 'ape'];
 
 function sparaAvatar() {
     avatarIds.forEach(function(id) {
-        const element = document.getElementById(id);
-        console.log(document.getElementById(id))   
-        if (element) {
+        let element = document.getElementById(id); 
+            if (element) {
             element.addEventListener('click', function() {
-                
-                localStorage.setItem('sparadAvatar', this.src);
+            localStorage.setItem('sparadAvatar', this.src);
             });
         }
     });
@@ -58,11 +54,11 @@ function visaSparadAvatar() {
 }
 
 
-
 window.onload = uppdatteraVisning;
-
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
     visaSparadAvatar();
 });
+
+
 
