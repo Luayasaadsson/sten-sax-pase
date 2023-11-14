@@ -30,7 +30,7 @@ function uppdatteraVisning(){
 
 
 
-/* window.onload = uppdatteraVisning; */
+window.onload = uppdatteraVisning;
 
 
 
@@ -44,7 +44,7 @@ function uppdatteraVisning(){
 } */
 
 
-const avatarIds = ['demon', 'man', 'alien', 'ape'];
+/* const avatarIds = ['demon', 'man', 'alien', 'ape'];
 
 function sparaAvatar() {
     avatarIds.forEach(function(id) {
@@ -70,12 +70,12 @@ function visaSparadAvatar() {
             avatarBild.src = sparadUrl;
         }
     }
-}
+} */
 
 
 
-window.onload = function() {
+/* window.onload = function() {
     uppdatteraVisning();
     sparaAvatar();
     visaSparadAvatar();
-};
+}; */
