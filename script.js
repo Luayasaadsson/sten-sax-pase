@@ -142,12 +142,12 @@ function animation() {
     let choicesAnimation = document.getElementById('choices');
     let explosionAnimation = document.getElementById('explosion');
     let darkAnimation = document.getElementById('dark-overlay');
-
+    let screenborder = document.getElementById('screenborder')
     console.log(handAnimation);
 
     // Start dark animation with ease-in
     darkAnimation.style.transition = 'opacity 0.8s ease-in';
-    darkAnimation.style.opacity = '0.6';
+    darkAnimation.style.opacity = '0.5';
 
     // Flash dark animation for 1 second then step out instantly
     setTimeout(function() {
@@ -156,7 +156,7 @@ function animation() {
 
         // Optional: Reset the transition back to original after a short delay
         setTimeout(() => {
-            darkAnimation.style.transition = 'opacity 0.2s ease-in';
+            darkAnimation.style.transition = 'opacity 0.01s ease-in';
         }, 50);
     }, 800);
 
@@ -178,6 +178,7 @@ function animation() {
         explosionAnimation.style.display = 'block';
         explosionAnimation.style.opacity = '1';
         explosionAnimation.style.transition = 'opacity 1s ease-in';
+        screenborder.style.zIndex = '-10';
 
         console.log("KABOOOM");
 
@@ -187,7 +188,8 @@ function animation() {
             choicesAnimation.style.opacity = '1'; // Fade in choices
             setTimeout(function() {
                 explosionAnimation.style.display = 'none';
-            }, 200);
+                screenborder.style.zIndex = '10';
+            }, 1000);
         }, 500);
 
     }, 3000); // 800 milliseconds = 0.8 seconds
