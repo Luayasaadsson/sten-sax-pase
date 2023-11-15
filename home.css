@@ -174,9 +174,9 @@ body {
 }
 
 #firstPage {
-  display: none;
+  display: block;
 }
 
 #secondPage {
-  
+  display: none;
 }
