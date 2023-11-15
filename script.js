@@ -197,7 +197,7 @@ function spel () {
     let resultElement = document.getElementById('result');
     resultElement.style.animation = 'none';
     void resultElement.offsetWidth; 
-    resultElement.style.animation = 'result1 3s ease'; ///SKRIVER UT RESULTAT PÅ SKÄRMEN
+    resultElement.style.animation = 'result1 2s ease'; ///SKRIVER UT RESULTAT PÅ SKÄRMEN
 }
     if (result === 'You win!') {
         win.score += 1;
