@@ -90,7 +90,7 @@ main{
   color: rgb(248, 238, 239);
   font-size: 30px;
   padding: 15px 20px;
-}
+} 
 /* 
 #result {
   color: rgb(237, 237, 68);
@@ -597,8 +597,8 @@ margin-top: -92px;
     opacity: 1;
   width: 100%;
   
-}
-/* 
+}/* 
+
 .screen::before {
   content: " ";
   display: block;
@@ -613,11 +613,11 @@ margin-top: -92px;
   margin-right: 450px;
   margin-bottom: 10px;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 2px, 3px 100%;
+  z-index: 10;
+    background-size: 100% 2px, 3px 100%;
   pointer-events: none;
 }  */
-
+ */
 /* 
 .h1flicker::before {
   content: " ";
@@ -653,7 +653,7 @@ margin-top: -92px;
   pointer-events: none;
   animation: flicker 0.15s infinite;
 }
- */
+ 
 
 @keyframes flicker {
   0% {
@@ -722,7 +722,6 @@ margin-top: -92px;
 }
 
 
-/*  
    @keyframes floatEffect {
     0%, 100% {
       transform: translateY(0);
@@ -730,7 +729,8 @@ margin-top: -92px;
     50% {
       transform: translateY(-20px);
     }
-  } */
+  }
+   */
 
   @keyframes fadeIn {
     0% {
