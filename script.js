@@ -1,62 +1,4 @@
-/* const fetchName = {
-    fetchPlayerName: () => {
-        return fetch("data.json")
-        .then(res => {
-            if (!res.ok) {
-                console.log("Fetch failed with status: ", res.status);
-                throw new Error('Network response was not ok.');
-            }
-            console.log("Response ok, proceeding to parse JSON.");
-            return res.json();
-        })
-        .then(data => {
-            if (!data.userName) {
-                console.log("userName not found in the data: ", data);
-                return; // Exit the function if userName is not present
-            }
-            console.log("Setting userName: ", data.userName);
-            document.querySelector(".text-left").innerText = data.userName; // Changed to querySelector to target the class
-            return data.userName; // If you need to use the userName outside
-        })
-        
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    },
-    fetchRobotName: () => {
-        return fetch("data.json")
-        .then(res => {
-            if (!res.ok) {
-                console.log("Fetch failed with status: ", res.status);
-                throw new Error('Network response was not ok.');
-            }
-            console.log("Response ok, proceeding to parse JSON.");
-            return res.json();
-        })
 
-        .then(data => {
-            if (!data.robotName) {
-                console.log("robotName not found in the data: ", data);
-                return; // Exit the function if userName is not present
-            }
-            console.log("Setting robotName: ", data.robotName);
-            document.querySelector(".text-right").innerText = data.robotName; // Changed to querySelector to target the class
-            return data.robotName; // If you need to use the userName outside
-        })
-        // Call the function to fetch and update the player name
-        
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
-};
-
-// Now call both methods after the DOM has fully loaded
-document.addEventListener('DOMContentLoaded', (event) => {
-    fetchName.fetchPlayerName();
-    fetchName.fetchRobotName();
-
-}); */
 
 let joystick = 1;
 
@@ -111,9 +53,6 @@ document.body.addEventListener('keydown',(event) => {
     }
 })
 
-
-
-
 // början till självaste spelet.
 //0 paper
 //1 scissor
@@ -141,6 +80,7 @@ function resetGame() {
             flashOverlay.style.opacity = '0';
         }, 150); // Adjust the time for the length of the flash
     }
+
 }
 
 function updateScoreElement() {
@@ -149,37 +89,23 @@ function updateScoreElement() {
     document.getElementById('draw.score').textContent = "Draws: " + draw.score;
 }
 
-//Animationen för händerna när man trycker GO
+//Animationen för händerna när man trycker GO (EXPLOSION OCH GREJER)
 function animation() {
     let handAnimation = document.getElementById('hands');
     let choicesAnimation = document.getElementById('choices');
     let explosionAnimation = document.getElementById('explosion');
     let darkAnimation = document.getElementById('dark-overlay');
     let screenborder = document.getElementById('screenborder')
-    
-    
     let expSound = document.getElementById("expSound");
     let goSound = document.getElementById('button2');
     let wooshSound = document.getElementById("wooshSound");
-  
     /* let swishSound = document.getElementById("swishSound"); */
-    
-   
-
-
-    console.log(handAnimation);
-
     // Start dark animation with ease-in
     goSound.play()
     wooshSound.play()
-    
   /*   swishSound.play() */
-
-
     darkAnimation.style.transition = 'opacity 0.8s ease-in';
     darkAnimation.style.opacity = '0.5';
-    
-
     // Flash dark animation for 1 second then step out instantly
     setTimeout(function() {
         darkAnimation.style.transition = 'opacity 0.2s';
@@ -190,7 +116,6 @@ function animation() {
             darkAnimation.style.transition = 'opacity 0.01s ease-in';
         }, 50);
     }, 800);
-
     // Set z-index of hands to 10 and hide choices with initial opacity set to 0
     handAnimation.style.zIndex = '1';
     choicesAnimation.style.display = 'none';
@@ -203,7 +128,6 @@ function animation() {
         choicesAnimation.style.zIndex = '10';
         console.log('z-index changed back to -10');
 
-        
 
         // Show explosion animation
         expSound.play()
@@ -307,4 +231,32 @@ document.getElementById('väljMusik').addEventListener('change', function(e) {
     var audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = this.value;
     audioPlayer.play();
+});
+
+
+//DELAY FÖR KNAPPAR SÅ INTE ANIMATIONER / LJUD BREAKAR:
+//GO-BTN:
+document.getElementById('goButton').addEventListener('click', function() {
+    this.disabled = true;
+
+    setTimeout(() => {
+        this.disabled = false;
+    }, 3300);
+});
+
+//SPAKENN
+document.getElementById('joyButton').addEventListener('click', function() {
+    this.disabled = true;
+
+    setTimeout(() => {
+        this.disabled = false;
+    }, 300); // 2000 milliseconds = 2 seconds
+});
+
+document.getElementById('resetButton').addEventListener('click', function() {
+    this.disabled = true;
+
+    setTimeout(() => {
+        this.disabled = false;
+    }, 500); // 2000 milliseconds = 2 seconds
 });
