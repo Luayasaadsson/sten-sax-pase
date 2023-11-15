@@ -91,15 +91,6 @@ main{
   font-size: 30px;
   padding: 15px 20px;
 } 
-/* 
-#result {
-  color: rgb(237, 237, 68);
-  font-size: 100px;
-  margin-top: -800px;
-  margin-left: 400px;
-  margin-right: 380px;
-  position: absolute;
-} */
 
 .score {
   margin-top: 60px;
@@ -605,8 +596,8 @@ margin-top: -92px;
     opacity: 1;
   width: 100%;
   
-}/* 
-
+}
+/* 
 .screen::before {
   content: " ";
   display: block;
@@ -624,7 +615,7 @@ margin-top: -92px;
   z-index: 10;
     background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-}  */
+}  
  */
 /* 
 .h1flicker::before {
@@ -728,8 +719,7 @@ margin-top: -92px;
   opacity: 0.24387;
   }
 }
-
-
+/* */
    @keyframes floatEffect {
     0%, 100% {
       transform: translateY(0);
@@ -737,8 +727,8 @@ margin-top: -92px;
     50% {
       transform: translateY(-20px);
     }
-  }
-   */
+  }  
+  
 
   @keyframes fadeIn {
     0% {
@@ -879,22 +869,30 @@ height: 50px;
     margin-top: -660px;
     opacity: 0
   }
-  25%  {
+  25%, 30%  {
     margin-left: 290px;
     margin-top: -660px;
     opacity: 0.5;
   }
-  50%, 80% {
+  31%, 84% {
     opacity: 1;
     margin-left: 290px;
     margin-top: -660px;
   }
-  100% {
+  
+  85%,91% {
     font-size: 130px;
-    opacity: 0;
+    opacity: 0.6;
     margin-left: 290px;
     margin-top: -660px;
   }
+ 92%, 100% {
+    font-size: 130px;
+    opacity: 0.3;
+    margin-left: 290px;
+    margin-top: -660px;
+  }
+
 }
   
 
