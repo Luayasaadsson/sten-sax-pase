@@ -15,6 +15,9 @@
     <audio id="expSound" src="music/exp.mp3"></audio>
     <audio id="swishSound" src="music/swish.mp3"></audio>
     <audio id="wooshSound" src="music/woosh.mp3"></audio>
+    <audio id="button1" src="sounds/button4.wav"></audio>
+    <audio id="button2" src="sounds/button6.wav"></audio>
+    <audio id="button3" src="sounds/button2.wav"></audio>
 
     <div class="arkad">
         <img src="images/arkad.png" alt="">
@@ -23,9 +26,7 @@
     <div class="gameboy">
         <img src="images/gameboy2.png" alt="">
     </div>
-   <!--  <audio controls autoplay>   <source src="/music/level-1.mp3" type="audio/mpeg"> -->
-
-    </audio>
+   <audio controls autoplay>   <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg"></audio>
 <header>
 <h1>ROCK PAPER SCISSORS</h1>
 </header>
@@ -141,7 +142,7 @@
         </div>
     </div>
     <div class="go">
-        <button onclick="animation()" class="go-btn"></button>
+        <button id="goButton" onclick="animation()" class="go-btn"></button>
         <img src="/images/button.gif" alt="">
     </div>
     <div class="go-text">
@@ -153,7 +154,7 @@
     <div class="reset" onclick="
     resetGame();">
 
-    <button class="reset-btn"></button>
+    <button id="resetButton" class="reset-btn"></button>
 <img src="/images/button.gif" alt="">
 </div>
 <div class="reset-text"><img src="/images/reset-1.png" alt=""></div>

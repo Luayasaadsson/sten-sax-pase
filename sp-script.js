@@ -95,6 +95,8 @@ function visaSparadRobotAvatar() {
 }
 
 
+
+
 window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
@@ -103,6 +105,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     visaSparadRobotAvatar();
 
 });
+
 
 
 
