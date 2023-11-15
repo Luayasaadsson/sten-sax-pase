@@ -67,14 +67,19 @@ let draw = { score: 0 };
 
 //Byter värde mellan på en knapp som sitter på joysticken. Som då byter mellan de olika händerna
 function joystickChange() {
+    let switchSound = document.getElementById("switchSound")
+   
     joystick     = (joystick + 1) % 3;
     document.getElementById('displayValue').innerText = joystick;
     document.querySelector('.bag').style.display = 'none';
     document.querySelector('.scissor').style.display = 'none';
     document.querySelector('.stone').style.display = 'none';
+    switchSound.play()
+    
 
     if (joystick === 0) {
         document.querySelector('.bag').style.display = 'block';
+     
     } else if (joystick === 1) {
         document.querySelector('.scissor').style.display = 'block';
     } else if (joystick === 2) {
@@ -85,6 +90,7 @@ function joystickChange() {
 
 //Ändrar på joystick bilden så den böjer sig när man klickar
 function joystickBend() {
+
     const imageElement = document.getElementById('joystickImage')
     const origionalSrc = imageElement.src;
     imageElement.src = '/images/joystick-2.png'
