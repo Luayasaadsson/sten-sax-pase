@@ -302,3 +302,9 @@ function robotHand (robot) {
         selectedHand.style.display = 'none';
     }, 2000); */
 }
+
+document.getElementById('musicSelect').addEventListener('change', function(e) {
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = this.value;
+    audioPlayer.play();
+});

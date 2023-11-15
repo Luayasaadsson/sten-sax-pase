@@ -27,7 +27,16 @@
     <div class="gameboy">
         <img src="images/gameboy2.png" alt="">
     </div>
-   <audio controls autoplay>   <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg"></audio>
+   <select id="musicSelect">
+<option value="/music/Level-1_MonoBit.wav">Låt 1</option>
+<option value="/music/Level-2_MonoBit.wav">Låt 2</option>
+<option value="/music/Level-3_MonoBit.wav">Låt 3</option>
+   </select>
+   <audio id="audioPlayer" controls>
+    <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg">
+  </audio>
+   
+   <!--  <audio controls autoplay>   <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg"></audio> -->
 <header>
 <h1>ROCK PAPER SCISSORS</h1>
 </header>
