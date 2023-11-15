@@ -67,7 +67,7 @@ let draw = { score: 0 };
 
 //Byter värde mellan på en knapp som sitter på joysticken. Som då byter mellan de olika händerna
 function joystickChange() {
-    let switchSound = document.getElementById("switchSound")
+    let switchSound = document.getElementById('button3')
    
     joystick     = (joystick + 1) % 3;
     document.getElementById('displayValue').innerText = joystick;
@@ -112,19 +112,24 @@ document.body.addEventListener('keydown',(event) => {
 })
 
 
+
+
 // början till självaste spelet.
 //0 paper
 //1 scissor
 //2 rock
 function resetGame() {
-    let resetSound = document.getElementById('resetSound')
-    resetSound.play()
+
     win.score = 0;
     losses.score = 0;
     draw.score = 0;
     updateScoreElement();
-
+    
+ 
+    
     let flashOverlay = document.getElementById('flash-overlay');
+    let resetSound = document.getElementById("button1");
+    resetSound.play();
 
     // Check if flashOverlay exists
     if (flashOverlay) {
@@ -151,16 +156,25 @@ function animation() {
     let explosionAnimation = document.getElementById('explosion');
     let darkAnimation = document.getElementById('dark-overlay');
     let screenborder = document.getElementById('screenborder')
+    
+    
     let expSound = document.getElementById("expSound");
+    let goSound = document.getElementById('button2');
     let wooshSound = document.getElementById("wooshSound");
-    let swishSound = document.getElementById("swishSound");
+  
+    /* let swishSound = document.getElementById("swishSound"); */
+    
+   
 
 
     console.log(handAnimation);
 
     // Start dark animation with ease-in
+    goSound.play()
     wooshSound.play()
-    swishSound.play()
+    
+  /*   swishSound.play() */
+
 
     darkAnimation.style.transition = 'opacity 0.8s ease-in';
     darkAnimation.style.opacity = '0.5';

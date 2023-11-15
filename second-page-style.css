@@ -133,6 +133,8 @@ body {
 
 .img:hover {
   cursor: pointer;
-  border: 4px solid #f8eeee;
-  opacity: 70%;
+  /* border: solid #eef8f0; */
+  opacity: 80%;
+ 
+ 
 }
