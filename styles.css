@@ -63,7 +63,7 @@ header h1 {
   font-size: 64px;
   color: rgb(255, 255, 255);
   animation: fadeIn 4s ease-in-out alternate infinite;
-  z-index: 2;
+  z-index: 1000;
   text-align: center;
   font-family: MKtitle;
 }
@@ -113,33 +113,19 @@ footer{
 }
 
 .ring{
+  position: relative;
     margin-top: -100%;
-    z-index: -3;
+    z-index: 1000000;
 }
 
 .ring img{
+  position: relative;
+    z-index: 1000000;
+
     width: 100%;
     margin-top: 5%;
     animation: ringfloat 37.5s infinite;
 }
-
-
-/* 
-.animated-background {
-    width: 100%;          
-    height: 100%;        
-    background-image: url('/images/level1.jfif'); 
-    background-repeat: repeat-x;
-    animation: floatEffect 9s infinite alternate; 
-    display: flex; 
-    flex-wrap: wrap;
-    align-content: center;
-    overflow: hidden;
-    margin-top: -2%;
-    z-index: -1;
-    position: relative;
-
-  } */
 
   audio {
     display: none;
@@ -154,7 +140,7 @@ footer{
 
 .ring{
   margin-top: -100%;
-  z-index: -3;
+  z-index: -1;
 }
 
 .ring img{
@@ -164,22 +150,6 @@ footer{
 }
 
 
-/* 
-.animated-background {
-  width: 100%;          
-  height: 100%;        
-  background-image: url('/images/level1.jfif'); 
-  background-repeat: repeat-x;
-  animation: floatEffect 9s infinite alternate; 
-  display: flex; 
-  flex-wrap: wrap;
-  align-content: center;
-  overflow: hidden;
-  margin-top: -2%;
-  z-index: -1;
-  position: relative;
-
-} */
 
 audio {
   display: none;
@@ -192,7 +162,7 @@ position: relative;
 .joystick-container {
   position: relative;
   bottom: 290px;
-  z-index: 1;
+  z-index: 3;
   position: absolute;
 }
 .joystick-1 {
@@ -348,6 +318,7 @@ height: 100%;
 } */
 
 .animated-background {
+  position: relative;
     width: 100%;          
     height: 100%;        
     background-image: url('/images/level1.jfif'); 
@@ -357,8 +328,7 @@ height: 100%;
     align-content: center;
     overflow: hidden;
     margin-top: 5%;
-    position: relative;
-    z-index: -3 ;
+    z-index: -5 ;
     animation: slideshowPanY 37.5s infinite , slideshow 75s infinite ;
 }
 
@@ -623,7 +593,7 @@ margin-top: -92px;
   margin-left: -0px;
   margin-top: 95px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
     opacity: 1;
   width: 100%;
   
@@ -847,7 +817,7 @@ font-weight: bold;
 .explosion{
   position: relative;
   display: none;
-  z-index: 1; 
+  z-index: -1; 
 }
 .explosion img{
   height: 750px;
@@ -970,6 +940,7 @@ main .screen{
 
 header {
   width: 10000px;
+  
 }
 
 footer {
