@@ -106,6 +106,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
+let firstPage = document.getElementById('firstPage')
+let secondPage = document.getElementById('secondPage')
+const startMusic = document.getElementById('startMusic')
 
-
-
+function nextPage() {
+    secondPage.style.display = 'block'
+    firstPage.style.display = 'none'
+    startMusic.play()
+}
