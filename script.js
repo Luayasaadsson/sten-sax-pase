@@ -1,4 +1,4 @@
-const fetchName = {
+/* const fetchName = {
     fetchPlayerName: () => {
         return fetch("data.json")
         .then(res => {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetchName.fetchPlayerName();
     fetchName.fetchRobotName();
 
-});
+}); */
 
 let joystick = 1;
 

@@ -444,14 +444,14 @@ height: 100%;
     filter:saturate(90%);
 }
 
-  @keyframes stone-animation {
+/*   @keyframes stone-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
-}
+} */
 
 .moveHumanContainer {
   position: absolute;
@@ -497,14 +497,14 @@ width: 150px;
   position: absolute;
 }
 
-@keyframes robot-hand-animation {
+/* @keyframes robot-hand-animation {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(20px);
   }
-}
+} */
 
 .robot-hand1 {
   display: block;
@@ -516,14 +516,14 @@ width: 150px;
   display: none;
 }
 
-@keyframes robot-hand-animation {
+/* @keyframes robot-hand-animation {
   0%, 100% {
     transform: translateY(-10);
   }
   50% {
     transform: translateY(0px);
   }
-}
+} */
 
 .robot-hand2 {
   position: absolute;
@@ -535,14 +535,14 @@ width: 150px;
   display: none;
 }
 
-@keyframes robot-hand-animation {
+/* @keyframes robot-hand-animation {
   0%, 100% {
     transform: translateX(-10px);
   }
   50% {
     transform: translateY(0px);
   }
-}
+} */
 
 .arkad {
   position: absolute;
@@ -830,26 +830,25 @@ width: 1000px;
 }
 
 .humanScreen {
-  margin-top: -575px;
+  margin-top: -560px;
   transform-origin: left;
-  animation: shakeHuman 0.4s infinite;
+  animation: shakeHuman 0.9s ease infinite;
 }
 @keyframes shakeHuman {
  50% {
-  transform: rotate(720deg);
-  transform: translateY(100px); 
+
+  transform: translateY(10px); 
 }
 
 }
 
 .robotScreen {
   transform-origin: left;
-  animation: shakeRobot 0.4s infinite;
+  animation: shakeRobot 0.9s ease infinite;
 }
 @keyframes shakeRobot {
 50% {
-  transform: rotateY(180deg);
-  transform: translateX(-100px); 
+  transform: translateX(10px);
 }
 }
   
