@@ -180,16 +180,24 @@ function spel () {
         updateScore('draw.score');
         console.log("draw");
         robotHand(robot)
+        document.getElementById('result').innerHTML = "<img src='/images/draw2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
     } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
         console.log("win");
         updateScore('win.score');
         robotHand(robot)
+        document.getElementById('result').innerHTML = "<img src='/images/win2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
     } else {
         console.log("lose");
         updateScore('losses.score');
         result = 'You lose!';
         robotHand(robot)
+        document.getElementById('result').innerHTML = "<img src='/images/lose2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
     }
+    
+    let resultElement = document.getElementById('result');
+    resultElement.style.animation = 'none';
+    void resultElement.offsetWidth; 
+    resultElement.style.animation = 'result1 3s ease'; ///SKRIVER UT RESULTAT PÅ SKÄRMEN
 }
     if (result === 'You win!') {
         win.score += 1;
