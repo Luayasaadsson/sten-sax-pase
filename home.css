@@ -173,6 +173,37 @@ body {
   transform: translateY(-5px);
 }
 
+#popUp {
+  left: 20%;
+  top: 10%;
+  position: fixed;
+  width: 60%;
+  height: 60%;
+  background-color: #45476D;
+  border: 5px solid #222334;
+  color: white;
+  border-radius: 10px;
+  display: none;
+}
+
+#popUp h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+#popUp li {
+  margin-left: 5rem;
+  font-size: 1.5rem;
+}
+
+#popUp button{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 20px;
+  height: 20px;
+}
+
 #firstPage {
   display: block;
 }
