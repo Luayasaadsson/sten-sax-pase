@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>RPS or Die!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <script src="/sp-script.js" defer></script> 
+</head>
+
+
+<body>
+    <div id="secondPage">
+        <div class="title">
+            <h1>Choose your character below</h1>
+        </div>
+        <div class="container">
+        <section class="left-section">
+        <div class="character-container">
+            <img class="img" id="demon" src="/images/demon.jpeg" alt="demon">
+            <img class="img" id="man" src="/images/man.png" alt="man">
+            <img class="img" id="alien" src="/images/alien.jpeg" alt="alien">
+            <img class="img" id="ape" src="/images/apa.png" alt="ape"> 
+        </div>
+        </section>
+
+        <section class="right-section">
+        <div class="robot-container">
+            <img class="img" id="terminator"src="/images/terminator.png" alt="en österrikisk robot">
+            <img class="img" id="r2d2"src="/images/r2d2.png" alt="en robot från Star Wars">
+            <img class="img" id="hal"src="/images/hal9000.png" alt="en läskig robot">
+            <img class="img" id="kenny"src="/images/kennybaker.png" alt="han som spekade r2d2">
+        </div>
+        </section>
+        </div>
+
+
+        <div>
+            <input id="userNameInput" class="btn-name-user" type="text" placeholder="Enter your name">
+            <input id="robotNameInput" class="btn-name-robot" type="text" placeholder="Enter robot name">
+        </div>
+
+        <div class="continue"> 
+            <a href="/index.html">
+            <button type="submit" id="continueButton" onclick="return sparaFormular(); tryckaknapp();" class="continue-btn">Continue</button>
+        </a>
+        </div>
+    </div>
+
+    <div id="firstPage">
+        <div class="title">
+            <h1>Welcome to</h1>
+        </div>
+
+        <div class="title">
+            <h2>ROCK PAPER SCISSORS</h2>
+        </div>
+
+        
+            <button type="button" class="btn1">How to play</button>
+            
+            <button type="button" class="btn2">Rules</button>
+        
+        
+        <a href="second-page.html">
+            <button class="start-button" type="button">Press start</button>
+        </a>
+    </div>
+
+
+</body>
+
+</html>

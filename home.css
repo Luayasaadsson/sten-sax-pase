@@ -138,3 +138,45 @@ body {
  
  
 }
+
+.title {
+  font-size: 30px;
+  font-family: MKtitle;
+  background-color: rgb(208, 10, 10);
+  color: white;
+}
+
+.title:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.btn1, .btn2, .start-button {
+  font-size:30px;
+    color: rgb(250, 245, 245);
+    background-color: rgb(208, 10, 10);
+    text-transform: uppercase;
+    font-family: MKtitle;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-top: 20px ;
+}
+
+.btn1:hover, .btn2:hover, .start-button:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+#firstPage {
+  display: none;
+}
+
+#secondPage {
+  
+}
