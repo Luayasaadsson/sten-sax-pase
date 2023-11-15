@@ -117,6 +117,8 @@ document.body.addEventListener('keydown',(event) => {
 //1 scissor
 //2 rock
 function resetGame() {
+    let resetSound = document.getElementById('resetSound')
+    resetSound.play()
     win.score = 0;
     losses.score = 0;
     draw.score = 0;
