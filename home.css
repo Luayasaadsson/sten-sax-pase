@@ -200,8 +200,14 @@ body {
   position: absolute;
   top: 2%;
   right: 2%;
-  width: 20px;
-  height: 20px;
+  font-size: 1.3rem;
+  width: 30px;
+  height: 30px;
+  background-color: #222334;
+  text-shadow: none;
+  border-color: #111119;
+  border-style: solid;
+  color: white;
 }
 
 #firstPage {

@@ -115,3 +115,13 @@ function nextPage() {
     firstPage.style.display = 'none'
     startMusic.play()
 }
+
+const rulePop = document.getElementById('popUp')
+
+function rules() {
+    rulePop.style.display = 'block'
+}
+
+function rulesClose() {
+    rulePop.style.display = 'none'
+}
