@@ -146,7 +146,7 @@
         
         <div class="joystick-1">
             <img id="joystickImage" src="/images/joystick-1.png" alt="">
-            <button onclick="joystickChange(); joystickBend()" class="joy-btn"></button>
+            <button onclick="joystickChange(); joystickBend()" class="joy-btn" id="joyButton"></button>
             <p style="font-size: x-large; color: white; position: absolute;" id="displayValue">0</p>
             <div class="joystick-shadow-1"></div>
         </div>
@@ -161,7 +161,7 @@
     </div>
     <div class="reset"><img src="/images/button.gif" alt=""></div>
     <div class="reset-text"><img src="/images/reset-1.png" alt=""></div>
-    <div class="reset" onclick="
+    <div class="reset" id="resetButton1" onclick="
     resetGame();">
 
     <button id="resetButton" class="reset-btn"></button>
