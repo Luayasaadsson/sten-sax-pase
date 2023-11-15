@@ -303,7 +303,7 @@ function robotHand (robot) {
     }, 2000); */
 }
 
-document.getElementById('musicSelect').addEventListener('change', function(e) {
+document.getElementById('väljMusik').addEventListener('change', function(e) {
     var audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = this.value;
     audioPlayer.play();

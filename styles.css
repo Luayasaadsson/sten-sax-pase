@@ -286,6 +286,14 @@ width: 100%;
 height: 100%;
 }
 
+.musikspelare{
+  margin-top: 5%;
+  display: flex;
+  background-color: rgb(26, 255, 0);
+  width: 100px;
+  height: 30px;
+}
+
 /* 
 .back {
   position: absolute;
