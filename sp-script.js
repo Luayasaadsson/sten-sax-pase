@@ -30,6 +30,14 @@ function uppdatteraVisning(){
 
 window.onload = uppdatteraVisning;
 
+
+
+
+
+
+
+
+
 const avatarIds = ['demon', 'man', 'alien', 'ape'];
 
 function sparaAvatar() {
@@ -58,6 +66,42 @@ window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
     visaSparadAvatar();
+});
+
+
+
+
+const avatarRobotIds = ['terminator', 'r2d2', 'hal', 'kenny'];
+
+function sparaRobotAvatar() {
+    avatarRobotIds.forEach(function(id) {
+        let element = document.getElementById(id); 
+            if (element) {
+            element.addEventListener('click', function() {
+            localStorage.setItem('sparadRobotAvatar', this.src);
+            });
+        }
+    });
+}
+
+function visaSparadRobotAvatar() {
+    let sparadRobotUrl = localStorage.getItem('sparadRobotAvatar');
+    if (sparadRobotUrl) {
+        let avatarRobotBild = document.getElementById('avatarRobotBild');
+        if (avatarRobotBild) {
+            avatarRobotBild.src = sparadRobotUrl;
+        }
+    }
+}
+
+
+window.onload = uppdatteraVisning;
+document.addEventListener('DOMContentLoaded', (event) => {
+    sparaAvatar();
+    visaSparadAvatar();
+    sparaRobotAvatar();
+    visaSparadRobotAvatar();
+
 });
 
 
