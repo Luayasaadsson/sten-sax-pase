@@ -166,10 +166,8 @@ function spel () {
     let robot;
     
     if (fuskAktiverat) {
-        // Om fusk är aktiverat, välj robotens hand så att spelaren alltid vinner
-        robot = (joystick + 2) % 3; // Detta säkerställer att spelaren alltid vinner
+        robot = (joystick + 2) % 3;
     } else {
-        // Annars välj en slumpmässig hand för roboten
         robot = Math.floor(Math.random() * 3);
     }
     console.log(robot)
