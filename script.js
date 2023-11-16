@@ -1,6 +1,6 @@
 
 
-let joystick = 1;
+let joystick = 0;
 
 let win = { score: 0 };
 let losses = { score: 0 };

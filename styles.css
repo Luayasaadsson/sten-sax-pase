@@ -408,6 +408,13 @@ height: 100%;
   z-index: -10;
 }
 
+#displayValue {
+  font-size: x-large;
+  color: white;
+  position: absolute;
+  opacity: 0;
+}
+
 .scissor{
     /* display: flex;
     align-content: center; */
