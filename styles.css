@@ -880,30 +880,37 @@ height: 50px;
   z-index: 10;
   }
 
-@keyframes result1 {
-  0%, 24%  {
-    margin-left: 290px;
-    margin-top: -660px;
-    opacity: 0
-  }
-  25%  {
-    margin-left: 290px;
-    margin-top: -660px;
-    opacity: 0.5;
-  }
-  50%, 80% {
-    opacity: 1;
-    margin-left: 290px;
-    margin-top: -660px;
-  }
-  100% {
-    font-size: 130px;
-    opacity: 0;
-    margin-left: 290px;
-    margin-top: -660px;
-  }
-}
+  @keyframes result1 {
+    0%, 24%  {
+      margin-left: 290px;
+      margin-top: -660px;
+      opacity: 0
+    }
+    25%, 30%  {
+      margin-left: 290px;
+      margin-top: -660px;
+      opacity: 0.5;
+    }
+    31%, 84% {
+      opacity: 1;
+      margin-left: 290px;
+      margin-top: -660px;
+    }
+    
+    85%,91% {
+      font-size: 130px;
+      opacity: 0.66;
+      margin-left: 290px;
+      margin-top: -660px;
+    }
+   92%, 100% {
+      font-size: 130px;
+      opacity: 0.33;
+      margin-left: 290px;
+      margin-top: -660px;
+    }
   
+  }
 
 
 /* 
