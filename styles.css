@@ -203,9 +203,16 @@ opacity: 0;
 
 .go {
 position: absolute;
-width: 150px;
-top: 15px;
+width: 140px;
+top: 23px;
 margin-left: 590px;
+}
+
+.duck {
+  width: 100px;
+  position: absolute;
+  margin-left: 300px;
+  margin-top: -63px;
 }
 
 .go img {
@@ -243,6 +250,7 @@ height: 70px;
 margin-left: 15px;
 border-radius: 50%;
 opacity: 0;
+cursor: pointer;
 }
 
 @keyframes changeImage {
@@ -258,9 +266,10 @@ opacity: 0;
 }
 .reset {
 position: absolute;
-width: 150px;
+width: 130px;
 margin-left: 812px;
 top: 15px;
+cursor: pointer;
 }
 
 .reset img {
@@ -370,7 +379,7 @@ height: 100%;
     /* display: flex;
     align-content: center; */
     top: 43%;
-    left: 20%;
+    left: 25%;
     z-index: 0;
     position: absolute;
     animation: bag-animation 1.5s ease-in-out infinite alternate;
@@ -386,14 +395,14 @@ height: 100%;
 }
 
 
-  @keyframes bag-animation {
+/*   @keyframes bag-animation {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
     }
-} */
+}  */*/
 
 
 .choices {
@@ -419,7 +428,7 @@ height: 100%;
     /* display: flex;
     align-content: center; */
     top: 43%;
-    left: 20%;
+    left: 25%;
     /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
@@ -428,7 +437,7 @@ height: 100%;
 
 .scissor img {
     width: 30%;
-    height: 30%;
+    height: 25%;
     filter: contrast(100%);
     filter:saturate(90%);
 }
@@ -445,7 +454,7 @@ height: 100%;
     /* display: flex;
     align-content: center; */
     top: 43%;
-    left: 20%;
+    left: 25%;
     /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
@@ -505,8 +514,8 @@ width: 150px;
 
 .robot-hand {
   display: block;
-  top: 38%;
-  margin-left: 700px;
+  top: 40%;
+  margin-left: 650px;
   rotate: -90deg;
   animation: robot-hand-animation 3s ease-in-out infinite;
   position: absolute;
@@ -524,8 +533,8 @@ width: 150px;
 .robot-hand1 {
   display: block;
   position: absolute;
-  top: 35%;
-  margin-left: 700px;
+  top: 38%;
+  margin-left: 650px;
  rotate: -90deg;
   animation: robot-hand-animation 3s ease-in-out infinite;
   display: none;
@@ -543,8 +552,8 @@ width: 150px;
 .robot-hand2 {
   position: absolute;
   display: block;
-  top: 34%;
-  margin-left: 700px;
+  top: 36%;
+  margin-left: 650px;
   rotate: -90deg;
   animation: robot-hand-animation 3s ease-in-out infinite;
   display: none;

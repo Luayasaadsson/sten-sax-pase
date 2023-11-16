@@ -84,6 +84,8 @@
     </div>
 
 
+
+
 <div class="choices" id="choices">
     <div class="bag">
         <img src="/images/Bag2.png" alt="">
@@ -149,6 +151,10 @@
         <button id="goButton" onclick="animation()" class="go-btn"></button>
         <img src="/images/button.gif" alt="">
     </div>
+    
+
+
+
     <div class="go-text">
         <img src="/images/go-2.png" alt="">
         <img src="/images/go-1.png" alt="">
@@ -164,6 +170,7 @@
 <div class="reset-text"><img src="/images/reset-1.png" alt=""></div>
 
 <select id="väljMusik" class="musikspelare">
+    <option value="">Choose music</option>
     <option value="/music/Level-1_MonoBit.wav">Magic Ride</option>
     <option value="/music/Level-2_MonoBit.wav">Hall Of The Skulls</option>
     <option value="/music/Level-3_MonoBit.wav">Trespasser Of Death</option>
@@ -171,6 +178,16 @@
        <audio id="audioPlayer" controls>
         <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg">
       </audio>
+
+        <!-- Här manipulerar jag spelet genom att lägga till en fusk kod för att vinna varje runda -->
+        <div class="fusk" id="fuskIndikator" style="display: none;">
+            <span class="duck">
+                <img src="/images/dancing-duck-danse.gif"
+            </span>
+        </div>
+        <audio id="fuskLjud" src="/music/duck.wav" preload="auto"></audio>
+
+        
 
 </footer>
 

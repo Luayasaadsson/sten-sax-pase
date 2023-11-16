@@ -1,3 +1,4 @@
+let fuskAktiverat = false;
 
 
 let joystick = 0;
@@ -47,9 +48,15 @@ document.body.addEventListener('keydown',(event) => {
         joystickChange();
         joystickBend();
     } else if (event.key === 'g') {
-        spel();
+        animation();
     } else if (event.key === 'r') {
         resetGame();
+    } else if (event.key === 'F' || event.key === 'f') {
+        fuskAktiverat = !fuskAktiverat;
+        document.getElementById('fuskIndikator').style.display = fuskAktiverat ? 'block' : 'none';
+        if (fuskAktiverat) {
+            document.getElementById('fuskLjud').play();
+        }
     }
 })
 
@@ -155,8 +162,16 @@ function animation() {
 }
 
 function spel () {
+
+    let robot;
     
-    let robot = Math.floor(Math.random() * 3)
+    if (fuskAktiverat) {
+        // Om fusk är aktiverat, välj robotens hand så att spelaren alltid vinner
+        robot = (joystick + 2) % 3; // Detta säkerställer att spelaren alltid vinner
+    } else {
+        // Annars välj en slumpmässig hand för roboten
+        robot = Math.floor(Math.random() * 3);
+    }
     console.log(robot)
 
    /*  let result = '';
@@ -199,13 +214,13 @@ function spel () {
     void resultElement.offsetWidth; 
     resultElement.style.animation = 'result1 2s ease'; ///SKRIVER UT RESULTAT PÅ SKÄRMEN
 }
-    if (result === 'You win!') {
+   /*  if (result === 'You win!') {
         win.score += 1;
       } else if (result === 'You lose!') {
         losses.score += 1;
       } else if (result === 'Draw!') {
         draw.score += 1;
-      }
+      } */
 
 function updateScore(scoreId) {
     const scoreElement = document.getElementById(scoreId);
@@ -236,7 +251,7 @@ function robotHand (robot) {
 }
 
 document.getElementById('väljMusik').addEventListener('change', function(e) {
-    var audioPlayer = document.getElementById('audioPlayer');
+    let audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = this.value;
     audioPlayer.play();
 });
