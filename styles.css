@@ -1191,6 +1191,36 @@ header {
   opacity: 0;
   } 
 
+  .text-left{
+    margin-left: 70px;
+    font-size: 2rem;
+  }
+
+  .text-right{
+    margin-right: 70px;
+    font-size: 2rem;
+  }
+
+  .img1 {
+    margin-left: 60px;
+    margin-top: -10px;
+  }
+
+  .img2 {
+    margin-right: 50px;
+    margin-top: -10px;
+  }
+
+  .life-bar-left {
+    margin-left: 70px;
+    margin-top: 10px;
+  }
+
+  .life-bar-right {
+    margin-right: 65px;
+    margin-top: 5px;
+  }
+
 .gameboy {
   opacity: 0;
 }
