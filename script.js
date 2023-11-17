@@ -194,17 +194,23 @@ function spel () {
         console.log("draw");
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/draw2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
+        let drawSound = document.getElementById("drawSound");
+        drawSound.play();
     } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
         console.log("win");
         updateScore('win.score');
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/win2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
+        let winSound = document.getElementById("winSound");
+        winSound.play();
     } else {
         console.log("lose");
         updateScore('losses.score');
         result = 'You lose!';
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/lose2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
+        let loseSound = document.getElementById("loseSound");
+        loseSound.play();
     }
     
     let resultElement = document.getElementById('result');
