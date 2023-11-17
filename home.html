@@ -8,11 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
     <script src="/sp-script.js" defer></script> 
+    <script src="/ny-script.js" defer></script>
 </head>
 
 
 <body>
-    <audio id="startMusic" src="/music/Press-Start_MonoBit.wav"></audio>
+    <audio id="startMusic" src="/music/Press-Start_MonoBit.wav" loop></audio>
     <div id="secondPage">
         <div class="title">
             <h1>Choose your character below</h1>
@@ -20,19 +21,19 @@
         <div class="container">
         <section class="left-section">
         <div class="character-container">
-            <img class="img" id="demon" src="/images/demon.jpeg" alt="demon">
-            <img class="img" id="man" src="/images/man.png" alt="man">
-            <img class="img" id="alien" src="/images/alien.jpeg" alt="alien">
-            <img class="img" id="ape" src="/images/apa.png" alt="ape"> 
+            <img class="img" id="demon" onclick="markeraHuman(this)" src="/images/demon.jpeg" alt="demon">
+            <img class="img" id="man" onclick="markeraHuman(this) "src="/images/man.png" alt="man">
+            <img class="img" id="alien" onclick="markeraHuman(this)" src="/images/alien.jpeg" alt="alien">
+            <img class="img" id="ape" onclick="markeraHuman(this)" src="/images/apa.png" alt="ape"> 
         </div>
         </section>
 
         <section class="right-section">
         <div class="robot-container">
-            <img class="img" id="terminator"src="/images/terminator.png" alt="en österrikisk robot">
-            <img class="img" id="r2d2"src="/images/r2d2.png" alt="en robot från Star Wars">
-            <img class="img" id="hal"src="/images/hal9000.png" alt="en läskig robot">
-            <img class="img" id="kenny"src="/images/kennybaker.png" alt="han som spekade r2d2">
+            <img class="img" id="terminator" onclick="markeraRobot(this)" src="/images/terminator.png" alt="en österrikisk robot">
+            <img class="img" id="r2d2" onclick="markeraRobot(this)"  src="/images/r2d2.png" alt="en robot från Star Wars">
+            <img class="img" id="hal" onclick="markeraRobot(this)" src="/images/hal9000.png" alt="en läskig robot">
+            <img class="img" id="kenny" onclick="markeraRobot(this)" src="/images/kennybaker.png" alt="han som spekade r2d2">
         </div>
         </section>
         </div>
