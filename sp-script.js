@@ -1,3 +1,5 @@
+
+
 // Sparar ner namnen till huvudsidan
 function sparaFormular(){ // Funktionen triggas av knappen Continue från secong page
     let humanName = document.getElementById('userNameInput').value;
@@ -125,3 +127,5 @@ function rules() {
 function rulesClose() {
     rulePop.style.display = 'none'
 }
+
+
