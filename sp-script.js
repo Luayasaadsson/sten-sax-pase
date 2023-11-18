@@ -118,6 +118,15 @@ function nextPage() {
     startMusic.play()
 }
 
+function howToPlay() {
+    document.getElementById('howToPlayPopUp').style.display = 'block';
+}
+
+function howToPlayClose() {
+    document.getElementById('howToPlayPopUp').style.display = 'none';
+}
+
+
 const rulePop = document.getElementById('popUp')
 
 function rules() {

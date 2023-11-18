@@ -59,53 +59,149 @@
         <div class="title">
             <h2>ROCK PAPER SCISSORS</h2>
         </div>
+
+
+        <div id="howToPlayPopUp">
+            <h1 class="howToPlayTitle">How to play</h1>
+            <button onclick="howToPlayClose()">X</button>
+
+            <h2 class="howToPlayHeader">
+                <div class="howToPlayHeaderTitle">
+                    Rock, Paper & Scissors
+                </div>
+                Welcome to our interactive "Rock, Paper, Scissors" game! Here's how you can play and enjoy the game:
+            </h2>
+            
+            <div class="howToPlayText">
+                <h3>
+                    Starting the Game
+                
+                <p>
+                    When you open the game, you will see a display with options for Rock, Paper, and Scissors, represented by their respective icons.
+                    The game begins with no hands displayed on the screen, providing a clean and straightforward interface.
+                </p>
+                </h3>
+
+                <h3>
+                    Selecting Your Move
+                 
+                <p>
+                    Use the joystick control (on-screen or physical, if applicable) to cycle through the hand gestures for Rock, Paper, or Scissors.
+                    Press 'j' on your keyboard to change the hand gesture. The selected gesture will be displayed on the screen.
+                    You can also bend the joystick image by clicking on it, providing a more interactive experience.
+                </p>
+                </h3>
+
+                <h3>
+                    Initiating a Round
+                 
+                <p>
+                    Once you’ve made your choice, press 'g' to start the round.
+                    An animation will play, adding excitement to the reveal of both your hand and the robot’s hand.
+                </p>
+                </h3>
+
+                <h3>
+                    Understanding the Outcome
+                 
+                <p>
+                    The game will automatically determine the winner based on the classic rules: Rock crushes Scissors, Scissors cuts Paper, and Paper covers Rock.
+                    Wins, losses, and draws are tracked and displayed on the screen.
+                </p>
+                </h3>
+
+                <h3>
+                    Using Special Features
+                 
+                <p>
+                    Press 'F' or 'f' to toggle a cheat mode, altering the game's behavior.
+                    You can reset the game and all scores at any point by pressing 'r'.
+                </p>
+                </h3>
+
+                <h3>
+                    Sound and Music
+                 
+                <p>
+                    Enjoy different sound effects for actions like switching hands, starting a round, and winning or losing.
+                    You can select music to play during the game from a dropdown menu for a customized experience.
+                </p>
+                </h3>
+
+                <h3>
+                    Ending a Game
+                 
+                <p>
+                    The game tracks the number of wins and losses. Once a set limit is reached, an alert will declare the game over.
+                    The game will automatically reset after the alert, so you can start a new round immediately.
+                </p>
+                </h3>
+
+                <h3>
+                    Accessibility and Controls
+                <p>
+                    Keyboard shortcuts for easy navigation and gameplay.
+                    The game is designed with intuitive controls for a seamless user experience.
+                </p>    
+                </h3>
+            </div>
+        </div>
+            
+
+
+
+
+
         <div id="popUp">
             <h1 class="rulesTitle">Rules</h1>
             <button onclick="rulesClose()">X</button>
             
             <div class="rulesText">
                 <h2>
-                    Rock paper scissors
+                    Rock, Paper & Scissors
                 </h2>
+                
+            <div class="rulesTextGrid">
                 <h3>
-                Gestures:
-                <p>
-                Rock: Closed fist. <br>
-                Scissors: Index and middle fingers extended.
-                Paper: Open hand, palm facing down.
-                </p>
-                </h3>
-
-                <h3>
-                To play:
-                <p>
-                Count to three (usually "rock, paper, scissors!") and show a gesture on three.
-                Rock crushes scissors, scissors cuts paper, and paper covers rock.
-
-                <h3>
-                Winner:
-                <p>
-                If the same gesture, it's a draw.
-                Otherwise, see which gesture beats the other.
-                </p>
-                </h3>
-
-                </p>
-                </h3>
-
-                <h3>
-                Usage:
-                <p>
-                A fun and fair way to make quick decisions.
-                </p>
-                </h3>
+                    Gestures
+                    <p>
+                    Rock: Closed fist. <br>
+                    Scissors: Index and middle fingers extended.
+                    Paper: Open hand, palm facing down.
+                    </p>
+                    </h3>
+                    
+    
+                    <h3>
+                    To play
+                    <p>
+                    Count to three (usually "rock, paper, scissors!") and show a gesture on three.
+                    Rock crushes scissors, scissors cuts paper, and paper covers rock.
+                    </p>
+                    </h3>
+    
+                    <h3>
+                    Winner
+                    <p>
+                    If the same gesture, it's a draw.
+                    Otherwise, see which gesture beats the other.
+                    </p>
+                    </h3>
+    
+                    <h3>
+                    Usage
+                    <p>
+                    A fun and fair way to make quick decisions.
+                    </p>
+                    </h3>
+            </div>
 
 
             </div>
         </div>
 
         
-            <button type="button" class="btn1">How to play</button>
+            <button type="button" class="btn1" onclick="howToPlay()">How to play</button>
             
             <button type="button" class="btn2" onclick="rules()">Rules</button>
         
