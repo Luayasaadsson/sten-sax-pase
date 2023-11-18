@@ -60,36 +60,6 @@ document.body.addEventListener('keydown',(event) => {
     }
 })
 
-// början till självaste spelet.
-//0 paper
-//1 scissor
-//2 rock
-function resetGame() {
-
-    win.score = 0;
-    losses.score = 0;
-    draw.score = 0;
-    updateScoreElement();
-    
- 
-    
-    let flashOverlay = document.getElementById('flash-overlay');
-    let resetSound = document.getElementById("button1");
-    resetSound.play();
-
-    // Check if flashOverlay exists
-    if (flashOverlay) {
-        // Make the overlay visible
-        flashOverlay.style.opacity = '1';
-
-        // Set a timeout to hide the overlay after a short period
-        setTimeout(function() {
-            flashOverlay.style.opacity = '0';
-        }, 150); // Adjust the time for the length of the flash
-    }
-
-}
-
 function updateScoreElement() {
     document.getElementById('win.score').textContent = "Wins: " + win.score;
     document.getElementById('losses.score').textContent = "Losses: " + losses.score;
@@ -203,6 +173,7 @@ function spel () {
         document.getElementById('result').innerHTML = "<img src='/images/win2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let winSound = document.getElementById("winSound");
         winSound.play();
+        updateLifebar('robot', 1); // Minskar robotens liv med 1
     } else {
         console.log("lose");
         updateScore('losses.score');
@@ -211,6 +182,7 @@ function spel () {
         document.getElementById('result').innerHTML = "<img src='/images/lose2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let loseSound = document.getElementById("loseSound");
         loseSound.play();
+        updateLifebar('human', 1); // Minskar humans liv med 1
     }
     
     let resultElement = document.getElementById('result');
@@ -253,6 +225,88 @@ function robotHand (robot) {
         selectedHand.style.display = 'none';
     }, 2000); */
 }
+
+// Här lägger jag till en funkiton som uppdaterar spelarnas liv genom att minska backgrundsfärgen med 1 efter varje match. 
+function updateLifebar(human) {
+    let lifeItems;
+    let updateIndex;
+
+    if (human === 'human') {
+        lifeItems = document.querySelectorAll('.life-bar-left .life-item');
+        updateIndex = lifeItems.length - 1;
+        while (updateIndex >= 0 && lifeItems[updateIndex].style.backgroundColor === 'grey') {
+            updateIndex--;
+        }
+    } else {
+        lifeItems = document.querySelectorAll('.life-bar-right .life-item');
+        updateIndex = 0;
+        while (updateIndex < lifeItems.length && lifeItems[updateIndex].style.backgroundColor === 'grey') {
+            updateIndex++;
+        }
+    }
+
+    if (updateIndex >= 0 && updateIndex < lifeItems.length) {
+        lifeItems[updateIndex].style.backgroundColor = 'grey';
+    }
+    checkGameOver();
+}
+// Explosionseffekten fortsätter att loopa efter avlutad spel. Så jag lägger till en funktion för att tvinga det att stoppas. 
+function stopExplosion() {
+    let explosionAnimation = document.getElementById('explosion');
+    explosionAnimation.style.display = 'none';
+}
+
+// Genom denna funktion bestämmer jag hur många liv ska varje spelare ha. 
+function checkGameOver() {
+    let humanLivesLost = document.querySelectorAll('.life-bar-left .life-item[style*="background-color: grey"]').length;
+    let robotLivesLost = document.querySelectorAll('.life-bar-right .life-item[style*="background-color: grey"]').length;
+    const totalLives = 3;
+
+    if (humanLivesLost === totalLives || robotLivesLost === totalLives) {
+        stopExplosion(); // Stoppar explosionen
+        let loser = humanLivesLost === totalLives ? 'Human' : 'Robot';
+        setTimeout(function() { endGame(loser); }, 500); // Genom denna funktion skickar jag förlorarens namn till endGame.
+    }
+}
+
+// Lägger min lyssnare utanför min resetGame funktion så att användaren kan välja att återställa spelet när som helst.
+document.getElementById('resetButton').addEventListener('click', resetGame);
+
+// Funktionen återställer livmätarna
+function resetGame() {
+    win.score = 0;
+    losses.score = 0;
+    draw.score = 0;
+    updateScoreElement();
+    let lifeItems = document.querySelectorAll('.life-item');
+    lifeItems.forEach(function (item) {
+        item.style.backgroundColor = ''; // Återställ bakgrundsfärgen
+    });
+    let flashOverlay = document.getElementById('flash-overlay');
+    let resetSound = document.getElementById("button1");
+    resetSound.play();
+
+    // Check if flashOverlay exists
+    if (flashOverlay) {
+        // Make the overlay visible
+        flashOverlay.style.opacity = '1';
+
+        // Set a timeout to hide the overlay after a short period
+        setTimeout(function() {
+            flashOverlay.style.opacity = '0';
+        }, 150); // Adjust the time for the length of the flash
+    }
+}
+
+// Funktionen skriver ut förlorarens namn
+function endGame(loser) {
+    alert("Game Over! " + loser + " lost.");
+    resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs
+}
+
+
+
+
 
 document.getElementById('väljMusik').addEventListener('change', function(e) {
     let audioPlayer = document.getElementById('audioPlayer');

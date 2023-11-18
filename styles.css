@@ -533,7 +533,7 @@ width: 150px;
 .robot-hand1 {
   display: block;
   position: absolute;
-  top: 38%;
+  top: 35%;
   margin-left: 650px;
  rotate: -90deg;
   animation: robot-hand-animation 3s ease-in-out infinite;
