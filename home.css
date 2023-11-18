@@ -70,54 +70,6 @@ body {
   transform: translateY(-5px);
 }
 
-.rulesTitle {
-  display: flex;
-  justify-content: center;
-  color: antiquewhite;
-  background-color: rgb(244, 55, 22);
-  font-family: 'MKtitle';
-  border-radius: 50px;
-  max-width: 400px;
-  margin-left: 300px;
-  margin-top: 20px;
-}
-
-.rulesText h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(244, 55, 22);
-  font-family: 'MKtitle';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  width: 20rem;
-  margin-left: 340px;
-}
-
-.rulesText h3 {
-  font-family: fantasy;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.rulesText p {
-  background-color: rgb(59, 126, 199);
-  font-family: fantasy;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 50%;
-}
-
 .nameButton {
   margin-top: 200px;
   width: 300px;
@@ -224,10 +176,38 @@ body {
   transform: translateY(-5px);
 }
 
+#howToPlayPopUp {
+  left: 20%;
+  top: 8%;
+  position: absolute;
+  width: 60%;
+  background-color: #45476D;
+  border: 5px solid #222334;
+  color: white;
+  border-radius: 20px;
+  display: none;
+  margin-top: -40px;
+}
+
+#howToPlayPopUp button{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 1.3rem;
+  width: 30px;
+  height: 30px;
+  background-color: #222334;
+  text-shadow: none;
+  border-color: #111119;
+  border-style: solid;
+  color: white;
+  cursor: pointer;
+}
+
 #popUp {
   left: 20%;
-  top: 10%;
-  position: fixed;
+  top: 8%;
+  position: absolute;
   width: 60%;
   background-color: #45476D;
   border: 5px solid #222334;
@@ -238,7 +218,12 @@ body {
 }
 
 #popUp h1 {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  font-family: 'MKtitle';
+  border-radius: 50px;
+  margin-top: 20px;
   font-size: 5rem;
 }
 
@@ -260,6 +245,90 @@ body {
   border-style: solid;
   color: white;
   cursor: pointer;
+}
+
+.rulesTextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.rulesText h2 {
+  font-family: fantasy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+}
+
+.rulesText h3 {
+  font-family: fantasy;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rulesText p {
+  background-color: rgb(59, 126, 199);
+  font-family: fantasy;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  border-radius: 10px;
+}
+
+#howToPlayPopUp h1 {
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  font-family: 'MKtitle';
+  border-radius: 50px;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.howToPlayText {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.howToPlayHeaderTitle {
+  margin-left: 120px;
+}
+
+.howToPlayHeader {
+  grid-template-rows: 1fr;
+  font-size: 20px;
+  font-family: fantasy;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left: 250px;
+}
+
+.howToPlayText h3 {
+  font-family: fantasy;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.howToPlayText p {
+  background-color: rgb(59, 126, 199);
+  font-family: fantasy;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  border-radius: 10px;
 }
 
 #firstPage {
