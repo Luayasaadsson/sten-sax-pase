@@ -1,3 +1,18 @@
+// Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
+function hideAllHands() {
+    document.querySelector('.bag').style.display = 'none';
+    document.querySelector('.scissor').style.display = 'none';
+    document.querySelector('.stone').style.display = 'none';
+    document.querySelector('.robot-hand').style.display = 'none';
+    document.querySelector('.robot-hand1').style.display = 'none';
+    document.querySelector('.robot-hand2').style.display = 'none';
+}
+
+// Anropar funktionen när sidan laddas
+hideAllHands();
+
+
+
 let fuskAktiverat = false;
 
 
@@ -296,6 +311,8 @@ function resetGame() {
             flashOverlay.style.opacity = '0';
         }, 150); // Adjust the time for the length of the flash
     }
+        // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
+        hideAllHands();
 }
 
 // Funktionen skriver ut förlorarens namn
@@ -303,10 +320,6 @@ function endGame(loser) {
     alert("Game Over! " + loser + " lost.");
     resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs
 }
-
-
-
-
 
 document.getElementById('väljMusik').addEventListener('change', function(e) {
     let audioPlayer = document.getElementById('audioPlayer');
