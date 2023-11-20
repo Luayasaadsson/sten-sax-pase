@@ -504,6 +504,16 @@ height: 100%;
 width: 150px;
 }
 
+.exit-sign {
+  position: absolute;
+  z-index: 100;
+}
+
+.exit-sign img {
+  width: 100px;
+  transform: scaleX(-1);
+}
+
 .robotScreen {
   position: absolute;
   margin-top: -550px;
