@@ -1156,9 +1156,7 @@ opacity: 0;
   border-radius: 50%;
   opacity: 1;
   }
-.go {
 
-}
 .go-btn {
     position: absolute;
     margin-top: -240px;
@@ -1245,24 +1243,17 @@ opacity: 0;
   margin-top: -14em;
   margin-left: 13em;
   width: 75em;
-}
-}
+}}
 
-
-
-
-.ufo {
-  display: none;
-  height: 10%;
-  width: 10%;
+.ufot {
+  Display: none;
+  height: 20%;
+  width: 20%;
   object-fit: cover;
-  --skutt: 100px;
   animation: skuttande 5s linear infinite;
-  
-
 }
 
-.ufo:hover{
+.ufot:hover{
 cursor: crosshair;
 }
 
@@ -1288,3 +1279,4 @@ cursor: crosshair;
   90% { transform: translateX(20%) translateY(0); }
   95% { transform: translateX(10%) translateY(-20px); }
 }
+
