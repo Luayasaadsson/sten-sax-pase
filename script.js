@@ -101,6 +101,7 @@ function animation() {
 
     // Den här if-satsen ser till att spelets animation inte går igång ifall användaren inte interagerar med joysticken först.
     if (!isGameStarted) {
+        alert("Please start the game using the joystick!")
         return;
 }
     let handAnimation = document.getElementById('hands');
