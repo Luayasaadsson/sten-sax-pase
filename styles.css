@@ -127,6 +127,23 @@ footer{
     animation: ringfloat 37.5s infinite;
 }
 
+#winnerVideo {
+    position: absolute;
+    top: 53px; 
+    left: -20px;
+    z-index: 1000; /* Ställer in ett högt värde för att placera videon överst */
+    opacity: 0.8;
+}
+
+#loserVideo {
+  position: absolute;
+  top: 150px; 
+  left: -225px;
+  z-index: 1000; /* Ställer in ett högt värde för att placera videon överst */
+  opacity: 0.8;
+}
+
+
   audio {
     display: none;
 }
@@ -199,6 +216,7 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 opacity: 0;
+cursor: pointer;
 }
 
 .go {
@@ -502,6 +520,16 @@ height: 100%;
 
 .humanScreen img {
 width: 150px;
+}
+
+.exit-sign {
+  position: absolute;
+  z-index: 100;
+}
+
+.exit-sign img {
+  width: 100px;
+  transform: scaleX(-1);
 }
 
 .robotScreen {
@@ -939,6 +967,17 @@ height: 50px;
 
 MINDRE DEVAJSES>>>>>>>  */
   
+
+
+#mario {
+  position: absolute;
+  margin-top: 170px;
+}
+
+#mario img {
+  width: 80px;
+}
+
 @media (max-width: 750px ) {
 html { 
   margin-top: 50px;

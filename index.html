@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <audio id="resetSound" src="sounds/reset.mp3"></audio>
+<!--     <audio id="resetSound" src="sounds/reset.mp3"></audio> -->
     <audio id="switchSound" src="sounds/SWITCH.mp3"></audio>
     <audio id="expSound" src="music/exp.mp3"></audio>
     <audio id="swishSound" src="music/swish.mp3"></audio>
@@ -35,11 +35,17 @@
     <div class="tamagotchi">
         <img src="images/tamagotchi3.png" alt="">
     </div>
+
    
    <!--  <audio controls autoplay>   <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg"></audio> -->
 <header>
-<h1>ROCK PAPER SCISSORS</h1>
+    <div class="exit-sign">
+        <a href="home.html"><img src="/images/exit.png" alt=""></a>
+    </div>
+    <h1>ROCK PAPER SCISSORS</h1>
+
 </header>
+
 <main>
     <div id="flash-overlay"></div>
     <div id="dark-overlay"></div>
@@ -53,7 +59,7 @@
                     Player 1
                 </span>
                 <span id="robot" class="text-right">
-                    Player 2
+                    Robot
                 </span>
             </div>
 
@@ -138,7 +144,15 @@
     </div>
 
 
+    <video id="winnerVideo" width="1050" height="800" style="display:none;">
+        <source src="videos/dancingboy.mp4" type="video/mp4">
+    </video>
 
+    <video id="loserVideo" width="1500" height="600" style="display:none;">
+        <source src="videos/mancry.mp4" type="video/mp4">
+    </video>
+    
+    
 
 <div  id="result"></div>
 <div class="score-board">
@@ -203,7 +217,12 @@
         </div>
         <audio id="fuskLjud" src="/music/duck.wav" preload="auto"></audio>
 
-        
+    <div id="mario">
+        <a href="#">
+        <img src="/images/mario.png" alt="">
+        </a>
+        <audio id="marioSound" src="/sounds/marioSound.mp3"></audio>
+    </div>
 
 </footer>
 
