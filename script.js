@@ -4,6 +4,23 @@ let isGameStarted = false;
 
 
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
+
+function visaUfo(){
+        let ufoElement = document.querySelector('.ufot');
+        ufoElement.style.display = 'block';
+        /* document.querySelector('.ufot').style.display = 'block'; */
+        ufoElement.onclick = döljUfo;
+
+}
+   
+function döljUfo(){
+    document.querySelector('.ufot').style.display = 'none';
+
+}
+
+
+
+
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
     document.querySelector('.scissor').style.display = 'none';
@@ -26,6 +43,7 @@ let joystick = 0;
 let win = { score: 0 };
 let losses = { score: 0 };
 let draw = { score: 0 };
+
 
 
 //Byter värde mellan på en knapp som sitter på joysticken. Som då byter mellan de olika händerna
@@ -139,7 +157,7 @@ function animation() {
         handAnimation.style.zIndex = '-10';
         choicesAnimation.style.display = 'block';
         choicesAnimation.style.zIndex = '10';
-        console.log('z-index changed back to -10');
+        //console.log('z-index changed back to -10');
 
 
         // Show explosion animation
@@ -150,7 +168,7 @@ function animation() {
         screenborder.style.zIndex = '-10';
         
 
-        console.log("KABOOOM");
+        //console.log("KABOOOM");
 
         // After the explosion animation, fade in the choices
         setTimeout(function() {
@@ -167,6 +185,8 @@ function animation() {
     }, 800); // 800 milliseconds = 0.8 seconds
 }
 
+
+
 function spel () {
 
     let robot;
@@ -176,7 +196,7 @@ function spel () {
     } else {
         robot = Math.floor(Math.random() * 3);
     }
-    console.log(robot)
+    //console.log(robot)
 
    /*  let result = '';
 
@@ -195,30 +215,38 @@ function spel () {
         robotHand (robot)
     } */
 
+    
+
     if (joystick === robot) {
         updateScore('draw.score');
-        console.log("draw");
+        //console.log("draw");
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/draw2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let drawSound = document.getElementById("drawSound");
-        drawSound.play();
+        setTimeout(function(){drawSound.play();}, 300);
     } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
-        console.log("win");
+        //console.log("win");
         updateScore('win.score');
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/win2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let winSound = document.getElementById("winSound");
-        winSound.play();
-        updateLifebar('robot', 1); // Minskar robotens liv med 1
+        setTimeout(function(){winSound.play();}, 300);
+        let winLifeSound = document.getElementById("winLife");
+        setTimeout(function(){winLifeSound.play();}, 2400);
+        setTimeout(function(){updateLifebar('robot', 1);}, 2400); // Minskar robotens liv med 1
     } else {
-        console.log("lose");
+        //console.log("lose");
         updateScore('losses.score');
+        console.log(updateScore)
         result = 'You lose!';
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/lose2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let loseSound = document.getElementById("loseSound");
-        loseSound.play();
-        updateLifebar('human', 1); // Minskar humans liv med 1
+        setTimeout(function(){loseSound.play();}, 300);
+        let loseLifeSound = document.getElementById("loseLife");
+        setTimeout(function(){loseLifeSound.play();}, 2400);
+        setTimeout(function(){updateLifebar('human', 1);}, 2400); // Minskar humans liv med 1
+        
     }
     
     let resultElement = document.getElementById('result');
@@ -236,6 +264,7 @@ function spel () {
 
 function updateScore(scoreId) {
     const scoreElement = document.getElementById(scoreId);
+    //console.log(scoreElement)
     let currentScore = parseInt(scoreElement.textContent.split(" ")[1]);
     if (isNaN(currentScore)) {
         currentScore = 0; // Om det inte är ett numeriskt värde, sätt det till 0
@@ -370,14 +399,38 @@ function resetGame() {
         hideAllHands();
 }
 
+
+
+
+
+
+
+/* function updateLosses() {
+    losses.score++; // Anta att detta är hur du uppdaterar antalet förluster
+    // Kalla på UfoFunktion varje gång förlustantalet uppdateras
+    UfoFunktion();
+} */
+
+
+/* document.addEventListener('DOMContentLoaded', (event) => {
+   
+document.querySelector('ufo').addEventListener('click', onUfoClick);
+
+});
+
+function onUfoClick() {
+        //resetGame();
+        console.log("UFO clicked!")
+}; 
+
+window.addEventListener('load', UfoFunktion); */
+
+
+
+
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
-    if (loser === 'Human') {
-        loserVideo();
-    } else {
-        playWinnerVideo();
-    }
-    setTimeout(function() { 
+    visaUfo();
     alert("Game Over! " + loser + " lost.");
     }, 100);
     resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs

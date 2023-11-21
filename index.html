@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -22,6 +23,8 @@
     <audio id="winSound" src="sounds/youwin.mp3"></audio>
     <audio id="loseSound" src="sounds/youlose.mp3"></audio>
     <audio id="drawSound" src="sounds/draw.mp3"></audio>
+    <audio id="loseLife" src="/sounds/loser.wav"></audio>
+    <audio id="winLife" src="/sounds/winner.wav"></audio>
     <div class="arkad">
         <img src="images/arkad.png" alt="">
     </div>
@@ -47,6 +50,7 @@
     <div id="flash-overlay"></div>
     <div id="dark-overlay"></div>
     <div class="screen">
+       
       <img src="images/screen3.png" id="screenborder" alt="">
         <div class="life-bars-block">
             <div class="nameblock">
@@ -58,6 +62,11 @@
                     Robot
                 </span>
             </div>
+
+            <div>
+                <img id="ufo" class="ufot" src="/images/ufo.png" alt="">
+            </div>
+           
     
             <div class="life-bar-container"> 
                 <img id="avatarBild" src="" class="img1"/>
@@ -80,10 +89,13 @@
                 <div class="life-item">
                 </div>
             </div>
+
             <img id="avatarRobotBild" src="" class="img2"/>
+            
         </div>
         </div>
     </div>
+    
 
     <h1 class="h1flicker">Rock Paper Scissors</h1>
      <div class="animated-background"></div>
@@ -215,7 +227,8 @@
 </footer>
 
 
-</body>
-<script src="script.js" ></script>
 <script src="sp-script.js" ></script>
+</body>
+
+<!-- <script>window.addEventListener('load', visaUfoFunktion);</script> -->
 </html>
