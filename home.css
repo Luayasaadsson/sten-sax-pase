@@ -23,7 +23,14 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
+  width: 90%;
+  background-color: antiquewhite;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: rgba(107, 107, 153, 0.8);
+  border: 5px solid #222334;
+ 
+  border-radius: 20px;
 
 }
 
@@ -79,10 +86,19 @@ body {
   text-align: center;
   font-family: 'MKtitle';
 }
+.name-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 30px;
+}
 
-.continue-btn {
-  margin-top: 40px;
-  margin-left: 240px;
+  
+
+.continue-btn, .back-btn {
+  /*margin-top: 40px;
+  margin-left: 240px;*/
   width: 250px;
   height: 40px;
   font-size: 1.5rem;
@@ -91,9 +107,45 @@ body {
   background-color: rgb(244, 55, 22);
   position: absolute;
   cursor: pointer;
+  color: white;
+}
+.playerName-btn, .robotName-btn {
+  background-color: rgb(244, 55, 22);
+  cursor: pointer;
+  width: 250px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-family: 'MKtitle';
+  border-radius: 40px;
+  color: white;
+}
+.ok-btn1, .ok-btn2 {
+  background-color: rgb(244, 55, 22);
+  cursor: pointer;
+  width: 50px;
+  height: 40px;
+  font-size: 1rem;
+  font-family: 'MKtitle';
+  border-radius: 10px;
+  color: white;
+  margin-top: 15px;
+}
+.ok-btn1:disabled, .ok-btn2:disabled {
+  background-color: rgb(49, 49, 49);
+  cursor: pointer;
+  width: 50px;
+  height: 40px;
+  font-size: 1rem;
+  font-family: 'MKtitle';
+  border-radius: 10px;
+  color: white;
+  margin-top: 15px;
 }
 
-.continue-btn:hover {
+.continue-btn:hover,
+.playerName-btn:hover,
+.robotName-btn:hover,
+.back-btn:hover {
   background-color: #76c1d4;
   transition: background-color 0.3s ease-out;
   transition: transform 0.3s ease;
@@ -114,24 +166,26 @@ body {
   cursor: pointer;
 }
 
-.btn-name-user:hover, .btn-name-robot:hover {
+/*.btn-name-user:hover, .btn-name-robot:hover {
   background-color: #76c1d4;
   transition: background-color 0.3s ease-out;
   transition: transform 0.3s ease;
   opacity: 1;
   transform: translateY(-5px);
-}
+}*/
 
-.character-container {
+/*.character-container {
   position: relative;
 
-}
+}*/
 
 .img {
   display: flex;
   width: 90px;
   border-radius: 50%;
   margin-top: 20px;
+  border: 2px solid red;
+  box-shadow: 5px 5px 2px rgb(41, 41, 41);
 }
 
 .img:hover {
@@ -141,13 +195,33 @@ body {
  
  
 }
-
+.title-container {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
 .title {
   font-size: 30px;
   font-family: MKtitle;
   background-color: rgb(208, 10, 10);
   color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin-block: 5px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
+.title1 {
+  font-size: 18px;
+  font-family: MKtitle;
+  background-color: rgb(208, 10, 10);
+  color: white;
+  width: 4rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
 
 .title:hover {
   background-color: #76c1d4;
@@ -157,6 +231,11 @@ body {
   transform: translateY(-5px);
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
 .btn1, .btn2, .start-button {
   font-size:30px;
     color: rgb(250, 245, 245);
@@ -166,6 +245,8 @@ body {
     cursor: pointer;
     margin-left: 15px;
     margin-top: 20px ;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
 .btn1:hover, .btn2:hover, .start-button:hover {
@@ -364,6 +445,79 @@ body {
   
   .eldEffektRobot {
     animation: eldAnimationRobot 0.5s infinite;
+  }
+
+  .name-popup1,  .name-popup2 {
+    background-color: #222334;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: #45476D;
+    border: 5px solid #222334;
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 20px 20px rgb(203, 203, 203);
+  }
+
+  .name-popup1 label,
+  .name-popup2 label {
+    text-transform: uppercase;
+    font-size: x-large;
+    font-weight: 800;
+   
+  }
+  .name-popup1 input,
+  .name-popup2 input {
+    align-self: center;
+    height: 50px;
+    width: 80%;
+    margin-left: -8px;
+  }
+
+  .popup-windows {
+    display: flex;
+  display: 100%;
+    margin: -450px 0 auto auto;
+   
+justify-content: space-around;
+
+  }
+
+  .close-symbol-left {
+    position: absolute;
+    align-self: flex-end;
+    margin-top: -200px;
+    background-color: #231f39;
+    padding: 2px 6px;
+    border: 1px solid rgb(19, 19, 19);
+    cursor: pointer;
+  }
+  .close-symbol-right {
+    position: absolute;
+    align-self: flex-end;
+    margin-top: -200px;
+    background-color: #231f39;
+    padding: 2px 6px;
+    border: 1px solid rgb(19, 19, 19);
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .nav-btns {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+   justify-content: space-between;
+  
+  }
+  .continue {
+    margin-right: 250px;
   }
 
 
