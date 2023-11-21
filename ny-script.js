@@ -1,3 +1,5 @@
+
+
 function markeraHuman(selectedImage){
     document.querySelectorAll('.character-container img').forEach(img => {
         img.classList.remove('eldEffektHuman');
@@ -13,4 +15,27 @@ function markeraRobot(selectedImage){
     });
 
 selectedImage.classList.add('eldEffektRobot');
+}
+
+
+
+
+
+function visaUfoFunktion(){
+    const visaUfo = true;
+    
+
+    if(visaUfo){
+        document.querySelector('.ufo').style.display = 'block';
+    }
+    console.log(visaUfo)
+};
+
+document.addEventListener('DOMContentLoaded', (event) => {
+document.querySelector('.ufo').addEventListener('click', onUfoClick);
+});
+
+function onUfoClick() {
+        /* resetGame(); */
+        console.log("UFO clicked!")
 }

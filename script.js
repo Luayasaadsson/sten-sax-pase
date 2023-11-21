@@ -1,4 +1,7 @@
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
+
+
+
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
     document.querySelector('.scissor').style.display = 'none';
@@ -314,7 +317,6 @@ function resetGame() {
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
         hideAllHands();
 }
-
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
     alert("Game Over! " + loser + " lost.");
@@ -354,3 +356,26 @@ document.getElementById('resetButton').addEventListener('click', function() {
         this.disabled = false;
     }, 500); // 2000 milliseconds = 2 seconds
 });
+
+
+
+function visaUfoFunktion(){
+    const visaUfo = math.ele
+    
+
+    if(visaUfo){
+        document.querySelector('.ufo').style.display = 'block';
+    } 
+    console.log(visaUfo)
+};
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+document.querySelector('.ufo').addEventListener('click', onUfoClick);
+});
+
+function onUfoClick() {
+        //resetGame();
+        console.log("UFO clicked!")
+};
+  
