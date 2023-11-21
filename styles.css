@@ -127,6 +127,23 @@ footer{
     animation: ringfloat 37.5s infinite;
 }
 
+#winnerVideo {
+    position: absolute;
+    top: 53px; 
+    left: -20px;
+    z-index: 1000; /* Ställer in ett högt värde för att placera videon överst */
+    opacity: 0.8;
+}
+
+#loserVideo {
+  position: absolute;
+  top: 150px; 
+  left: -225px;
+  z-index: 1000; /* Ställer in ett högt värde för att placera videon överst */
+  opacity: 0.8;
+}
+
+
   audio {
     display: none;
 }

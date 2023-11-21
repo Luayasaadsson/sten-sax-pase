@@ -1,3 +1,8 @@
+// Definerar här en global variabel för att spara om användaren startar spelet genom att börja trycka på joysticken för att välja en hand.
+let isGameStarted = false;
+
+
+
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
@@ -43,6 +48,16 @@ function joystickChange() {
     } else if (joystick === 2) {
         document.querySelector('.stone').style.display = 'block';
     }
+
+    // Om spelet inte startas genom att först trycka på joysticken, då körs den här koden.
+    if (!isGameStarted) {
+        startGame();
+    }
+}
+
+// Ny funktion som kör spelet ifall användaren börjar med att välja hand genom att trycka på joysticken.
+function startGame() {
+    isGameStarted = true;
 }
 
 
@@ -83,6 +98,11 @@ function updateScoreElement() {
 
 //Animationen för händerna när man trycker GO (EXPLOSION OCH GREJER)
 function animation() {
+
+    // Den här if-satsen ser till att spelets animation inte går igång ifall användaren inte interagerar med joysticken först.
+    if (!isGameStarted) {
+        return;
+}
     let handAnimation = document.getElementById('hands');
     let choicesAnimation = document.getElementById('choices');
     let explosionAnimation = document.getElementById('explosion');
@@ -284,6 +304,35 @@ function checkGameOver() {
     }
 }
 
+// Denna funtion kör videon när human vinner.
+function playWinnerVideo() {
+    let video = document.getElementById('winnerVideo');
+    video.style.display = 'block';
+    video.play();
+}
+
+// Hämtar vinnarvideon och kör en funktion som stoppar videon.
+document.getElementById('winnerVideo').addEventListener('ended', function() {
+    this.style.display = 'none'; 
+    this.pause(); 
+    this.currentTime = 0; 
+});
+
+// Denna funktion kör videon när human förlorar.
+function loserVideo() {
+    let video = document.getElementById('loserVideo');
+    video.style.display = 'block';
+    video.play();
+}
+
+// Hämtar vinnarvideon och kör en funktion som stoppar videon.
+document.getElementById('loserVideo').addEventListener('ended', function() {
+    this.style.display = 'none';
+    this.pause();
+    this.currentTime = 0;
+});
+
+
 // Lägger min lyssnare utanför min resetGame funktion så att användaren kan välja att återställa spelet när som helst.
 document.getElementById('resetButton').addEventListener('click', resetGame);
 
@@ -298,8 +347,8 @@ function resetGame() {
         item.style.backgroundColor = ''; // Återställ bakgrundsfärgen
     });
     let flashOverlay = document.getElementById('flash-overlay');
-    let resetSound = document.getElementById("button1");
-    resetSound.play();
+/*     let resetSound = document.getElementById("button1");
+    resetSound.play(); */
 
     // Check if flashOverlay exists
     if (flashOverlay) {
@@ -311,13 +360,25 @@ function resetGame() {
             flashOverlay.style.opacity = '0';
         }, 150); // Adjust the time for the length of the flash
     }
+
+    // Här anropar jag min variabel för att se till att det inte går att köra spelet när användaren trycker på reset knappen. Återigen användaren måste interagera med joysticken först för att kunna fortsätta. 
+    isGameStarted = false;
+
+
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
         hideAllHands();
 }
 
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
+    if (loser === 'Human') {
+        loserVideo();
+    } else {
+        playWinnerVideo();
+    }
+    setTimeout(function() { 
     alert("Game Over! " + loser + " lost.");
+    }, 100);
     resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs
 }
 
