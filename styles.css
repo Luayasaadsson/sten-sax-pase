@@ -982,6 +982,7 @@ MINDRE DEVAJSES>>>>>>>  */
   position: absolute;
   margin-top: -800px;
   z-index: 100;
+  display: none;
 }
 
 #bigMario img{

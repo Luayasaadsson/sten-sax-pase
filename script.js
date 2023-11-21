@@ -490,7 +490,9 @@ function revealMario() {
 
     const revealImage = () => {
         if (currentImage <= totalImages) {
+            const bigMario = document.getElementById('bigMario')
             const img = document.getElementById(`mario${currentImage}`);
+            bigMario.style.display = 'block'
             img.style.visibility = 'visible';
             currentImage++;
             setTimeout(revealImage, revealTime);
@@ -498,6 +500,7 @@ function revealMario() {
             setTimeout(() => {
                 for (let i = 1; i <= totalImages; i++) {
                     document.getElementById(`mario${i}`).style.visibility = 'hidden';
+                    bigMario.style.display = 'none'
                 }
             }, displayTime);
         }
