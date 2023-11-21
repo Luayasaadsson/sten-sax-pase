@@ -978,6 +978,17 @@ MINDRE DEVAJSES>>>>>>>  */
   width: 80px;
 }
 
+#bigMario {
+  position: absolute;
+  margin-top: -800px;
+  z-index: 100;
+}
+
+#bigMario img{
+  width: 200px;
+  visibility: hidden;
+}
+
 @media (max-width: 750px ) {
 html { 
   margin-top: 50px;

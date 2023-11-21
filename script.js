@@ -478,4 +478,30 @@ document.getElementById('mario').addEventListener('click', function(event) {
     event.preventDefault();
     const marioSound = document.getElementById('marioSound')
     marioSound.play()
+
+    revealMario()
 })
+
+function revealMario() {
+    let currentImage = 1;
+    const totalImages = 15;
+    const revealTime = 100;
+    const displayTime = 5000;
+
+    const revealImage = () => {
+        if (currentImage <= totalImages) {
+            const img = document.getElementById(`mario${currentImage}`);
+            img.style.visibility = 'visible';
+            currentImage++;
+            setTimeout(revealImage, revealTime);
+        } else {
+            setTimeout(() => {
+                for (let i = 1; i <= totalImages; i++) {
+                    document.getElementById(`mario${i}`).style.visibility = 'hidden';
+                }
+            }, displayTime);
+        }
+    };
+
+    revealImage();
+}
