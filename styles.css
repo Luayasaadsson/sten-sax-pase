@@ -216,6 +216,7 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 opacity: 0;
+cursor: pointer;
 }
 
 .go {
@@ -966,6 +967,17 @@ height: 50px;
 
 MINDRE DEVAJSES>>>>>>>  */
   
+
+
+#mario {
+  position: absolute;
+  margin-top: 170px;
+}
+
+#mario img {
+  width: 80px;
+}
+
 @media (max-width: 750px ) {
 html { 
   margin-top: 50px;

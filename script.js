@@ -416,3 +416,10 @@ document.getElementById('resetButton').addEventListener('click', function() {
         this.disabled = false;
     }, 500); // 2000 milliseconds = 2 seconds
 });
+
+
+document.getElementById('mario').addEventListener('click', function(event) {
+    event.preventDefault();
+    const marioSound = document.getElementById('marioSound')
+    marioSound.play()
+})
