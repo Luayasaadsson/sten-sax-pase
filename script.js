@@ -432,8 +432,11 @@ window.addEventListener('load', UfoFunktion); */
 function endGame(loser) {
     visaUfo();
     alert("Game Over! " + loser + " lost.");
+    
+    setTimeout(() => {
+        resetGame();
     }, 100);
-    resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs
+ // Återställer spelet automatiskt efter att alert-rutan stängs
 }
 
 document.getElementById('väljMusik').addEventListener('change', function(e) {
