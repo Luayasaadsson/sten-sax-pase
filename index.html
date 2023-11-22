@@ -12,7 +12,10 @@
 </head>
 
 <body>
-<!--     <audio id="resetSound" src="sounds/reset.mp3"></audio> -->
+    <audio id="gtaDeath" src="sounds/gtadeath.mp3"></audio>
+    <audio id="gameOverVoice" src="sounds/gameoverVoice.mp3"></audio>
+    <audio id="gameOverSound" src="music/gameover.mp3"></audio>
+    <audio id="resetSound" src="sounds/reset.mp3"></audio>
     <audio id="switchSound" src="sounds/SWITCH.mp3"></audio>
     <audio id="expSound" src="music/exp.mp3"></audio>
     <audio id="swishSound" src="music/swish.mp3"></audio>
@@ -98,9 +101,9 @@
     
 
     <h1 class="h1flicker">Rock Paper Scissors</h1>
-     <div class="animated-background"></div>
+     <div class="animated-background" id="animated-background"></div>
 
-    <div class="ring">
+    <div class="ring" id="ring">
        
         <img src=/images/ring.png alt="">
     </div>
@@ -169,7 +172,8 @@
     </video>
     
     
-
+<div  id="gameover"></div>
+<div  id="pressreset"></div>
 <div  id="result"></div>
 <div class="score-board">
     <span id="win.score">Wins: 
