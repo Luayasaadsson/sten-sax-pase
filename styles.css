@@ -1339,11 +1339,16 @@ opacity: 0;
 }}
 
 .ufot {
+  position: relative;
+  top: 250px;
+  z-index: 30;
   Display: none;
   height: 20%;
   width: 20%;
   object-fit: cover;
   animation: skuttande 5s linear infinite;
+  
+
 }
 
 .ufot:hover{
