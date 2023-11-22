@@ -19,6 +19,8 @@ function döljUfo(){
     let ufoSound = document.getElementById("ufoSound");
     ufoSound.pause();
     ufoSound.currentTime = 0; 
+    let winLifeSound = document.getElementById("winLife");
+    winLifeSound.play();
 
 
 }
