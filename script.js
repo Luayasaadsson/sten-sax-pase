@@ -16,13 +16,14 @@ function visaUfo(){
    
 function döljUfo(){
     document.querySelector('.ufot').style.display = 'none';
-    let ufoSound2 = document.getElementById("ufoSound");
-    ufoSound2.paus();
+    let ufoSound = document.getElementById("ufoSound");
+    ufoSound.pause();
+    ufoSound.currentTime = 0; 
 
 
 }
 
-setInterval(visaUfo, 10000);
+setInterval(visaUfo, 20000);
 
 
 function hideAllHands() {
