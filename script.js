@@ -6,17 +6,24 @@ let isGameStarted = false;
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 
 function visaUfo(){
+        let ufoSound = document.getElementById("ufoSound");
+        ufoSound.play();
         let ufoElement = document.querySelector('.ufot');
         ufoElement.style.display = 'block';
-        /* document.querySelector('.ufot').style.display = 'block'; */
         ufoElement.onclick = döljUfo;
 
 }
    
 function döljUfo(){
     document.querySelector('.ufot').style.display = 'none';
+    let ufoSound2 = document.getElementById("ufoSound");
+    ufoSound2.paus();
+
 
 }
+
+setInterval(visaUfo, 10000);
+
 
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
