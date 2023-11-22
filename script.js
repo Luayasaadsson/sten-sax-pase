@@ -1,4 +1,23 @@
+// Definerar här en global variabel för att spara om användaren startar spelet genom att börja trycka på joysticken för att välja en hand.
+let isGameStarted = false;
+
+
+
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
+
+function visaUfo(){
+        let ufoElement = document.querySelector('.ufot');
+        ufoElement.style.display = 'block';
+        /* document.querySelector('.ufot').style.display = 'block'; */
+        ufoElement.onclick = döljUfo;
+
+}
+   
+function döljUfo(){
+    document.querySelector('.ufot').style.display = 'none';
+
+}
+
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
     document.querySelector('.scissor').style.display = 'none';
@@ -23,6 +42,7 @@ let losses = { score: 0 };
 let draw = { score: 0 };
 
 
+
 //Byter värde mellan på en knapp som sitter på joysticken. Som då byter mellan de olika händerna
 function joystickChange() {
     let switchSound = document.getElementById('button3')
@@ -43,6 +63,16 @@ function joystickChange() {
     } else if (joystick === 2) {
         document.querySelector('.stone').style.display = 'block';
     }
+
+    // Om spelet inte startas genom att först trycka på joysticken, då körs den här koden.
+    if (!isGameStarted) {
+        startGame();
+    }
+}
+
+// Ny funktion som kör spelet ifall användaren börjar med att välja hand genom att trycka på joysticken.
+function startGame() {
+    isGameStarted = true;
 }
 
 
@@ -83,6 +113,12 @@ function updateScoreElement() {
 
 //Animationen för händerna när man trycker GO (EXPLOSION OCH GREJER)
 function animation() {
+
+    // Den här if-satsen ser till att spelets animation inte går igång ifall användaren inte interagerar med joysticken först.
+    if (!isGameStarted) {
+        alert("Please start the game using the joystick!")
+        return;
+}
     let handAnimation = document.getElementById('hands');
     let choicesAnimation = document.getElementById('choices');
     let explosionAnimation = document.getElementById('explosion');
@@ -118,7 +154,7 @@ function animation() {
         handAnimation.style.zIndex = '-10';
         choicesAnimation.style.display = 'block';
         choicesAnimation.style.zIndex = '10';
-        console.log('z-index changed back to -10');
+        //console.log('z-index changed back to -10');
 
 
         // Show explosion animation
@@ -129,7 +165,7 @@ function animation() {
         screenborder.style.zIndex = '-10';
         
 
-        console.log("KABOOOM");
+        //console.log("KABOOOM");
 
         // After the explosion animation, fade in the choices
         setTimeout(function() {
@@ -146,6 +182,8 @@ function animation() {
     }, 800); // 800 milliseconds = 0.8 seconds
 }
 
+
+
 function spel () {
 
     let robot;
@@ -155,7 +193,7 @@ function spel () {
     } else {
         robot = Math.floor(Math.random() * 3);
     }
-    console.log(robot)
+    //console.log(robot)
 
    /*  let result = '';
 
@@ -174,30 +212,43 @@ function spel () {
         robotHand (robot)
     } */
 
+    
+
     if (joystick === robot) {
         updateScore('draw.score');
-        console.log("draw");
+        //console.log("draw");
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/draw2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let drawSound = document.getElementById("drawSound");
-        drawSound.play();
+        setTimeout(function(){drawSound.play();}, 300);
     } else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
-        console.log("win");
+        //console.log("win");
+        document.getElementById("goButton").disabled = true;
         updateScore('win.score');
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/win2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let winSound = document.getElementById("winSound");
-        winSound.play();
-        updateLifebar('robot', 1); // Minskar robotens liv med 1
+        setTimeout(function(){winSound.play();}, 300);
+        let winLifeSound = document.getElementById("winLife");
+        setTimeout(function(){winLifeSound.play();}, 2000);
+        setTimeout(function(){updateLifebar('robot', 1);
+    }, 2000); // Minskar robotens liv med 1
     } else {
-        console.log("lose");
+        document.getElementById("goButton").disabled = true;
+        //console.log("lose");
         updateScore('losses.score');
+        console.log(updateScore)
         result = 'You lose!';
         robotHand(robot)
         document.getElementById('result').innerHTML = "<img src='/images/lose2.png'>"; //<<<SKRIVER UT RESULTAT PÅ SKÄRMEN
         let loseSound = document.getElementById("loseSound");
-        loseSound.play();
-        updateLifebar('human', 1); // Minskar humans liv med 1
+        setTimeout(function(){loseSound.play();}, 300);
+        let loseLifeSound = document.getElementById("loseLife");
+        setTimeout(function(){loseLifeSound.play();}, 2000);
+        setTimeout(function(){updateLifebar('human', 1);
+    
+    }, 2000); // Minskar humans liv med 1
+        
     }
     
     let resultElement = document.getElementById('result');
@@ -215,6 +266,7 @@ function spel () {
 
 function updateScore(scoreId) {
     const scoreElement = document.getElementById(scoreId);
+    //console.log(scoreElement)
     let currentScore = parseInt(scoreElement.textContent.split(" ")[1]);
     if (isNaN(currentScore)) {
         currentScore = 0; // Om det inte är ett numeriskt värde, sätt det till 0
@@ -284,6 +336,35 @@ function checkGameOver() {
     }
 }
 
+// Denna funtion kör videon när human vinner.
+function playWinnerVideo() {
+    let video = document.getElementById('winnerVideo');
+    video.style.display = 'block';
+    video.play();
+}
+
+// Hämtar vinnarvideon och kör en funktion som stoppar videon.
+document.getElementById('winnerVideo').addEventListener('ended', function() {
+    this.style.display = 'none'; 
+    this.pause(); 
+    this.currentTime = 0; 
+});
+
+// Denna funktion kör videon när human förlorar.
+function loserVideo() {
+    let video = document.getElementById('loserVideo');
+    video.style.display = 'block';
+    video.play();
+}
+
+// Hämtar vinnarvideon och kör en funktion som stoppar videon.
+document.getElementById('loserVideo').addEventListener('ended', function() {
+    this.style.display = 'none';
+    this.pause();
+    this.currentTime = 0;
+});
+
+
 // Lägger min lyssnare utanför min resetGame funktion så att användaren kan välja att återställa spelet när som helst.
 document.getElementById('resetButton').addEventListener('click', resetGame);
 
@@ -296,30 +377,157 @@ function resetGame() {
     let lifeItems = document.querySelectorAll('.life-item');
     lifeItems.forEach(function (item) {
         item.style.backgroundColor = ''; // Återställ bakgrundsfärgen
-    });
-    let flashOverlay = document.getElementById('flash-overlay');
+    });        
+    //Ljud
+    let gameOverSound = document.getElementById("gameOverSound")
+    gameOverSound.pause() //Stänger av eventuellt överlappande ljud efter man fått Game over
     let resetSound = document.getElementById("button1");
     resetSound.play();
+   audioPlayer.play(); //Återupptar musiken efter game over
 
-    // Check if flashOverlay exists
-    if (flashOverlay) {
-        // Make the overlay visible
-        flashOverlay.style.opacity = '1';
+      //Animation
+    let flashOverlay = document.getElementById('flash-overlay');
+    let mainElement = document.querySelector('main'); 
+    mainElement.classList.remove('grayscale'); //Tar bort gråfilter från main (skärmen) i css efter man fått Game Over.
+    let background = document.getElementById("animated-background")
+let ring = document.getElementById("ring")
+background.classList.remove('blur');
+ring.classList.remove('blur'); //Tar bort blur
 
-        // Set a timeout to hide the overlay after a short period
-        setTimeout(function() {
-            flashOverlay.style.opacity = '0';
-        }, 150); // Adjust the time for the length of the flash
-    }
+    //Tar bort game over-texten
+    document.getElementById('gameover').innerHTML = "<img src='/images/gameover2.png'>"; //Visar game over på skärmen
+    let resultElement2 = document.getElementById('gameover');   
+    resultElement2.style.opacity = 0; ///tar bort GAME OVER
+
+    document.getElementById('pressreset').innerHTML = "<img src='/images/pressreset.png'>"; //Visar pressreset på skärmen
+    let resetElement2 = document.getElementById('pressreset');   
+    resetElement2.style.opacity = 0;
+    resetElement2.style.display = "none";
+
+    //Återaktiverar Go-knappen
+    document.getElementById("goButton").disabled = false;
+
+// Check if flashOverlay exists
+if (flashOverlay) {
+    // Make the overlay visible
+    flashOverlay.style.opacity = '1';
+
+    // Set a timeout to hide the overlay after a short period
+    setTimeout(function() {
+        flashOverlay.style.opacity = '0';
+    }, 150); // Adjust the time for the length of the flash
+}
+    // Här anropar jag min variabel för att se till att det inte går att köra spelet när användaren trycker på reset knappen. Återigen användaren måste interagera med joysticken först för att kunna fortsätta. 
+    isGameStarted = false;
+
+
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
         hideAllHands();
 }
 
+let resetElement = document.getElementById('pressreset'); 
+/* function updateLosses() {
+    losses.score++; // Anta att detta är hur du uppdaterar antalet förluster
+    // Kalla på UfoFunktion varje gång förlustantalet uppdateras
+    UfoFunktion();
+} */
+
+
+/* document.addEventListener('DOMContentLoaded', (event) => {
+   
+document.querySelector('ufo').addEventListener('click', onUfoClick);
+
+});
+
+function onUfoClick() {
+        //resetGame();
+        console.log("UFO clicked!")
+}; 
+
+window.addEventListener('load', UfoFunktion); */
+
+
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
-    alert("Game Over! " + loser + " lost.");
-    resetGame(); // Återställer spelet automatiskt efter att alert-rutan stängs
-}
+        if (loser === 'Human') {
+    
+
+    document.getElementById("goButton").disabled = true;
+
+    //Animation
+    
+        //Flash
+        let flashOverlay = document.getElementById("flash-overlay")
+        if (flashOverlay) {
+            flashOverlay.style.opacity = '1';
+            setTimeout(function() {
+                flashOverlay.style.opacity = '0';
+            }, 150); //Vit flash
+        }
+
+        //Gråfilter/Blur
+        let mainElement = document.querySelector('main'); //Lägger till gråfilter till main (skärmen) i css
+        mainElement.classList.add('grayscale'); //Gör skärmen grå
+        let background = document.getElementById("animated-background")
+        let ring = document.getElementById("ring")//Lögger på blur
+        background.classList.add('blur');//Lögger på blur
+        ring.classList.add('blur'); //Lögger på blur
+        /* ring.style.marginTop = "-98%" //zoomar ut lite för extra GTA-ig effekt som inte fungerar ejengklieng */
+
+        //Darkness filter
+        let darkAnimation = document.getElementById('dark-overlay');
+        // Start dark animation with ease-in
+        darkAnimation.style.transition = 'opacity 0.8s';
+        darkAnimation.style.opacity = '0.6';
+        // Flash dark animation for 1 second then step out instantly
+        setTimeout(async function() {
+            darkAnimation.style.transition = '5s';
+            darkAnimation.style.opacity = '0';
+        }, 500);
+
+        //Ljud
+        audioPlayer.pause()
+        let gtaDeathSound = document.getElementById("gtaDeath") //Gameover-ljudeffekt
+        let gameOverSound = document.getElementById("gameOverSound") //Gameover-låt
+        let gameOverVoice = document.getElementById("gameOverVoice") //Gameover-röst
+        gtaDeathSound.play()   
+
+        //Allt som händer efter flash/grå
+        setTimeout(function() { 
+            
+            //Ljud
+            gameOverVoice.play()
+            gameOverSound.play()
+            gameOverSound.currentTime = 0; //Gör att ljudet spelas från början varje gång man får Game over och inte börjar mitt i från där det pausades.
+            audioPlayer.currentTime = 0; 
+            
+            //Animation
+
+            document.getElementById('gameover').innerHTML = "<img src='/images/gameover2.png'>"; //Visar game over på skärmen
+            let resultElement2 = document.getElementById('gameover');   
+            resultElement2.style.opacity = 1; ///SKRIVER GAME OVER
+    
+            setTimeout(function() { //Väntar tills press reset-animationen börjar
+            
+            //Animation
+                document.getElementById('pressreset').innerHTML = "<img src='/images/reset.png'>"; //Visar pressreset på skärmen
+                let resetElement2 = document.getElementById('pressreset');   
+                resetElement2.style.opacity = 1; ///SKRIVER reset
+                resetElement2.style.display = "block";
+                resetElement2.style.animation = 'none';
+                void resetElement2.offsetWidth; 
+                resetElement2.style.animation = 'pressreset1 2s infinite'; ///SKRIVER UT reset
+
+            }, 1000); //Delay för hjärnan om man har damp
+    
+        }, 1500); //Väntar på att tidigare animationer och ljud slutar innan Game over-animationerna börjar.
+    
+        } else {
+            alert("You win! ");
+        }
+    } 
+
+
 
 document.getElementById('väljMusik').addEventListener('change', function(e) {
     let audioPlayer = document.getElementById('audioPlayer');
@@ -327,15 +535,14 @@ document.getElementById('väljMusik').addEventListener('change', function(e) {
     audioPlayer.play();
 });
 
-
 //DELAY FÖR KNAPPAR SÅ INTE ANIMATIONER / LJUD BREAKAR:
 //GO-BTN:
 document.getElementById('goButton').addEventListener('click', function() {
     this.disabled = true;
-
+audioPlayer.play()
     setTimeout(() => {
         this.disabled = false;
-    }, 3300);
+    }, 4200);
 });
 
 //SPAKENN
@@ -354,3 +561,39 @@ document.getElementById('resetButton').addEventListener('click', function() {
         this.disabled = false;
     }, 500); // 2000 milliseconds = 2 seconds
 });
+
+
+document.getElementById('mario').addEventListener('click', function(event) {
+    event.preventDefault();
+    const marioSound = document.getElementById('marioSound')
+    marioSound.play()
+
+    revealMario()
+})
+
+function revealMario() {
+    let currentImage = 1;
+    const totalImages = 15;
+    const revealTime = 100;
+    const displayTime = 5000;
+
+    const revealImage = () => {
+        if (currentImage <= totalImages) {
+            const bigMario = document.getElementById('bigMario')
+            const img = document.getElementById(`mario${currentImage}`);
+            bigMario.style.display = 'block'
+            img.style.visibility = 'visible';
+            currentImage++;
+            setTimeout(revealImage, revealTime);
+        } else {
+            setTimeout(() => {
+                for (let i = 1; i <= totalImages; i++) {
+                    document.getElementById(`mario${i}`).style.visibility = 'hidden';
+                    bigMario.style.display = 'none'
+                }
+            }, displayTime);
+        }
+    };
+
+    revealImage();
+}

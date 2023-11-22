@@ -1,3 +1,5 @@
+
+
 function markeraHuman(selectedImage){
     document.querySelectorAll('.character-container img').forEach(img => {
         img.classList.remove('eldEffektHuman');
@@ -14,3 +16,5 @@ function markeraRobot(selectedImage){
 
 selectedImage.classList.add('eldEffektRobot');
 }
+
+

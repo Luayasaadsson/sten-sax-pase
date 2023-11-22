@@ -8,9 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <audio id="gtaDeath" src="sounds/gtadeath.mp3"></audio>
+    <audio id="gameOverVoice" src="sounds/gameoverVoice.mp3"></audio>
+    <audio id="gameOverSound" src="music/gameover.mp3"></audio>
     <audio id="resetSound" src="sounds/reset.mp3"></audio>
     <audio id="switchSound" src="sounds/SWITCH.mp3"></audio>
     <audio id="expSound" src="music/exp.mp3"></audio>
@@ -22,6 +26,8 @@
     <audio id="winSound" src="sounds/youwin.mp3"></audio>
     <audio id="loseSound" src="sounds/youlose.mp3"></audio>
     <audio id="drawSound" src="sounds/draw.mp3"></audio>
+    <audio id="loseLife" src="/sounds/loser.wav"></audio>
+    <audio id="winLife" src="/sounds/winner.wav"></audio>
     <div class="arkad">
         <img src="images/arkad.png" alt="">
     </div>
@@ -47,17 +53,23 @@
     <div id="flash-overlay"></div>
     <div id="dark-overlay"></div>
     <div class="screen">
+       
       <img src="images/screen3.png" id="screenborder" alt="">
         <div class="life-bars-block">
             <div class="nameblock">
             
                 <span id="user" class="text-left">
-                    Player 1
+                    Player
                 </span>
                 <span id="robot" class="text-right">
                     Robot
                 </span>
             </div>
+
+            <div>
+                <img id="ufo" class="ufot" src="/images/ufo.png" alt="">
+            </div>
+           
     
             <div class="life-bar-container"> 
                 <img id="avatarBild" src="" class="img1"/>
@@ -80,20 +92,39 @@
                 <div class="life-item">
                 </div>
             </div>
+
             <img id="avatarRobotBild" src="" class="img2"/>
+            
         </div>
         </div>
     </div>
+    
 
     <h1 class="h1flicker">Rock Paper Scissors</h1>
-     <div class="animated-background"></div>
+     <div class="animated-background" id="animated-background"></div>
 
-    <div class="ring">
+    <div class="ring" id="ring">
        
         <img src=/images/ring.png alt="">
     </div>
 
-
+    <div id="bigMario">
+        <img id="mario1" src="/images/bigMario.png" alt="">
+        <img id="mario2" src="/images/bigMario.png" alt="">
+        <img id="mario3" src="/images/bigMario.png" alt="">
+        <img id="mario4" src="/images/bigMario.png" alt="">
+        <img id="mario5" src="/images/bigMario.png" alt="">
+        <img id="mario6" src="/images/bigMario.png" alt="">
+        <img id="mario7" src="/images/bigMario.png" alt="">
+        <img id="mario8" src="/images/bigMario.png" alt="">
+        <img id="mario9" src="/images/bigMario.png" alt="">
+        <img id="mario10" src="/images/bigMario.png" alt="">
+        <img id="mario11" src="/images/bigMario.png" alt="">
+        <img id="mario12" src="/images/bigMario.png" alt="">
+        <img id="mario13" src="/images/bigMario.png" alt="">
+        <img id="mario14" src="/images/bigMario.png" alt="">
+        <img id="mario15" src="/images/bigMario.png" alt="">
+    </div>
 
 
 <div class="choices" id="choices">
@@ -132,8 +163,17 @@
     </div>
 
 
+    <video id="winnerVideo" width="1050" height="800" style="display:none;">
+        <source src="videos/dancingboy.mp4" type="video/mp4">
+    </video>
 
-
+    <video id="loserVideo" width="1500" height="600" style="display:none;">
+        <source src="videos/mancry.mp4" type="video/mp4">
+    </video>
+    
+    
+<div  id="gameover"></div>
+<div  id="pressreset"></div>
 <div  id="result"></div>
 <div class="score-board">
     <span id="win.score">Wins: 
@@ -197,12 +237,18 @@
         </div>
         <audio id="fuskLjud" src="/music/duck.wav" preload="auto"></audio>
 
-        
+    <div id="mario">
+        <a href="#">
+        <img src="/images/mario.png" alt="">
+        </a>
+        <audio id="marioSound" src="/sounds/marioSound.mp3"></audio>
+    </div>
 
 </footer>
 
 
-</body>
-<script src="script.js" ></script>
 <script src="sp-script.js" ></script>
+</body>
+
+<!-- <script>window.addEventListener('load', visaUfoFunktion);</script> -->
 </html>

@@ -39,11 +39,17 @@
         </div>
 
 
-        <div>
-            <input id="userNameInput" class="btn-name-user" type="text" placeholder="Enter your name">
-            <input id="robotNameInput" class="btn-name-robot" type="text" placeholder="Enter robot name">
+        <div class="name-buttons">
+            <button type="button" class="playerName-btn">Enter your name</button>
+            <button type="button" class="robotName-btn">Enter robot name</button>
         </div>
 
+        <div class="nav-btns">
+        <div class="back">
+            <a href="#">
+                <button type="submit" id="continueButton" class="back-btn" onclick="prevPage()">Back</button>
+            </a>
+        </div>
         <div class="continue"> 
             <a href="/index.html">
             <button type="submit" id="continueButton" onclick="return sparaFormular(); tryckaknapp();" class="continue-btn">Continue</button>
@@ -51,14 +57,38 @@
         </div>
     </div>
 
+    <div class="popup-windows">
+        <div class="name-popup1 hidden">
+            <h3 class="close-symbol-left">X</h3>
+            <label for="userNameInput">Enter your name</label>
+            <input id="userNameInput" class="btn-name-user" type="text" placeholder="Enter your name">
+            <button type="submit" class="ok-btn1" disabled>OK</button>
+        </div>
+        <div class="name-popup2 hidden">
+            <h3 class="close-symbol-right">X</h3>
+            <label for="robotNameInput">Enter robot name</label>
+            <input id="robotNameInput" class="btn-name-robot" type="text" placeholder="Enter robot name">
+            <button type="submit" class="ok-btn2" disabled>OK</button>
+        </div>
+    </div>
+
+        
+    </div>
+
     <div id="firstPage">
+        <div class="title-container">
         <div class="title">
-            <h1>Welcome to</h1>
+            <h1>Welcome</h1>
+        </div>
+
+        <div class="title1">
+            <h1>to</h1>
         </div>
 
         <div class="title">
             <h2>ROCK PAPER SCISSORS</h2>
         </div>
+    </div>
 
 
         <div id="howToPlayPopUp">
@@ -108,7 +138,7 @@
                     The game will automatically determine the winner based on the classic rules: Rock crushes Scissors, Scissors cuts Paper, and Paper covers Rock.
                     Wins, losses, and draws are tracked and displayed on the screen.
                 </p>
-                </h3>
+                </h3>  
 
                 <h3>
                     Using Special Features
@@ -201,11 +231,13 @@
         </div>
 
         
+        <div class="btn-container">
             <button type="button" class="btn1" onclick="howToPlay()">How to play</button>
             
             <button type="button" class="btn2" onclick="rules()">Rules</button>
         
             <button class="start-button" type="button" onclick="nextPage()">Press start</button>
+        </div>
     </div>
 
 
