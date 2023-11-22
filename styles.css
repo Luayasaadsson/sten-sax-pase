@@ -152,9 +152,10 @@ footer{
 
 #loserVideo {
   position: absolute;
-  top: 150px; 
-  left: -225px;
-  z-index: 1000; /* Ställer in ett högt värde för att placera videon överst */
+  top: -50px; 
+  left: -1200px;
+  width: 220em;
+  z-index: -2; /* Ställer in ett högt värde för att placera videon överst */
   opacity: 0.8;
 }
 

@@ -11,8 +11,8 @@ function visaUfo(){
         ufoSound.play();
         let ufoElement = document.querySelector('.ufot');
         let animatedBackground = document.getElementById('animated-background');
-        animatedBackground.style.animation = "none";
         animatedBackground.style.background = "url(/images/alien.png)";
+        animatedBackground.style.animation = "slideshowPanY 37s infinite";
         ufoElement.style.background = "url(/images/ufo.png)";
         ufoElement.style.backgroundSize = "cover"
         ufoElement.style.height = "100px"
@@ -553,7 +553,9 @@ function endGame(loser) {
                 resetElement2.style.animation = 'none';
                 void resetElement2.offsetWidth; 
                 resetElement2.style.animation = 'pressreset1 2s infinite'; ///SKRIVER UT reset
-
+                setTimeout(function() {
+                    loserVideo() 
+                }, 2500);
             }, 1000); //Delay för hjärnan om man har damp
     
         }, 1500); //Väntar på att tidigare animationer och ljud slutar innan Game over-animationerna börjar.
