@@ -6,27 +6,46 @@ let isGameStarted = false;
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 
 function visaUfo(){
+        audioPlayer.pause();
         let ufoSound = document.getElementById("ufoSound");
         ufoSound.play();
         let ufoElement = document.querySelector('.ufot');
+        let animatedBackground = document.getElementById('animated-background');
+        animatedBackground.style.background = "url(/images/alien.png)";
+        animatedBackground.style.animation = "slideshowPanY 37s infinite";
+        ufoElement.style.background = "url(/images/ufo.png)";
+        ufoElement.style.backgroundSize = "cover"
+        ufoElement.style.height = "100px"
         ufoElement.style.display = 'block';
         ufoElement.onclick = döljUfo;
-
 }
    
 function döljUfo(){
-    document.querySelector('.ufot').style.display = 'none';
-    let ufoSound = document.getElementById("ufoSound");
-    ufoSound.pause();
-    ufoSound.currentTime = 0; 
-    let winLifeSound = document.getElementById("winLife");
-    winLifeSound.play();
-
+    let ufoElement = document.querySelector('.ufot');
+  /*   ufoElement.style.animation = "none"; */
+    ufoElement.style.background = "url(/images/exp2.gif)";
+    ufoElement.style.backgroundSize = "cover"
+    ufoElement.style.height = "200px"
+    let ufoexp = document.getElementById("ufoexp");
+    ufoexp.play()
+    setTimeout(function() {
+        let animatedBackground = document.getElementById('animated-background');
+        animatedBackground.style.animation = "slideshowPanY 37.5s infinite , slideshow 75s infinite";
+        animatedBackground.style.background = "url(/images/level1.jfif)";
+        audioPlayer.play();
+        document.querySelector('.ufot').style.display = 'none';
+        ufoElement.style.background = "url(/images/ufo.png)";
+        ufoElement.style.backgroundSize = "cover"
+        let ufoSound = document.getElementById("ufoSound");
+        ufoSound.pause();
+        ufoSound.currentTime = 0; 
+        let winLifeSound = document.getElementById("winLife");
+        winLifeSound.play();
+    }, 500);
 
 }
 
-setInterval(visaUfo, 20000);
-
+setInterval(visaUfo, 30000);
 
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
@@ -351,6 +370,7 @@ function playWinnerVideo() {
     let video = document.getElementById('winnerVideo');
     video.style.display = 'block';
     video.play();
+    video.currentTime = 0;
 }
 
 // Hämtar vinnarvideon och kör en funktion som stoppar videon.
@@ -387,7 +407,13 @@ function resetGame() {
     let lifeItems = document.querySelectorAll('.life-item');
     lifeItems.forEach(function (item) {
         item.style.backgroundColor = ''; // Återställ bakgrundsfärgen
-    });        
+    });   
+    
+    //Video
+    let video = document.getElementById('winnerVideo');
+    video.style.display = 'none';
+    video.pause()
+
     //Ljud
     let gameOverSound = document.getElementById("gameOverSound")
     gameOverSound.pause() //Stänger av eventuellt överlappande ljud efter man fått Game over
@@ -527,13 +553,16 @@ function endGame(loser) {
                 resetElement2.style.animation = 'none';
                 void resetElement2.offsetWidth; 
                 resetElement2.style.animation = 'pressreset1 2s infinite'; ///SKRIVER UT reset
-
+                setTimeout(function() {
+                    loserVideo() 
+                }, 2500);
             }, 1000); //Delay för hjärnan om man har damp
     
         }, 1500); //Väntar på att tidigare animationer och ljud slutar innan Game over-animationerna börjar.
     
         } else {
-            alert("You win! ");
+            audioPlayer.pause();
+            playWinnerVideo();
         }
     } 
 
@@ -549,7 +578,7 @@ document.getElementById('väljMusik').addEventListener('change', function(e) {
 //GO-BTN:
 document.getElementById('goButton').addEventListener('click', function() {
     this.disabled = true;
-audioPlayer.play()
+/* audioPlayer.play() */
     setTimeout(() => {
         this.disabled = false;
     }, 4200);
