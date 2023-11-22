@@ -508,3 +508,14 @@ function revealMario() {
 
     revealImage();
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const image = document.querySelector(".go-text img")
+    setInterval(() => {
+        image.src = "/images/go-2.png"
+
+        setTimeout(() => {
+            image.src = "/images/go-1.png"
+        }, 100);
+    }, 7000);
+})
