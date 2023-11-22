@@ -1339,15 +1339,16 @@ opacity: 0;
 }}
 
 .ufot {
-  position: relative;
-  top: 250px;
+  background: url(/images/ufo.png);
+  background-size: cover;
+  position: absolute;
+  margin-top: 250px;
   z-index: 30;
   Display: none;
-  height: 20%;
-  width: 20%;
-  object-fit: cover;
+  height: 100px;
+  width: 200px;
   animation: skuttande 5s linear infinite;
-  
+
 
 }
 
@@ -1355,6 +1356,31 @@ opacity: 0;
 cursor: crosshair;
 }
 
+
+@keyframes skuttande {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  5% { transform: translateX(90px) translateY(-200px); }
+  10% { transform: translateX(180px) translateY(0); }
+  15% { transform: translateX(270px) translateY(-100px); }
+  20% { transform: translateX(360px) translateY(0); }
+  25% { transform: translateX(450px) translateY(200px); }
+  30% { transform: translateX(540px) translateY(0); }
+  35% { transform: translateX(630px) translateY(100px); }
+  40% { transform: translateX(720px) translateY(0); }
+  45% { transform: translateX(810px) translateY(250px); }
+  50% { transform: translateX(900px) translateY(0); }
+  55% { transform: translateX(810px) translateY(150px); }
+  60% { transform: translateX(720px) translateY(0); }
+  65% { transform: translateX(630px) translateY(200px); }
+  70% { transform: translateX(540px) translateY(0); }
+  75% { transform: translateX(450px) translateY(200px); }
+  80% { transform: translateX(360px) translateY(0); }
+  85% { transform: translateX(270px) translateY(100px); }
+  90% { transform: translateX(180px) translateY(0); }
+  95% { transform: translateX(90px) translateY(300px); }
+}
+
+/* 
 @keyframes skuttande {
   0%, 100% { transform: translateX(0%) translateY(0); }
   5% { transform: translateX(20px) translateY(-20px); }
@@ -1378,3 +1404,4 @@ cursor: crosshair;
   95% { transform: translateX(10%) translateY(-20px); }
 }
 
+ */
