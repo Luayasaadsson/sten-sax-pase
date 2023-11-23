@@ -99,6 +99,7 @@ function visaSparadRobotAvatar() {
 
 
 
+
 window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
@@ -154,6 +155,7 @@ const okBtn1 = document.querySelector(".ok-btn1");
 const okBtn2 = document.querySelector(".ok-btn2");
 const input1 = document.querySelector("#userNameInput");
 const input2 = document.querySelector("#robotNameInput");
+const contBtn = document.querySelector("#continueButton");
 
 //Tar bort klassen "hidden" och fönstret syns
 pName.addEventListener("click", ()=> {
@@ -194,11 +196,24 @@ input2.addEventListener('input', function () {
     if (input2.value.trim() !== '') {
         
         okBtn2.removeAttribute('disabled');
+
     } else {
         
         okBtn2.setAttribute('disabled', 'disabled');
     }
 });
+
+function checkInputs() {
+    // om båda input har textinnehåll då aktiveras knappen "continue"
+    if (input1.value.trim() !== '' && input2.value.trim() !== '') {
+      contBtn.removeAttribute('disabled');
+    } else {
+      // annars deaktiveras knappen
+      contBtn.setAttribute('disabled', 'true');
+    }
+  }
+  input1.addEventListener('input', checkInputs);
+    input2.addEventListener('input', checkInputs);
 
 
 
