@@ -520,6 +520,9 @@ justify-content: space-around;
   .continue {
     margin-right: 250px;
   }
+  #continueButton:disabled {
+    background-color: #464646;
+  }
 
 
   @media (max-width: 1024px ) {
