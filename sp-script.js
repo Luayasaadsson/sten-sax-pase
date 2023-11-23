@@ -227,6 +227,34 @@ input2.addEventListener('input', function () {
     }
 });
 
+// Funktionen ger möjligheten att interagera med 'OK' knappen genom ENTER-knappen.
+function onOkButtonPressed(buttonId) {
+    if (buttonId === 'okBtn1') {
+      // Hanterar åtgärder för första OK-knappen
+      playerNamePopup.classList.add("hidden");
+    } else if (buttonId === 'okBtn2') {
+      // Hanterar åtgärder för andra OK-knappen
+      robotNamePopup.classList.add("hidden");
+    }
+  }
+
+  // En lyssnare som triggas när användaren trycker ENTER-knappen.
+  input1.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !okBtn1.disabled) {
+        onOkButtonPressed('okBtn1');
+    }
+});
+
+  // En lyssnare som triggas när användaren trycker ENTER-knappen.
+input2.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !okBtn2.disabled) {
+        onOkButtonPressed('okBtn2');
+    }
+});
+
+
+  
+
 
 
 
