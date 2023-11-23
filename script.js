@@ -1,11 +1,13 @@
 // Definerar här en global variabel för att spara om användaren startar spelet genom att börja trycka på joysticken för att välja en hand.
 let isGameStarted = false;
+let endGameAnimation = false
 
 
 
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 
 function visaUfo(){
+    if (endGameAnimation === false) {
         audioPlayer.pause();
         let ufoSound = document.getElementById("ufoSound");
         ufoSound.play();
@@ -18,6 +20,8 @@ function visaUfo(){
         ufoElement.style.height = "100px"
         ufoElement.style.display = 'block';
         ufoElement.onclick = döljUfo;
+    }
+        
 }
    
 function döljUfo(){
@@ -422,6 +426,7 @@ function resetGame() {
    audioPlayer.play(); //Återupptar musiken efter game over
 
       //Animation
+      endGameAnimation = false;
     let flashOverlay = document.getElementById('flash-overlay');
     let mainElement = document.querySelector('main'); 
     mainElement.classList.remove('grayscale'); //Tar bort gråfilter från main (skärmen) i css efter man fått Game Over.
@@ -489,6 +494,7 @@ function endGame(loser) {
     
 
     document.getElementById("goButton").disabled = true;
+    endGameAnimation = true
 
     //Animation
     
@@ -558,6 +564,7 @@ function endGame(loser) {
         }, 1500); //Väntar på att tidigare animationer och ljud slutar innan Game over-animationerna börjar.
     
         } else {
+            endGameAnimation = true
             audioPlayer.pause();
             playWinnerVideo();
         }
