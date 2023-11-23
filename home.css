@@ -177,10 +177,14 @@ body {
   transform: translateY(-5px);
 }*/
 
-/*.character-container {
-  position: relative;
+.character-container {
+  background-size: cover;
 
-}*/
+}
+
+#demon{
+  height: 98px;
+}
 
 .img {
   display: flex;
@@ -189,6 +193,7 @@ body {
   margin-top: 20px;
   border: 2px solid red;
   box-shadow: 5px 5px 2px rgb(41, 41, 41);
+  min-height: 90px;
 }
 
 .img:hover {

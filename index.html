@@ -30,7 +30,7 @@
     <audio id="drawSound" src="sounds/draw.mp3"></audio>
     <audio id="loseLife" src="/sounds/loser.wav"></audio>
     <audio id="winLife" src="/sounds/winnerNy.wav"></audio>
-    <audio id="ufoSound" src="/sounds/UFO1.wav"></audio>
+    <audio id="ufoSound" src="/sounds/UFO1.wav" loop></audio>
     <div class="arkad">
         <img src="images/arkad.png" alt="">
     </div>
@@ -231,6 +231,8 @@
        <audio id="audioPlayer" controls>
         <source src="/music/Level-1_MonoBit.wav" type="audio/mpeg">
       </audio>
+      <br>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.7">
 
         <!-- Här manipulerar jag spelet genom att lägga till en fusk kod för att vinna varje runda -->
         <div class="fusk" id="fuskIndikator" style="display: none;">
