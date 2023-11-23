@@ -1,9 +1,17 @@
 
+let humanAvatarChosen = false;
+let robotAvatarChosen = false;
 
 // Sparar ner namnen till huvudsidan
 function sparaFormular(){ // Funktionen triggas av knappen Continue från secong page
     let humanName = document.getElementById('userNameInput').value;
     let robotName = document.getElementById('robotNameInput').value;
+
+    if (!humanAvatarChosen || !robotAvatarChosen) {
+        alert("Please select characters.");
+        return false;
+    }
+
 
 localStorage.setItem('mittHumanName', humanName);
 localStorage.setItem('mittRobotName', robotName);
@@ -48,6 +56,7 @@ function sparaAvatar() {
             if (element) {
             element.addEventListener('click', function() {
             localStorage.setItem('sparadAvatar', this.src);
+            humanAvatarChosen = true;
             });
         }
     });
@@ -81,6 +90,7 @@ function sparaRobotAvatar() {
             if (element) {
             element.addEventListener('click', function() {
             localStorage.setItem('sparadRobotAvatar', this.src);
+            robotAvatarChosen = true;
             });
         }
     });

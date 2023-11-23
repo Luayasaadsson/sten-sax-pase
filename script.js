@@ -6,7 +6,7 @@ let endGameAnimation = false
 
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 
-function visaUfo(){
+/* function visaUfo(){
     if (endGameAnimation === false) {
         audioPlayer.pause();
         let ufoSound = document.getElementById("ufoSound");
@@ -22,12 +22,12 @@ function visaUfo(){
         ufoElement.onclick = döljUfo;
     }
         
-}
+} */
    
-function döljUfo(){
-    let ufoElement = document.querySelector('.ufot');
+/* function döljUfo(){
+    let ufoElement = document.querySelector('.ufot'); */
   /*   ufoElement.style.animation = "none"; */
-    ufoElement.style.background = "url(/images/exp2.gif)";
+   /*  ufoElement.style.background = "url(/images/exp2.gif)";
     ufoElement.style.backgroundSize = "cover"
     ufoElement.style.height = "200px"
     let ufoexp = document.getElementById("ufoexp");
@@ -48,8 +48,8 @@ function döljUfo(){
     }, 500);
 
 }
-
-setInterval(visaUfo, 30000);
+ */
+/* setInterval(visaUfo, 30000); */
 
 function hideAllHands() {
     document.querySelector('.bag').style.display = 'none';
@@ -364,6 +364,7 @@ function checkGameOver() {
 
     if (humanLivesLost === totalLives || robotLivesLost === totalLives) {
         stopExplosion(); // Stoppar explosionen
+        
         let loser = humanLivesLost === totalLives ? 'Human' : 'Robot';
         setTimeout(function() { endGame(loser); }, 500); // Genom denna funktion skickar jag förlorarens namn till endGame.
     }
@@ -423,7 +424,7 @@ function resetGame() {
     gameOverSound.pause() //Stänger av eventuellt överlappande ljud efter man fått Game over
     let resetSound = document.getElementById("button1");
     resetSound.play();
-   audioPlayer.play(); //Återupptar musiken efter game over
+ /*   audioPlayer.play(); //Återupptar musiken efter game over */
 
       //Animation
       endGameAnimation = false;

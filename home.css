@@ -15,7 +15,6 @@ body {
   place-items: center;
   height: 30vh;
   margin-top: 40px;
-  
 }
 
 @font-face {
@@ -28,7 +27,7 @@ body {
   width: 90%;
   background-color: antiquewhite;
   margin: 0 auto;
-  padding: 50px;
+  padding: 5px;
   background-color: rgba(107, 107, 153, 0.8);
   border: 5px solid #222334;
  
@@ -59,6 +58,34 @@ body {
 .left-section p, .right-section p {
   display: flex;
   justify-content: center;
+}
+
+.human-character {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: rgb(244, 55, 22);
+  font-family: 'MKtitle';
+  font-size: 1.5rem;
+  border-radius: 50px;
+}
+
+.robot-character {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: rgb(244, 55, 22);
+  font-family: 'MKtitle';
+  font-size: 1.5rem;
+  border-radius: 50px;
+}
+
+.human-character:hover, .robot-character:hover {
+  background-color: #76c1d4;
+  transition: background-color 0.3s ease-out;
+  transition: transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
 
@@ -121,6 +148,7 @@ body {
   font-family: 'MKtitle';
   border-radius: 40px;
   color: white;
+  margin-top: -25px;
 }
 .ok-btn1, .ok-btn2 {
   background-color: rgb(244, 55, 22);
