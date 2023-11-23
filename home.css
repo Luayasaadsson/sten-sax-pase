@@ -25,6 +25,8 @@ body {
 
 .container {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 90%;
   background-color: antiquewhite;
   margin: 0 auto;
@@ -53,7 +55,6 @@ body {
   flex: 1; 
   padding: 0;
   margin: 0;
-
 }  
 
 .left-section p, .right-section p {
@@ -177,13 +178,29 @@ body {
   transform: translateY(-5px);
 }*/
 
-.character-container {
-  background-size: cover;
+
+
+.character-container, .robot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
+
+
 #demon{
   height: 98px;
+  margin-top: 28px;
+}
+
+#ape{
+  margin-bottom: 8px;
+}
+
+#kenny{
+  height: 93px;
+  margin-bottom: 2px;
 }
 
 .img {
