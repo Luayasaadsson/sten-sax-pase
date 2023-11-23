@@ -1,10 +1,34 @@
-
+let humanAvatarVald = false;
+let robotAvatarVald = false;
 
 // Sparar ner namnen till huvudsidan
 function sparaFormular(){ // Funktionen triggas av knappen Continue från secong page
     let humanName = document.getElementById('userNameInput').value;
     let robotName = document.getElementById('robotNameInput').value;
 
+    if (!humanAvatarVald && !robotAvatarVald) {
+        alert("Please select your character and robot character, then choose names.");
+        return false;
+    }
+
+     // Kontrollerar om endast mänskliganamnet är ifyllt och inte det robot namnet.
+    if (humanName.trim() && !robotName.trim()) {
+        alert("Please start the game by chosing robot name.");
+        return false;
+    }
+
+    // Kontrollerar om endast robot namnet är ifyllt och inte det mänskliga namnet.
+    if (!humanName.trim() && robotName.trim()) {
+        alert("Please start the game by chosing your name.");
+        return false;
+    }
+
+    // Kontrollerar om båda namnen är tomma.
+    if (!humanName.trim() && !robotName.trim()) {
+        alert("Please start the game by chosing your name and robot name.");
+        return false;
+    }
+    
 localStorage.setItem('mittHumanName', humanName);
 localStorage.setItem('mittRobotName', robotName);
 
@@ -48,6 +72,7 @@ function sparaAvatar() {
             if (element) {
             element.addEventListener('click', function() {
             localStorage.setItem('sparadAvatar', this.src);
+            humanAvatarVald = true;
             });
         }
     });
@@ -68,6 +93,7 @@ window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
     visaSparadAvatar();
+    sparaRobotAvatar();
 });
 
 
@@ -81,6 +107,7 @@ function sparaRobotAvatar() {
             if (element) {
             element.addEventListener('click', function() {
             localStorage.setItem('sparadRobotAvatar', this.src);
+            robotAvatarVald = true;
             });
         }
     });
