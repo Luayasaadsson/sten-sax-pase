@@ -142,6 +142,8 @@ function updateScoreElement() {
     document.getElementById('win.score').textContent = "Wins: " + win.score;
     document.getElementById('losses.score').textContent = "Losses: " + losses.score;
     document.getElementById('draw.score').textContent = "Draws: " + draw.score;
+
+    document.getElementById('endGameMessage').style.display = 'none';
 }
 
 //Animationen för händerna när man trycker GO (EXPLOSION OCH GREJER)
@@ -364,7 +366,6 @@ function checkGameOver() {
 
     if (humanLivesLost === totalLives || robotLivesLost === totalLives) {
         stopExplosion(); // Stoppar explosionen
-        
         let loser = humanLivesLost === totalLives ? 'Human' : 'Robot';
         setTimeout(function() { endGame(loser); }, 500); // Genom denna funktion skickar jag förlorarens namn till endGame.
     }
@@ -465,6 +466,8 @@ if (flashOverlay) {
 
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
         hideAllHands();
+
+        document.getElementById('endGameMessage').style.display = 'none';
 }
 
 let resetElement = document.getElementById('pressreset'); 
@@ -491,6 +494,22 @@ window.addEventListener('load', UfoFunktion); */
 
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
+    let endGameMessageElement = document.getElementById('endGameMessage');
+    
+    // Den här if-satsen sköter ett meddelande.
+    if (loser === 'Human') {
+        // Gömmer meddelandet om spelaren förlorar
+        endGameMessageElement.style.display = 'none';
+    } else {
+        // Visar meddelandet om spelaren vinner
+        let message = "Congratz champ, you won! 😁";
+        endGameMessageElement.innerText = message;
+        endGameMessageElement.style.display = 'block';
+
+        // Spelar upp vinnarvideo
+        playWinnerVideo();
+    }
+
         if (loser === 'Human') {
     
 
