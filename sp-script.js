@@ -126,6 +126,7 @@ function visaSparadRobotAvatar() {
 
 
 
+
 window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
     sparaAvatar();
@@ -181,6 +182,7 @@ const okBtn1 = document.querySelector(".ok-btn1");
 const okBtn2 = document.querySelector(".ok-btn2");
 const input1 = document.querySelector("#userNameInput");
 const input2 = document.querySelector("#robotNameInput");
+const contBtn = document.querySelector("#continueButton");
 
 //Tar bort klassen "hidden" och fönstret syns
 pName.addEventListener("click", ()=> {
@@ -221,39 +223,24 @@ input2.addEventListener('input', function () {
     if (input2.value.trim() !== '') {
         
         okBtn2.removeAttribute('disabled');
+
     } else {
         
         okBtn2.setAttribute('disabled', 'disabled');
     }
 });
 
-// Funktionen ger möjligheten att interagera med 'OK' knappen genom ENTER-knappen.
-function onOkButtonPressed(buttonId) {
-    if (buttonId === 'okBtn1') {
-      // Hanterar åtgärder för första OK-knappen
-      playerNamePopup.classList.add("hidden");
-    } else if (buttonId === 'okBtn2') {
-      // Hanterar åtgärder för andra OK-knappen
-      robotNamePopup.classList.add("hidden");
+function checkInputs() {
+    // om båda input har textinnehåll då aktiveras knappen "continue"
+    if (input1.value.trim() !== '' && input2.value.trim() !== '') {
+      contBtn.removeAttribute('disabled');
+    } else {
+      // annars deaktiveras knappen
+      contBtn.setAttribute('disabled', 'true');
     }
   }
-
-  // En lyssnare som triggas när användaren trycker ENTER-knappen.
-  input1.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !okBtn1.disabled) {
-        onOkButtonPressed('okBtn1');
-    }
-});
-
-  // En lyssnare som triggas när användaren trycker ENTER-knappen.
-input2.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !okBtn2.disabled) {
-        onOkButtonPressed('okBtn2');
-    }
-});
-
-
-  
+  input1.addEventListener('input', checkInputs);
+    input2.addEventListener('input', checkInputs);
 
 
 

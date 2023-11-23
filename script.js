@@ -1,11 +1,13 @@
 // Definerar här en global variabel för att spara om användaren startar spelet genom att börja trycka på joysticken för att välja en hand.
 let isGameStarted = false;
+let endGameAnimation = false
 
 
 
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
 
 function visaUfo(){
+    if (endGameAnimation === false) {
         audioPlayer.pause();
         let ufoSound = document.getElementById("ufoSound");
         ufoSound.play();
@@ -13,11 +15,13 @@ function visaUfo(){
         let animatedBackground = document.getElementById('animated-background');
         animatedBackground.style.background = "url(/images/alien.png)";
         animatedBackground.style.animation = "slideshowPanY 37s infinite";
-        ufoElement.style.background = "url(/images/ufo.png)";
+        ufoElement.style.background = "url(/images/ufo2.png)";
         ufoElement.style.backgroundSize = "cover"
         ufoElement.style.height = "100px"
         ufoElement.style.display = 'block';
         ufoElement.onclick = döljUfo;
+    }
+        
 }
    
 function döljUfo(){
@@ -422,6 +426,7 @@ function resetGame() {
    audioPlayer.play(); //Återupptar musiken efter game over
 
       //Animation
+      endGameAnimation = false;
     let flashOverlay = document.getElementById('flash-overlay');
     let mainElement = document.querySelector('main'); 
     mainElement.classList.remove('grayscale'); //Tar bort gråfilter från main (skärmen) i css efter man fått Game Over.
@@ -489,6 +494,7 @@ function endGame(loser) {
     
 
     document.getElementById("goButton").disabled = true;
+    endGameAnimation = true
 
     //Animation
     
@@ -553,14 +559,12 @@ function endGame(loser) {
                 resetElement2.style.animation = 'none';
                 void resetElement2.offsetWidth; 
                 resetElement2.style.animation = 'pressreset1 2s infinite'; ///SKRIVER UT reset
-                setTimeout(function() {
-                    loserVideo() 
-                }, 2500);
             }, 1000); //Delay för hjärnan om man har damp
     
         }, 1500); //Väntar på att tidigare animationer och ljud slutar innan Game over-animationerna börjar.
     
         } else {
+            endGameAnimation = true
             audioPlayer.pause();
             playWinnerVideo();
         }
@@ -573,6 +577,13 @@ document.getElementById('väljMusik').addEventListener('change', function(e) {
     audioPlayer.src = this.value;
     audioPlayer.play();
 });
+
+document.getElementById('volumeControl').addEventListener('input', function(e) {
+    var volume = e.target.value;
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.volume = volume;
+});
+
 
 //DELAY FÖR KNAPPAR SÅ INTE ANIMATIONER / LJUD BREAKAR:
 //GO-BTN:
