@@ -571,6 +571,13 @@ document.getElementById('väljMusik').addEventListener('change', function(e) {
     audioPlayer.play();
 });
 
+document.getElementById('volumeControl').addEventListener('input', function(e) {
+    var volume = e.target.value;
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.volume = volume;
+});
+
+
 //DELAY FÖR KNAPPAR SÅ INTE ANIMATIONER / LJUD BREAKAR:
 //GO-BTN:
 document.getElementById('goButton').addEventListener('click', function() {
