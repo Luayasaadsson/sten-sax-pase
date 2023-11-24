@@ -992,6 +992,10 @@ opacity: 0;
   opacity: 1;
 }
 
+#endGameMessage {
+  margin-top: 70px;
+}
+
 header {
   margin:auto;
   display: none;
@@ -1148,6 +1152,10 @@ header {
 
 .gameboy {
   opacity: 0;
+}
+
+#endGameMessage {
+  margin-top: 80px;
 }
 
 .gameboy img{
