@@ -36,7 +36,6 @@ function döljUfo(){
         let animatedBackground = document.getElementById('animated-background');
         animatedBackground.style.animation = "slideshowPanY 37.5s infinite , slideshow 75s infinite";
         animatedBackground.style.background = "url(/images/level1.jfif)";
-        audioPlayer.play();
         document.querySelector('.ufot').style.display = 'none';
         ufoElement.style.background = "url(/images/ufo.png)";
         ufoElement.style.backgroundSize = "cover"
@@ -45,6 +44,7 @@ function döljUfo(){
         ufoSound.currentTime = 0; 
         let winLifeSound = document.getElementById("winLife");
         winLifeSound.play();
+        if (endGameAnimation === false) {audioPlayer.play(); }
     }, 500);
 
 }
