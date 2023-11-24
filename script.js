@@ -82,19 +82,6 @@ function döljUfo(){
 
 setInterval(visaUfo, 30000);
 
-function hideAllHands() {
-    document.querySelector('.bag').style.display = 'none';
-    document.querySelector('.scissor').style.display = 'none';
-    document.querySelector('.stone').style.display = 'none';
-    document.querySelector('.robot-hand').style.display = 'none';
-    document.querySelector('.robot-hand1').style.display = 'none';
-    document.querySelector('.robot-hand2').style.display = 'none';
-}
-
-// Anropar funktionen när sidan laddas
-hideAllHands();
-
-
 
 let fuskAktiverat = false;
 
@@ -620,7 +607,7 @@ document.getElementById('volumeControl').addEventListener('input', function(e) {
 //GO-BTN:
 document.getElementById('goButton').addEventListener('click', function() {
     this.disabled = true;
-/* audioPlayer.play() */
+audioPlayer.play()
     setTimeout(() => {
         this.disabled = false;
     }, 4200);
