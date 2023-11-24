@@ -100,7 +100,7 @@ overflow: hidden;
   border-radius: 10px;
   width: 150px;
   height: 100px;
-  margin-top: -780px;
+  margin-top: -750px;
   margin-left: 420px;
   color: rgb(248, 238, 239);
   font-size: 30px;
@@ -378,9 +378,27 @@ height: 100%;
     flex-wrap: wrap;
     align-content: center;
     overflow: hidden;
-    margin-top: 5%;
+    margin-top: 60px;
     z-index: -5 ;
     animation: slideshowPanY 37.5s infinite , slideshow 75s infinite ;
+}
+
+
+.animated-background2 {
+  position: absolute;
+    width: 100%;          
+    height: 100%;        
+    background-image: url('/images/alien.png'); 
+    background-repeat: repeat-x;
+    display: flex; 
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    margin-top: -900px;
+    z-index: -4 ;
+    animation: slideshowPanY 37.5s infinite;
+    opacity: 0;
+   transition: 0.5s;
 }
 
 @keyframes slideshow {
