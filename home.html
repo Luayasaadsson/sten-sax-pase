@@ -4,97 +4,27 @@
     <meta charset="UTF-8" />
     <title>RPS or Die!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
     <script src="/sp-script.js" defer></script> 
     <script src="/ny-script.js" defer></script>
 </head>
-
-
 <body>
     <audio id="startMusic" src="/music/Press-Start_MonoBit.wav" loop></audio>
-    <div id="secondPage">
-        <div class="title">
-            <h1>Choose your character below</h1>
-        </div>
-        <div class="container">
-           
-        <section class="left-section">
-            
-        <div class="character-container">
-            <p class="human-character">Human</p>
-            <img class="img" id="demon" onclick="markeraHuman(this)" src="/imagesNy/frusen3.png" alt="demon">
-            <img class="img" id="man" onclick="markeraHuman(this)" src="/images/highland.png" alt="man">
-            <img class="img" id="alien" onclick="markeraHuman(this)" src="/images/chungus.png" alt="alien">
-            <img class="img" id="ape" onclick="markeraHuman(this)" src="/imagesNy/frusen4.png" alt="ape"> 
-        </div>
-        </section>
-
-        <section class="right-section">
-        <div class="robot-container">
-            <p class="robot-character">Robot</p>
-            <img class="img" id="terminator" onclick="markeraRobot(this)" src="/images/terminator.png" alt="en österrikisk robot">
-            <img class="img" id="r2d2" onclick="markeraRobot(this)"  src="/images/r2d2.png" alt="en robot från Star Wars">
-            <img class="img" id="hal" onclick="markeraRobot(this)" src="/images/hal9000.png" alt="en läskig robot">
-            <img class="img" id="kenny" onclick="markeraRobot(this)" src="/images/kennybaker.png" alt="han som spekade r2d2">
-        </div>
-        </section>
-        </div>
-
-
-        <div class="name-buttons">
-            <button type="button" class="playerName-btn">Enter your name</button>
-            <button type="button" class="robotName-btn">Enter robot name</button>
-        </div>
-
-        <div class="nav-btns">
-        <div class="back">
-            <a href="#">
-                <button type="submit" id="backButton" class="back-btn" onclick="prevPage()">Back</button>
-            </a>
-        </div>
-        <div class="continue"> 
-            <a href="/index.html">
-            <button type="submit" id="continueButton" onclick="return sparaFormular(); tryckaknapp();" class="continue-btn" disabled>Continue</button>
-        </a>
-        </div>
-    </div>
-
-    <div class="popup-windows">
-        <div class="name-popup1 hidden">
-            <h3 class="close-symbol-left">X</h3>
-            <label for="userNameInput">Enter your name</label>
-            <input id="userNameInput" class="btn-name-user" type="text" placeholder="Enter your name">
-            <button type="submit" class="ok-btn1" disabled>OK</button>
-        </div>
-        <div class="name-popup2 hidden">
-            <h3 class="close-symbol-right">X</h3>
-            <label for="robotNameInput">Enter robot name</label>
-            <input id="robotNameInput" class="btn-name-robot" type="text" placeholder="Enter robot name">
-            <button type="submit" class="ok-btn2" disabled>OK</button>
-        </div>
-    </div>
-
-        
-    </div>
-
+    
     <div id="firstPage">
         <div class="title-container">
-        <div class="title">
-            <h1>Welcome</h1>
+            <div class="title"><h1>Welcome</h1></div>
+            <div class="title1"><h1>to</h1></div>
+            <div class="title"><h2>ROCK PAPER SCISSORS</h2></div>
         </div>
-
-        <div class="title1">
-            <h1>to</h1>
+        <div class="btn-container">
+            <button type="button" class="btn1" onclick="howToPlay()">How to play</button>
+            <button type="button" class="btn2" onclick="rules()">Rules</button>
+            <button class="start-button" type="button" onclick="nextPage()">Press start</button>
         </div>
-
-        <div class="title">
-            <h2>ROCK PAPER SCISSORS</h2>
-        </div>
-    </div>
-
-
+       
         <div id="howToPlayPopUp">
             <h1 class="howToPlayTitle">How to play</h1>
             <button onclick="howToPlayClose()">X</button>
@@ -108,143 +38,171 @@
             
             <div class="howToPlayText">
                 <h3>
-                    Starting the Game
-                
+                Starting the Game
                 <p>
-                    When you open the game, you will see a display with options for Rock, Paper, and Scissors, represented by their respective icons.
-                    The game begins with no hands displayed on the screen, providing a clean and straightforward interface.
+                When you open the game, you will see a display with options for Rock, Paper, and Scissors, represented by their respective icons.
+                The game begins with no hands displayed on the screen, providing a clean and straightforward interface.
                 </p>
                 </h3>
 
                 <h3>
-                    Selecting Your Move
-                 
+                Selecting Your Move
                 <p>
-                    Use the joystick control (on-screen or physical, if applicable) to cycle through the hand gestures for Rock, Paper, or Scissors.
-                    Press 'j' on your keyboard to change the hand gesture. The selected gesture will be displayed on the screen.
-                    You can also bend the joystick image by clicking on it, providing a more interactive experience.
+                Use the joystick control (on-screen or physical, if applicable) to cycle through the hand gestures for Rock, Paper, or Scissors.
+                Press 'j' on your keyboard to change the hand gesture. The selected gesture will be displayed on the screen.
+                You can also bend the joystick image by clicking on it, providing a more interactive experience.
                 </p>
                 </h3>
 
                 <h3>
-                    Initiating a Round
-                 
+                Initiating a Round
                 <p>
-                    Once you’ve made your choice, press 'g' to start the round.
-                    An animation will play, adding excitement to the reveal of both your hand and the robot’s hand.
+                Once you’ve made your choice, press 'g' to start the round.
+                An animation will play, adding excitement to the reveal of both your hand and the robot’s hand.
                 </p>
                 </h3>
 
                 <h3>
-                    Understanding the Outcome
-                 
+                Understanding the Outcome            
                 <p>
-                    The game will automatically determine the winner based on the classic rules: Rock crushes Scissors, Scissors cuts Paper, and Paper covers Rock.
-                    Wins, losses, and draws are tracked and displayed on the screen.
+                The game will automatically determine the winner based on the classic rules: Rock crushes Scissors, Scissors cuts Paper, and Paper covers Rock.
+                Wins, losses, and draws are tracked and displayed on the screen.
                 </p>
                 </h3>  
 
                 <h3>
-                    Using Special Features
-                 
+                Using Special Features
                 <p>
-                    Press 'F' or 'f' to toggle a cheat mode, altering the game's behavior.
-                    You can reset the game and all scores at any point by pressing 'r'.
+                Press 'F' or 'f' to toggle a cheat mode, altering the game's behavior.
+                You can reset the game and all scores at any point by pressing 'r'.
                 </p>
                 </h3>
 
                 <h3>
-                    Sound and Music
-                 
+                Sound and Music
                 <p>
-                    Enjoy different sound effects for actions like switching hands, starting a round, and winning or losing.
-                    You can select music to play during the game from a dropdown menu for a customized experience.
+                Enjoy different sound effects for actions like switching hands, starting a round, and winning or losing.
+                You can select music to play during the game from a dropdown menu for a customized experience.
                 </p>
                 </h3>
 
                 <h3>
-                    Ending a Game
-                 
+                Ending a Game             
                 <p>
-                    The game tracks the number of wins and losses. Once a set limit is reached, an alert will declare the game over.
-                    The game will automatically reset after the alert, so you can start a new round immediately.
+                The game tracks the number of wins and losses. Once a set limit is reached, an alert will declare the game over.
+                The game will automatically reset after the alert, so you can start a new round immediately.
                 </p>
                 </h3>
 
                 <h3>
-                    Accessibility and Controls
+                Accessibility and Controls
                 <p>
-                    Keyboard shortcuts for easy navigation and gameplay.
-                    The game is designed with intuitive controls for a seamless user experience.
+                Keyboard shortcuts for easy navigation and gameplay.
+                The game is designed with intuitive controls for a seamless user experience.
                 </p>    
                 </h3>
+
             </div>
         </div>
-            
 
-
-
-
-
+        
         <div id="popUp">
             <h1 class="rulesTitle">Rules</h1>
             <button onclick="rulesClose()">X</button>
             
             <div class="rulesText">
                 <h2>
-                    Rock, Paper & Scissors
+                Rock, Paper & Scissors
                 </h2>
                 
             <div class="rulesTextGrid">
                 <h3>
-                    Gestures
-                    <p>
-                    Rock: Closed fist. <br>
-                    Scissors: Index and middle fingers extended.
-                    Paper: Open hand, palm facing down.
-                    </p>
-                    </h3>
+                Gestures
+                <p>
+                Rock: Closed fist. <br>
+                Scissors: Index and middle fingers extended.
+                Paper: Open hand, palm facing down.
+                </p>
+                </h3>
                     
+                <h3>
+                To play
+                <p>
+                Count to three (usually "rock, paper, scissors!") and show a gesture on three.
+                Rock crushes scissors, scissors cuts paper, and paper covers rock.
+                </p>
+                </h3>
     
-                    <h3>
-                    To play
-                    <p>
-                    Count to three (usually "rock, paper, scissors!") and show a gesture on three.
-                    Rock crushes scissors, scissors cuts paper, and paper covers rock.
-                    </p>
-                    </h3>
-    
-                    <h3>
-                    Winner
-                    <p>
-                    If the same gesture, it's a draw.
-                    Otherwise, see which gesture beats the other.
-                    </p>
-                    </h3>
-    
-                    <h3>
-                    Usage
-                    <p>
-                    A fun and fair way to make quick decisions.
-                    </p>
-                    </h3>
+                <h3>
+                Winner
+                <p>
+                If the same gesture, it's a draw.
+                Otherwise, see which gesture beats the other.
+                </p>
+                </h3>
+
+                <h3>
+                Usage
+                <p>
+                A fun and fair way to make quick decisions.
+                </p>
+                </h3>
             </div>
 
 
             </div>
         </div>
 
-        
-        <div class="btn-container">
-            <button type="button" class="btn1" onclick="howToPlay()">How to play</button>
-            
-            <button type="button" class="btn2" onclick="rules()">Rules</button>
-        
-            <button class="start-button" type="button" onclick="nextPage()">Press start</button>
-        </div>
     </div>
 
-
+    <div id="secondPage">
+        <div class="title"><h1>Choose your character below</h1></div>
+        <div class="container">
+            <section class="left-section">
+                <div class="character-container">
+                    <p class="human-character">Human</p>
+                    <img class="img" id="demon" onclick="markeraHuman(this)" src="/imagesNy/frusen3.png" alt="demon">
+                    <img class="img" id="man" onclick="markeraHuman(this)" src="/images/highland.png" alt="man">
+                    <img class="img" id="alien" onclick="markeraHuman(this)" src="/images/chungus.png" alt="alien">
+                    <img class="img" id="ape" onclick="markeraHuman(this)" src="/imagesNy/frusen4.png" alt="ape">
+                </div>
+            </section>
+            <section class="right-section">
+                <div class="robot-container">
+                    <p class="robot-character">Robot</p>
+                    <img class="img" id="terminator" onclick="markeraRobot(this)" src="/images/terminator.png" alt="en österrikisk robot">
+                    <img class="img" id="r2d2" onclick="markeraRobot(this)"  src="/images/r2d2.png" alt="en robot från Star Wars">
+                    <img class="img" id="hal" onclick="markeraRobot(this)" src="/images/hal9000.png" alt="en läskig robot">
+                    <img class="img" id="kenny" onclick="markeraRobot(this)" src="/images/kennybaker.png" alt="han som spekade r2d2">
+                </div>
+            </section>
+        </div>
+        <div class="name-buttons">
+            <button type="button" class="playerName-btn">Enter your name</button>
+            <button type="button" class="robotName-btn">Enter robot name</button>
+        </div>
+        <div class="nav-btns">
+            <div class="back"><a href="#"><button type="submit" id="backButton" class="back-btn" onclick="prevPage()">Back</button></a></div>
+            <div class="continue"> 
+                <a href="/index.html">
+                    <button type="submit" id="continueButton" class="continue-btn" onclick="return sparaFormular(); tryckaknapp();" disabled>Continue</button>
+                </a>
+            </div>
+        </div>
+        <div class="popup-windows">
+            <div class="name-popup1 hidden">
+                <h3 class="close-symbol-left">X</h3>
+                <label for="userNameInput">Enter your name</label>
+                <input id="userNameInput" class="btn-name-user" type="text" placeholder="Enter your name">
+                <button type="submit" class="ok-btn1" disabled>OK</button>
+            </div>
+            <div class="name-popup2 hidden">
+                <h3 class="close-symbol-right">X</h3>
+                <label for="robotNameInput">Enter robot name</label>
+                <input id="robotNameInput" class="btn-name-robot" type="text" placeholder="Enter robot name">
+                <button type="submit" class="ok-btn2" disabled>OK</button>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>

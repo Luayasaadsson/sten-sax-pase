@@ -127,8 +127,6 @@ body {
   
 
 .continue-btn, .back-btn {
-  /*margin-top: 40px;
-  margin-left: 240px;*/
   width: 250px;
   height: 40px;
   font-size: 1.5rem;
@@ -197,14 +195,6 @@ body {
   cursor: pointer;
 }
 
-/*.btn-name-user:hover, .btn-name-robot:hover {
-  background-color: #76c1d4;
-  transition: background-color 0.3s ease-out;
-  transition: transform 0.3s ease;
-  opacity: 1;
-  transform: translateY(-5px);
-}*/
-
 .character-container {
   background-size: cover;
 
@@ -226,7 +216,6 @@ body {
 
 .img:hover {
   cursor: pointer;
-  /* border: solid #eef8f0; */
   opacity: 80%;
  
  
@@ -587,17 +576,7 @@ background-size: 500%;
 background-position: -60em;
      background-color: rgb(0, 0, 0);
     }
-    /*body {
-     position: absolute;
-      display: grid;
-      place-items: center;
-      height: 100vh;
-      margin-top: 40px;
-      
-    }*/
   
-     
-    
     .nav-btns {
       flex-direction: column;
       justify-content: center;
@@ -652,9 +631,6 @@ background-position: -60em;
   align-items: center;
   
     }
-    /*.continue, .back {
-      text-align: center;
-    }*/
   }
   
 

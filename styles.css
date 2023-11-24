@@ -29,7 +29,7 @@ body{
     
     ;
  grid-template-columns: 1fr 2fr 1fr;
- grid-template-rows: 100px/* 10% 70%; */
+ grid-template-rows: 100px
 }
 
 @font-face {
@@ -71,7 +71,6 @@ header h1 {
 
 main{
     grid-area: main;
-    /* background-color: blue; */
     min-height: 640px;
     margin-top: -45px;
     transition: filter 1s;
@@ -79,9 +78,9 @@ main{
 }
 
 .grayscale {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-z-index: -1;
+  z-index: -1;
 }
 
 .blur {
@@ -106,15 +105,6 @@ overflow: hidden;
   font-size: 30px;
   padding: 15px 20px;
 } 
-/* 
-#result {
-  color: rgb(237, 237, 68);
-  font-size: 100px;
-  margin-top: -800px;
-  margin-left: 400px;
-  margin-right: 380px;
-  position: absolute;
-} */
 
 .score {
   margin-top: 60px;
@@ -337,37 +327,6 @@ height: 100%;
   width: 8%;
 }
 
-/* 
-.back {
-  position: absolute;
-  width: 150px;
-  margin-left: 870px;
-  top: 15px;
-}
-
-.back img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.back-text {
-  position: absolute;
-  margin-left: 870px;
-  top: 130px;
-  background-color: rgba(0, 0, 0, 0.629);
-  height: 30%;
-  width: 170px;
-  border: 5px solid black;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.back-text img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-} */
-
 .animated-background {
   position: relative;
     width: 100%;          
@@ -406,13 +365,9 @@ height: 100%;
     50% {
       transform: translateY(-40px);
     }
-    /* transform: scaleX(1.05) */
   }
 
-.bag{
-    /* display: flex;
-  
-    align-content: center; */
+.bag {
     top: 38%;
     left: 15%;
     z-index: 0;
@@ -430,14 +385,7 @@ height: 100%;
 }
 
 
-/*   @keyframes bag-animation {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-}  */*/
+*/
 
 
 .choices {
@@ -460,11 +408,8 @@ height: 100%;
 }
 
 .scissor{
-    /* display: flex;
-    align-content: center; */
     top: 43%;
     left: 15%;
-    /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
     display: none;
@@ -486,11 +431,8 @@ height: 100%;
 }
 
 .stone{
-    /* display: flex;
-    align-content: center; */
     top: 40%;
     left: 15%;
-    /* z-index: 20; */
     position: absolute;
     animation: stone-animation 2s ease-in-out infinite alternate;
     display: block;
@@ -502,15 +444,6 @@ height: 100%;
     filter: contrast(100%);
     filter:saturate(90%);
 }
-
-/*   @keyframes stone-animation {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-} */
 
 .moveHumanContainer {
   position: absolute;
@@ -575,15 +508,6 @@ width: 150px;
   width: 120%;
 }
 
-/* @keyframes robot-hand-animation {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-} */
-
 .robot-hand1 {
   display: block;
   position: absolute;
@@ -594,15 +518,6 @@ width: 150px;
   display: none;
 }
 
-/* @keyframes robot-hand-animation {
-  0%, 100% {
-    transform: translateY(-10);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-} */
-
 .robot-hand2 {
   position: absolute;
   display: block;
@@ -612,15 +527,6 @@ width: 150px;
   animation: robot-hand-animation 3s ease-in-out infinite;
   display: none;
 }
-
-/* @keyframes robot-hand-animation {
-  0%, 100% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-} */
 
 .arkad {
   position: absolute;
@@ -650,9 +556,9 @@ margin-top: -92px;
     height: 610px;
     background-color: white;
     opacity: 0;
-    pointer-events: none; /* Ensures clicks go through the div */
-    transition: opacity 0.3s; /* Smooth transition for the flash effect */
-    z-index: 1; /* Ensure it's above everything else */
+    pointer-events: none; 
+    transition: opacity 0.3s;
+    z-index: 1; 
   }
 
   #dark-overlay {
@@ -666,7 +572,7 @@ margin-top: -92px;
       height: 610px;
       background-color: rgb(3, 3, 3);
       opacity: 0;
-      pointer-events: none; /* Ensures clicks go through the div */
+      pointer-events: none;
       transition: opacity 0.1s;
     }
     
@@ -679,9 +585,9 @@ margin-top: -92px;
     opacity: 1;
   width: 100%;
   
-}/* 
+}
 
-.screen::before {
+/* .screen::before {
   content: " ";
   display: block;
   position: absolute;
@@ -698,121 +604,7 @@ margin-top: -92px;
   z-index: 10;
     background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-}  */
- */
-/* 
-.h1flicker::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  
-  margin-left: 450px;
-  margin-right: 450px;
-  margin-bottom: 800px;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: no 
-}*//*  
- .h1flicker::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
-  margin-left: 450px;
-  margin-right: 450px;
-  margin-bottom: 800px;  background: rgba(18, 16, 16, 0.1);
-  opacity: 0.5;
-  z-index: 100;
-  pointer-events: none;
-  animation: flicker 0.15s infinite;
-}
- 
-
-@keyframes flicker {
-  0% {
-  opacity: 0.27861;
-  }
-  5% {
-  opacity: 0.34769;
-  }
-  10% {
-  opacity: 0.23604;
-  }
-  15% {
-  opacity: 0.90626;
-  }
-  20% {
-  opacity: 0.18128;
-  }
-  25% {
-  opacity: 0.83891;
-  }
-  30% {
-  opacity: 0.65583;
-  }
-  35% {
-  opacity: 0.67807;
-  }
-  40% {
-  opacity: 0.26559;
-  }
-  45% {
-  opacity: 0.84693;
-  }
-  50% {
-  opacity: 0.96019;
-  }
-  55% {
-  opacity: 0.08594;
-  }
-  60% {
-  opacity: 0.20313;
-  }
-  65% {
-  opacity: 0.71988;
-  }
-  70% {
-  opacity: 0.53455;
-  }
-  75% {
-  opacity: 0.37288;
-  }
-  80% {
-  opacity: 0.71428;
-  }
-  85% {
-  opacity: 0.70419;
-  }
-  90% {
-  opacity: 0.7003;
-  }
-  95% {
-  opacity: 0.36108;
-  }
-  100% {
-  opacity: 0.24387;
-  }
-}
-
-
-   @keyframes floatEffect {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-   */
+}   */
 
   @keyframes fadeIn {
     0% {
@@ -892,7 +684,6 @@ font-weight: bold;
 }
 
 .life-bars-block {
-  /*width: 95%;*/
   margin-top: -620px;
   margin-left: 0px;
 }
@@ -998,7 +789,7 @@ width: 1000px;
   
 
 #result {
-height: 50px;
+  height: 50px;
   margin-top: -800px;
   margin-left: 550px;
   margin-right: 380px;
@@ -1422,29 +1213,3 @@ cursor: crosshair;
   90% { transform: translateX(180px) translateY(0); }
   95% { transform: translateX(90px) translateY(300px); }
 }
-
-/* 
-@keyframes skuttande {
-  0%, 100% { transform: translateX(0%) translateY(0); }
-  5% { transform: translateX(20px) translateY(-20px); }
-  10% { transform: translateX(20px) translateY(0); }
-  15% { transform: translateX(30%) translateY(-20px); }
-  20% { transform: translateX(40%) translateY(0); }
-  25% { transform: translateX(50%) translateY(-20px); }
-  30% { transform: translateX(60%) translateY(0); }
-  35% { transform: translateX(70%) translateY(-20px); }
-  40% { transform: translateX(80%) translateY(0); }
-  45% { transform: translateX(90%) translateY(-20px); }
-  50% { transform: translateX(100%) translateY(0); }
-  55% { transform: translateX(90%) translateY(-20px); }
-  60% { transform: translateX(80%) translateY(0); }
-  65% { transform: translateX(70%) translateY(-20px); }
-  70% { transform: translateX(60%) translateY(0); }
-  75% { transform: translateX(50%) translateY(-20px); }
-  80% { transform: translateX(40%) translateY(0); }
-  85% { transform: translateX(30%) translateY(-20px); }
-  90% { transform: translateX(20%) translateY(0); }
-  95% { transform: translateX(10%) translateY(-20px); }
-}
-
- */
