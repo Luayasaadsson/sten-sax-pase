@@ -9,12 +9,31 @@ let endGameAnimation = false
 function visaUfo(){
     if (endGameAnimation === false) {
         audioPlayer.pause();
+        let whoaffSound = document.getElementById("whoaff");
+        whoaffSound.play();
         let ufoSound = document.getElementById("ufoSound");
         ufoSound.play();
         let ufoElement = document.querySelector('.ufot');
-        let animatedBackground = document.getElementById('animated-background');
-        animatedBackground.style.background = "url(/images/alien.png)";
-        animatedBackground.style.animation = "slideshowPanY 37s infinite";
+        let animatedBackground2 = document.getElementById('animated-background2');
+        let darkAnimation = document.getElementById('dark-overlay')
+
+        //Mörk flash
+        darkAnimation.style.transition = 'opacity 0.8s ease-in';
+        darkAnimation.style.opacity = '0.5';
+        setTimeout(function() {
+            darkAnimation.style.transition = 'opacity 0.2s';
+            darkAnimation.style.opacity = '0';
+    
+            // Optional: Reset the transition back to original after a short delay
+            setTimeout(() => {
+                darkAnimation.style.transition = 'opacity 0.01s ease-in';
+            }, 50);});
+
+            //Bakgrundsbyte
+        animatedBackground2.style.background = "url(/images/alien.png)";
+        animatedBackground2.style.zIndex = "-4";
+        animatedBackground2.style.opacity = "1"
+            //Ufo
         ufoElement.style.background = "url(/images/ufo2.png)";
         ufoElement.style.backgroundSize = "cover"
         ufoElement.style.height = "100px"
@@ -26,16 +45,15 @@ function visaUfo(){
    
 function döljUfo(){
     let ufoElement = document.querySelector('.ufot');
-  /*   ufoElement.style.animation = "none"; */
     ufoElement.style.background = "url(/images/exp2.gif)";
     ufoElement.style.backgroundSize = "cover"
     ufoElement.style.height = "200px"
     let ufoexp = document.getElementById("ufoexp");
     ufoexp.play()
     setTimeout(function() {
-        let animatedBackground = document.getElementById('animated-background');
-        animatedBackground.style.animation = "slideshowPanY 37.5s infinite , slideshow 75s infinite";
-        animatedBackground.style.background = "url(/images/level1.jfif)";
+        let animatedBackground2 = document.getElementById('animated-background2');
+        animatedBackground2.style.zIndex = "-6";
+        animatedBackground2.style.opacity = "0"
         document.querySelector('.ufot').style.display = 'none';
         ufoElement.style.background = "url(/images/ufo.png)";
         ufoElement.style.backgroundSize = "cover"
@@ -44,6 +62,19 @@ function döljUfo(){
         ufoSound.currentTime = 0; 
         let winLifeSound = document.getElementById("winLife");
         winLifeSound.play();
+        let darkAnimation = document.getElementById('dark-overlay')
+
+        //Mörk flash
+        darkAnimation.style.transition = 'opacity 0.8s ease-in';
+        darkAnimation.style.opacity = '0.5';
+        setTimeout(function() {
+            darkAnimation.style.transition = 'opacity 0.2s';
+            darkAnimation.style.opacity = '0';
+    
+            // Optional: Reset the transition back to original after a short delay
+            setTimeout(() => {
+                darkAnimation.style.transition = 'opacity 0.01s ease-in';
+            }, 50);});
         if (endGameAnimation === false) {audioPlayer.play(); }
     }, 500);
 
