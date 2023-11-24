@@ -168,7 +168,7 @@ footer{
   position: relative;
     grid-area: footer;
     background-color: #3D3F61;
-    margin-top: -35px;
+    margin-top: 3px;
 }
 
 .ring{
