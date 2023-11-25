@@ -321,10 +321,12 @@ height: 100%;
   background-color: rgb(26, 255, 0);
   width: 100px;
   height: 30px;
+  cursor: pointer;
 }
 
 #volumeControl{
   width: 8%;
+  cursor: pointer;
 }
 
 .animated-background {
