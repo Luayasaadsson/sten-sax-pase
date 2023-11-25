@@ -151,7 +151,7 @@ function animation() {
 
     // Den här if-satsen ser till att spelets animation inte går igång ifall användaren inte interagerar med joysticken först.
     if (!isGameStarted) {
-        alert("Please start the game using the joystick!")
+        alert("Please start the game using the joystick to choose hand (✊✋✌️)")
         return;
 }
     let handAnimation = document.getElementById('hands');
@@ -377,6 +377,18 @@ function playWinnerVideo() {
     video.style.display = 'block';
     video.play();
     video.currentTime = 0;
+
+    setTimeout(function() { //Väntar tills press reset-animationen börjar
+            
+        //Animation
+            document.getElementById('pressreset').innerHTML = "<img src='/images/reset.png'>"; //Visar pressreset på skärmen
+            let resetElement2 = document.getElementById('pressreset');   
+            resetElement2.style.opacity = 1; ///SKRIVER reset
+            resetElement2.style.display = "block";
+            resetElement2.style.animation = 'none';
+            void resetElement2.offsetWidth; 
+            resetElement2.style.animation = 'pressreset1 2s infinite'; ///SKRIVER UT reset
+        }, 16500); //Delay för hjärnan om man har damp
 }
 
 // Hämtar vinnarvideon och kör en funktion som stoppar videon.
