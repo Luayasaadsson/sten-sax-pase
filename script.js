@@ -1,7 +1,11 @@
 // Definerar här en global variabel för att spara om användaren startar spelet genom att börja trycka på joysticken för att välja en hand.
 let isGameStarted = false;
 let endGameAnimation = false
-
+let fuskAktiverat = false;
+let joystick = 0;
+let win = { score: 0 };
+let losses = { score: 0 };
+let draw = { score: 0 };
 
 
 // Denna funktion gör så att spelet börjar med händerna dolda i skärmen. Händerna kommer fram när användaren interagerar med spelet. 
@@ -65,14 +69,7 @@ hideAllHands();
 
 
 
-let fuskAktiverat = false;
 
-
-let joystick = 0;
-
-let win = { score: 0 };
-let losses = { score: 0 };
-let draw = { score: 0 };
 
 
 
@@ -122,14 +119,14 @@ function joystickBend() {
 
 
 document.body.addEventListener('keydown',(event) => {
-    if (event.key === 'j') {
+    if (event.key === 'j' || event.key === 'J') {
         joystickChange();
         joystickBend();
-    } else if (event.key === 'g') {
+    } else if (event.key === 'g' || event.key === 'G') {
         animation();
-    } else if (event.key === 'r') {
+    } else if (event.key === 'r' || event.key === 'R') {
         resetGame();
-    } else if (event.key === 'F' || event.key === 'f') {
+    } else if (event.key === 'f' || event.key === 'F') {
         fuskAktiverat = !fuskAktiverat;
         document.getElementById('fuskIndikator').style.display = fuskAktiverat ? 'block' : 'none';
         if (fuskAktiverat) {
