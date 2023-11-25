@@ -140,7 +140,8 @@ function updateScoreElement() {
     document.getElementById('losses.score').textContent = "Losses: " + losses.score;
     document.getElementById('draw.score').textContent = "Draws: " + draw.score;
 
-    document.getElementById('endGameMessage').style.display = 'none';
+    document.getElementById('endGameMessage').style.display = 'none';// Denna kodrad gör så att meddelande vid vinst/förlust
+    //  återställs tillsammans med resultatet.
 }
 
 //Animationen för händerna när man trycker GO (EXPLOSION OCH GREJER)
@@ -159,37 +160,36 @@ function animation() {
     let expSound = document.getElementById("expSound");
     let goSound = document.getElementById('button2');
     let wooshSound = document.getElementById("wooshSound");
-    /* let swishSound = document.getElementById("swishSound"); */
-    // Start dark animation with ease-in
+
     goSound.play()
     wooshSound.play()
-  /*   swishSound.play() */
     darkAnimation.style.transition = 'opacity 0.8s ease-in';
     darkAnimation.style.opacity = '0.5';
-    // Flash dark animation for 1 second then step out instantly
+
     setTimeout(function() {
         darkAnimation.style.transition = 'opacity 0.2s';
         darkAnimation.style.opacity = '0';
 
-        // Optional: Reset the transition back to original after a short delay
+
         setTimeout(() => {
             darkAnimation.style.transition = 'opacity 0.01s ease-in';
         }, 50);
     }, 800);
-    // Set z-index of hands to 10 and hide choices with initial opacity set to 0
+ 
+    
     handAnimation.style.zIndex = '1';
     choicesAnimation.style.display = 'none';
-    choicesAnimation.style.opacity = '0';  // Initially invisible
+    choicesAnimation.style.opacity = '0';  
 
-    // After a delay, change z-index back and call spel()
+  
+    // Efter fördröjningne, ändras z-index tillbaka.
     setTimeout(function() {
         handAnimation.style.zIndex = '-10';
         choicesAnimation.style.display = 'block';
         choicesAnimation.style.zIndex = '10';
-        //console.log('z-index changed back to -10');
 
 
-        // Show explosion animation
+        // Visar explosion effekt.
         expSound.play()
         explosionAnimation.style.display = 'block';
         explosionAnimation.style.opacity = '1';
@@ -197,12 +197,9 @@ function animation() {
         screenborder.style.zIndex = '-10';
         
 
-        //console.log("KABOOOM");
-
-        // After the explosion animation, fade in the choices
         setTimeout(function() {
-            choicesAnimation.style.transition = 'opacity 0.2s ease-in'; // Set transition for fade-in
-            choicesAnimation.style.opacity = '1'; // Fade in choices
+            choicesAnimation.style.transition = 'opacity 0.2s ease-in'; 
+            choicesAnimation.style.opacity = '1'; 
             spel();     
             setTimeout(function() {
                 explosionAnimation.style.display = 'none';
@@ -211,7 +208,7 @@ function animation() {
 
             }, 1000);
         }, 500);
-    }, 800); // 800 milliseconds = 0.8 seconds
+    }, 800);
 }
 
 
@@ -225,26 +222,6 @@ function spel () {
     } else {
         robot = Math.floor(Math.random() * 3);
     }
-    //console.log(robot)
-
-   /*  let result = '';
-
-    if (joystick === robot) {
-        document.getElementById('draw.score').textContent = "Draws: " + (parseInt(document.getElementById('draw.score').textContent.split(" ")[1]) + 1);
-        console.log("draw");
-        robotHand (robot)
-    }else if ((joystick === 0 && robot === 2) || (joystick === 1 && robot === 0) || (joystick === 2 && robot === 1)) {
-        console.log("win");
-        document.getElementById('win.score').textContent = "Wins: " + (parseInt(document.getElementById('win.score').textContent.split(" ")[1]) + 1);
-        robotHand (robot)
-    } else {
-        console.log("lose");
-        document.getElementById('losses.score').textContent = "Losses: " + (parseInt(document.getElementById('losses.score').textContent.split(" ")[1]) + 1);
-        result = 'You lose!';
-        robotHand (robot)
-    } */
-
-    
 
     if (joystick === robot) {
         updateScore('draw.score');
@@ -267,7 +244,6 @@ function spel () {
     }, 2000); // Minskar robotens liv med 1
     } else {
         document.getElementById("goButton").disabled = true;
-        //console.log("lose");
         updateScore('losses.score');
         console.log(updateScore)
         result = 'You lose!';
@@ -288,17 +264,10 @@ function spel () {
     void resultElement.offsetWidth; 
     resultElement.style.animation = 'result1 2s ease'; ///SKRIVER UT RESULTAT PÅ SKÄRMEN
 }
-   /*  if (result === 'You win!') {
-        win.score += 1;
-      } else if (result === 'You lose!') {
-        losses.score += 1;
-      } else if (result === 'Draw!') {
-        draw.score += 1;
-      } */
 
 function updateScore(scoreId) {
     const scoreElement = document.getElementById(scoreId);
-    //console.log(scoreElement)
+
     let currentScore = parseInt(scoreElement.textContent.split(" ")[1]);
     if (isNaN(currentScore)) {
         currentScore = 0; // Om det inte är ett numeriskt värde, sätt det till 0
@@ -318,14 +287,9 @@ function robotHand (robot) {
     }else if (robot === 2) {
         document.querySelector('.robot-hand').style.display = 'block';
     }
-
-   
-/*     setTimeout(function() {
-        selectedHand.style.display = 'none';
-    }, 2000); */
 }
 
-// Här lägger jag till en funkiton som uppdaterar spelarnas liv genom att minska backgrundsfärgen med 1 efter varje match. 
+// Här lägger jag till en funkiton som uppdaterar spelarnas liv genom att minska backgrundsfärgen med 1 efter varje runda. 
 function updateLifebar(human) {
     let lifeItems;
     let updateIndex;
@@ -363,8 +327,8 @@ function checkGameOver() {
 
     if (humanLivesLost === totalLives || robotLivesLost === totalLives) {
         stopExplosion(); // Stoppar explosionen
-        let loser = humanLivesLost === totalLives ? 'Human' : 'Robot';
-        setTimeout(function() { endGame(loser); }, 500); // Genom denna funktion skickar jag förlorarens namn till endGame.
+        let loser = humanLivesLost === totalLives ? 'Human' : 'Robot'; // En Ternär operatorn används här för att bestämma vem förloraren är.
+        setTimeout(function() { endGame(loser); }, 500); // Genom denna funktion skickar jag förlorarens namn till endGame. I endGame sker då animationer/alert.
     }
 }
 
@@ -374,6 +338,9 @@ function playWinnerVideo() {
     video.style.display = 'block';
     video.play();
     video.currentTime = 0;
+
+
+    //----------- Tillsammasn med videon körs "Press resset" meddelandet. Koden för det nedan---------// 
 
     setTimeout(function() { //Väntar tills press reset-animationen börjar
             
@@ -395,7 +362,7 @@ document.getElementById('winnerVideo').addEventListener('ended', function() {
     this.currentTime = 0; 
 });
 
-// Denna funktion kör videon när human förlorar.
+//-------- Denna funktion kör videon när human förlorar. OBS! (Just nu är den ej aktiv.)-------------//
 function loserVideo() {
     let video = document.getElementById('loserVideo');
     video.style.display = 'block';
@@ -408,6 +375,7 @@ document.getElementById('loserVideo').addEventListener('ended', function() {
     this.pause();
     this.currentTime = 0;
 });
+//------------------------------------------------------------------------------------------------------------------------//
 
 
 // Lägger min lyssnare utanför min resetGame funktion så att användaren kan välja att återställa spelet när som helst.
@@ -421,7 +389,7 @@ function resetGame() {
     updateScoreElement();
     let lifeItems = document.querySelectorAll('.life-item');
     lifeItems.forEach(function (item) {
-        item.style.backgroundColor = ''; // Återställ bakgrundsfärgen
+        item.style.backgroundColor = ''; // Återställer bakgrundsfärgen.
     });   
     
     //Video
@@ -459,9 +427,9 @@ ring.classList.remove('blur'); //Tar bort blur
     //Återaktiverar Go-knappen
     document.getElementById("goButton").disabled = false;
 
-// Check if flashOverlay exists
+// Checkar om flashOverlay existerar.
 if (flashOverlay) {
-    // Make the overlay visible
+    // Gör flashOverlayen synlig.
     flashOverlay.style.opacity = '1';
 
     // Set a timeout to hide the overlay after a short period
@@ -469,8 +437,9 @@ if (flashOverlay) {
         flashOverlay.style.opacity = '0';
     }, 150); // Adjust the time for the length of the flash
 }
-    // Här anropar jag min variabel för att se till att det inte går att köra spelet när användaren trycker på reset knappen. Återigen användaren måste interagera med joysticken först för att kunna fortsätta. 
-    isGameStarted = false;
+
+    /* // Här anropar jag min variabel för att se till att det inte går att köra spelet när användaren trycker på reset knappen. Återigen användaren måste interagera med joysticken först för att kunna fortsätta. 
+    isGameStarted = false; */
 
 
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
@@ -480,26 +449,6 @@ if (flashOverlay) {
 }
 
 let resetElement = document.getElementById('pressreset'); 
-/* function updateLosses() {
-    losses.score++; // Anta att detta är hur du uppdaterar antalet förluster
-    // Kalla på UfoFunktion varje gång förlustantalet uppdateras
-    UfoFunktion();
-} */
-
-
-/* document.addEventListener('DOMContentLoaded', (event) => {
-   
-document.querySelector('ufo').addEventListener('click', onUfoClick);
-
-});
-
-function onUfoClick() {
-        //resetGame();
-        console.log("UFO clicked!")
-}; 
-
-window.addEventListener('load', UfoFunktion); */
-
 
 // Funktionen skriver ut förlorarens namn
 function endGame(loser) {
@@ -520,13 +469,10 @@ function endGame(loser) {
     }
 
         if (loser === 'Human') {
-    
-
     document.getElementById("goButton").disabled = true;
     endGameAnimation = true
 
-    //Animation
-    
+        //Animation
         //Flash
         let flashOverlay = document.getElementById("flash-overlay")
         if (flashOverlay) {
@@ -600,16 +546,16 @@ function endGame(loser) {
     } 
 
 
-
+// Här hämtas musiken från HMTL.
 document.getElementById('väljMusik').addEventListener('change', function(e) {
     let audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = this.value;
     audioPlayer.play();
 });
-
+// Här hämtas musikvolymen från HTML.
 document.getElementById('volumeControl').addEventListener('input', function(e) {
-    var volume = e.target.value;
-    var audioPlayer = document.getElementById('audioPlayer');
+    let volume = e.target.value;
+    let audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.volume = volume;
 });
 

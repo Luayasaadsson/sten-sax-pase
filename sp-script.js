@@ -2,6 +2,26 @@
 let humanAvatarChosen = false;
 let robotAvatarChosen = false;
 
+
+// Den här funktionen lägger till eldeffekter i bakgrunden till karaktärbilderna. 
+function markeraHuman(selectedImage){
+    document.querySelectorAll('.character-container img').forEach(img => {
+        img.classList.remove('eldEffektHuman');
+    });
+
+selectedImage.classList.add('eldEffektHuman');
+}
+
+
+function markeraRobot(selectedImage){
+    document.querySelectorAll('.robot-container img').forEach(img => {
+        img.classList.remove('eldEffektRobot');
+    });
+
+selectedImage.classList.add('eldEffektRobot');
+}
+
+
 // Sparar ner namnen till huvudsidan
 function sparaFormular(){ // Funktionen triggas av knappen Continue från secong page
     let humanName = document.getElementById('userNameInput').value;
@@ -40,14 +60,6 @@ function uppdatteraVisning(){
 
 window.onload = uppdatteraVisning;
 
-
-
-
-
-
-
-
-
 const avatarIds = ['demon', 'man', 'alien', 'ape'];
 
 function sparaAvatar() {
@@ -79,9 +91,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     visaSparadAvatar();
 });
 
-
-
-
 const avatarRobotIds = ['terminator', 'r2d2', 'hal', 'kenny'];
 
 function sparaRobotAvatar() {
@@ -105,10 +114,6 @@ function visaSparadRobotAvatar() {
         }
     }
 }
-
-
-
-
 
 window.onload = uppdatteraVisning;
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -152,9 +157,7 @@ function rulesClose() {
     rulePop.style.display = 'none'
 }
 
-
-
-//-----------------Visa och dolja popup fönster med input av player och robot namn--------------
+//-----------------Visa och dölja popup fönster med input av player och robot namn--------------
 const pName = document.querySelector(".playerName-btn");
 const rName = document.querySelector(".robotName-btn");
 const playerNamePopup = document.querySelector(".name-popup1");
