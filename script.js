@@ -449,10 +449,6 @@ if (flashOverlay) {
     }, 150); // Adjust the time for the length of the flash
 }
 
-    /* // Här anropar jag min variabel för att se till att det inte går att köra spelet när användaren trycker på reset knappen. Återigen användaren måste interagera med joysticken först för att kunna fortsätta. 
-    isGameStarted = false; */
-
-
         // Här kallar jag på min funktion som är högst upp. Jag vill att när användaren trycker på återställningsknappen för att återställa resultatet, så ska det också gå att gömma händerna samtidigt.
         hideAllHands();
 
