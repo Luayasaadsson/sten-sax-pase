@@ -177,7 +177,7 @@ function animation() {
         setTimeout(() => {
             darkAnimation.style.transition = 'opacity 0.01s ease-in';
         }, 50);
-    }, 800);
+    }, 2500);
  
     
     handAnimation.style.zIndex = '1';
@@ -211,7 +211,7 @@ function animation() {
 
             }, 1000);
         }, 500);
-    }, 800);
+    }, 2500);
 }
 
 
