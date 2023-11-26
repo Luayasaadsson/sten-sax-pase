@@ -98,6 +98,9 @@ function joystickChange() {
     if (!isGameStarted) {
         startGame();
     }
+
+    // Ifall användaren väljer hand från joysticken så körs spelet som vanligt.
+    isGameStarted = true;
 }
 
 // Ny funktion som kör spelet ifall användaren börjar med att välja hand genom att trycka på joysticken.
@@ -214,6 +217,12 @@ function animation() {
 
 
 function spel () {
+
+    // Utifall användaren trycker på GO-knappen för att fortsätta spelet efter en match utan att välja hand, då skrivs detta felmeddelandet ut. 
+    if (!isGameStarted) {
+        alert("Please start the game using the joystick to choose hand (✊✋✌️)")
+        return;
+    }
 
     let robot;
     
@@ -391,6 +400,8 @@ function resetGame() {
     lifeItems.forEach(function (item) {
         item.style.backgroundColor = ''; // Återställer bakgrundsfärgen.
     });   
+    // Detta hindrar spelet att fortsätta ifall avändaren ej väljer hand från joysticken.
+    isGameStarted = false;
     
     //Video
     let video = document.getElementById('winnerVideo');
@@ -545,19 +556,84 @@ function endGame(loser) {
         }
     } 
 
+   // Definierar en asynkron funktion som hämtar låtar från Jamendo Music API.
+async function getTracks() {
+    const apiKey = '68b0f796'; // Min API-nyckel för Jamendo.com.
+    // Skapar URL:en för API-anropet med min API-nyckel.
+    const url = `https://api.jamendo.com/v3.0/tracks/?client_id=${apiKey}&format=jsonpretty&limit=10&tags=rock,pop&include=musicinfo&order=releasedate_desc`;
+
+
+    // Använder try-catch för att hantera eventuella fel under API-anropet.
+    try {
+        const response = await fetch(url); // Gör API-anropet och väntar på svaret.
+        const data = await response.json(); // Konverterar svaret till JSON-format.
+
+        // Kontrollerar om API-anropet lyckades och om det finns några låtar i svaret.
+        if (data.headers.status === 'success' && data.results.length > 0) {
+            updateTrackList(data.results); // Uppdaterar låtlistan med de hämtade låtarna.
+        } else {
+            console.error('No tracks were found or there was an error in the API call'); // Felmeddelande.
+        }
+    } catch (error) {
+        console.error('Error fetching tracks', error); // Loggar eventuella fel som inträffar under API-anropet.
+    }
+}
+
+// Funktion för att uppdatera låtlistan i användargränssnittet.
+function updateTrackList(tracks) {
+    const selectElement = document.getElementById('väljMusik'); // Hämtar <select>-elementet med ID 'väljMusik'.
+
+    // Loopar igenom varje låt i låtlistan.
+    tracks.forEach(track => {
+        const option = document.createElement('option'); // Skapar ett nytt option-element för varje låt.
+        option.value = track.audio; // Sätter ljudfilens URL som värdet på option-elementet.
+        option.textContent = track.name; // Sätter låtens namn som textinnehåll i option-elementet.
+        selectElement.appendChild(option); // Lägger till option-elementet i select-elementet.
+    });
+}
+
+// Lägger till en event listener som anropar 'getTracks' när webbsidan har laddats helt.
+document.addEventListener('DOMContentLoaded', getTracks);
 
 // Här hämtas musiken från HMTL.
 document.getElementById('väljMusik').addEventListener('change', function(e) {
     let audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.src = this.value;
-    audioPlayer.play();
+    if (this.value) {
+        audioPlayer.src = this.value;
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause(); // Stoppar musikuppspelningen om "Choose music" är valt
+    }
 });
+
 // Här hämtas musikvolymen från HTML.
 document.getElementById('volumeControl').addEventListener('input', function(e) {
     let volume = e.target.value;
     let audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.volume = volume;
 });
+
+// Hämtar mina videon från HTML med dess ID. 
+const winnerVideoElement = document.getElementById('winnerVideo');
+const loserVideoElement = document.getElementById('gameOverSound');
+
+// En lyssnare med typen 'ended'.
+winnerVideoElement.addEventListener('ended', function() {
+    // Kod som körs när videon är klar
+    continueMusicPlayback();
+});
+loserVideoElement.addEventListener('ended', function() {
+    continueMusicPlayback();
+});
+
+// Funktionen gör så att musiken fortsätter att spela efter videoserna har spelats klart.
+function continueMusicPlayback() {
+    let audioPlayer = document.getElementById('audioPlayer');
+    if (audioPlayer.src && audioPlayer.paused) {
+        audioPlayer.play();
+    }
+}
+
 
 
 //DELAY FÖR KNAPPAR SÅ INTE ANIMATIONER / LJUD BREAKAR:
